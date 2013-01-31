@@ -11,9 +11,9 @@
 #' 
 #' # Load the packages and create a BibTeX file with citation information
 #' LoadandCite(PackNames, file = 'PackageCites.bib')
+#' @source This function is partially based on: \link{https://gist.github.com/3710171}
+#' @seealso \code{\link{knitr::write_bib}}, \code{\link{install.packages}}, and \code{\link{library}} 
 #' @export
-
-# This function is partially based on: https://gist.github.com/3710171
 
 LoadandCite <- function(packages, file = "", install = FALSE)
 {
