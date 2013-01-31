@@ -8,7 +8,6 @@
 
 source_GitHubData <-function(url, sep = ",", header = TRUE)
 {
-  require(httr)
   request <- GET(url)
   stop_for_status(request)
   handle <- textConnection(content(request, as = 'text'))
