@@ -1,69 +1,46 @@
 \name{LoadandCite}
 \alias{LoadandCite}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+\title{Install, load, and cite R packages}
+\source{
+  This function is partially based on:
+  \link{https://gist.github.com/3710171}
 }
 \usage{
-LoadandCite(packages, file = "", install = FALSE)
+  LoadandCite(packages, file = "", install = FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{packages}{
-%%     ~~Describe \code{packages} here~~
+  \item{packages}{a character vector of R package names.}
+
+  \item{file}{the name of the BibTeX file}
+
+  \item{install}{a logical option for whether or not to
+  install the packages. The default is \code{install =
+  FALSE}}
 }
-  \item{file}{
-%%     ~~Describe \code{file} here~~
-}
-  \item{install}{
-%%     ~~Describe \code{install} here~~
-}
+\description{
+  \code{LoadandCite} can install and load R packages as
+  well as automatically generate a BibTeX file citing the
+  packages.
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+  The command can install R packages, load them, and create
+  a BibTeX file that can be used to cite the packages in a
+  LaTeX or similar document. It can be useful to place this
+  command at the beginning of a \code{\link{knitr}} code
+  chunk in a reproducible research document. Note: the
+  command will overwrite existing files with the same name
+  as \code{file}, so it is generally a good idea to create
+  a new BibTeX file with \code{LoadandCite}.
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# Create vector of package names
+PackNames <- c("knitr", "ggplot2")
 
-## The function is currently defined as
-function (packages, file = "", install = FALSE) 
-{
-    doInstall <- install
-    if (doInstall) {
-        install.packages(packages, repos = "http://cran.us.r-project.org")
-    }
-    lapply(packages, library, character.only = TRUE)
-    knitr::write_bib(packages, file = file)
-  }
+# Load the packages and create a BibTeX file
+LoadandCite(PackNames, file = 'PackageCites.bib')
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\seealso{
+  \link{knitr}, \code{\link{write_bib}},
+  \code{\link{install.packages}}, and \code{\link{library}}
+}
+

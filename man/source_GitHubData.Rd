@@ -1,69 +1,45 @@
 \name{source_GitHubData}
 \alias{source_GitHubData}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-%%  ~~function to do ... ~~
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+\title{Load plain-text data from GitHub}
+\source{
+  Based on \code{\link{source_url}} from the Hadley
+  Wickham's \link{devtools} package.
 }
 \usage{
-source_GitHubData(url, sep = ",", header = TRUE)
+  source_GitHubData(url, sep = ",", header = TRUE)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{url}{
-%%     ~~Describe \code{url} here~~
-}
-  \item{sep}{
-%%     ~~Describe \code{sep} here~~
-}
-  \item{header}{
-%%     ~~Describe \code{header} here~~
-}
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
+  \item{url}{The plain-text formatted data's RAW URL.}
+
+  \item{sep}{The separator method for the data. By default
+  \code{sep = ","} to load comman-separated values data
+  (CSV). To load tab-separated values data (TSV) use
+  \code{sep = "\t"},}
+
+  \item{header}{whether or not the first line of the file
+  is the header (variable names). The default is
+  \code{header = TRUE}}
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+  a data frame
 }
-\references{
-%% ~put references to the literature/web site here ~
+\description{
+  \code{source_GitHubData} loads data stored on GitHub in
+  plain-text formats into R.
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\details{
+  Loads plain-text data (e.g. CSV, TSV) data from GitHub
+  into R. Note: the GitHub URL you give for the \code{url}
+  argument must be for the RAW version of the file. The
+  function should work to download plain-text data from any
+  secure URL (https), though I have not verified this.
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (url, sep = ",", header = TRUE) 
-{
-    require(httr)
-    request <- GET(url)
-    stop_for_status(request)
-    handle <- textConnection(content(request, as = "text"))
-    on.exit(close(handle))
-    read.table(handle, sep = sep, header = header)
-  }
+# Download electoral disproportionality data stored on GitHub
+# Note: Using shortened URL created by bitly
+DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\seealso{
+  \link{httr} and \code{\link{read.table}}
+}
+

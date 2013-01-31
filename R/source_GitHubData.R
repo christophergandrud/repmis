@@ -11,10 +11,12 @@
 #' # Note: Using shortened URL created by bitly
 #' DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 #' @source Based on \code{\link{source_url}} from the Hadley Wickham's \link{devtools} package.
+#' @seealso \link{httr} and \code{\link{read.table}}
 #' @export
 
 source_GitHubData <-function(url, sep = ",", header = TRUE)
 {
+  require(httr)
   request <- GET(url)
   stop_for_status(request)
   handle <- textConnection(content(request, as = 'text'))
