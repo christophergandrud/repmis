@@ -1,2 +1,4 @@
 export(LoadandCite)
 export(source_GitHubData)
+import(httr)
+import(knitr)

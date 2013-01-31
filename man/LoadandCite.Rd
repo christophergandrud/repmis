@@ -3,7 +3,7 @@
 \title{Install, load, and cite R packages}
 \source{
   This function is partially based on:
-  \link{https://gist.github.com/3710171}
+  \link{https://gist.github.com/3710171}.
 }
 \usage{
   LoadandCite(packages, file = "", install = FALSE)
@@ -11,11 +11,11 @@
 \arguments{
   \item{packages}{a character vector of R package names.}
 
-  \item{file}{the name of the BibTeX file}
+  \item{file}{the name of the BibTeX file.}
 
   \item{install}{a logical option for whether or not to
   install the packages. The default is \code{install =
-  FALSE}}
+  FALSE}.}
 }
 \description{
   \code{LoadandCite} can install and load R packages as
@@ -26,8 +26,8 @@
   The command can install R packages, load them, and create
   a BibTeX file that can be used to cite the packages in a
   LaTeX or similar document. It can be useful to place this
-  command at the beginning of a \code{\link{knitr}} code
-  chunk in a reproducible research document. Note: the
+  command in a \code{\link{knitr}} code chunk at the
+  beginning of a reproducible research document. Note: the
   command will overwrite existing files with the same name
   as \code{file}, so it is generally a good idea to create
   a new BibTeX file with \code{LoadandCite}.

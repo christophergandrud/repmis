@@ -12,8 +12,8 @@ Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 License: GPL (>= 2)
 Depends:
     R (>= 2.15.2)
-URL: https://github.com/christophergandrud/repmis
-BugReports: https://github.com/christophergandrud/repmis/issues
+URL: <https://github.com/christophergandrud/repmis>
+BugReports: <https://github.com/christophergandrud/repmis/issues>
 Imports:
     knitr,
     httr

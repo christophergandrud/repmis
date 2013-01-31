@@ -12,20 +12,21 @@
   \item{url}{The plain-text formatted data's RAW URL.}
 
   \item{sep}{The separator method for the data. By default
-  \code{sep = ","} to load comman-separated values data
+  \code{sep = ","} to load comma-separated values data
   (CSV). To load tab-separated values data (TSV) use
-  \code{sep = "\t"},}
+  \code{sep = "\t"}.}
 
   \item{header}{whether or not the first line of the file
-  is the header (variable names). The default is
+  is the header (i.e. variable names). The default is
   \code{header = TRUE}}
 }
 \value{
   a data frame
 }
 \description{
-  \code{source_GitHubData} loads data stored on GitHub in
-  plain-text formats into R.
+  \code{source_GitHubData} loads plain-text formatted data
+  stored on GitHub (and other secure-https-websites) into
+  R.
 }
 \details{
   Loads plain-text data (e.g. CSV, TSV) data from GitHub

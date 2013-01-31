@@ -1,2 +1,5 @@
+  Version 0.01.1
+Documentation and external package load fixes.
+
   Version 0.01
 Includes the functions `LoadandCite` for loading and citing R packages as well as `source_GitHubData` for downloading plain-text data from GitHub.
