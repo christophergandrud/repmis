@@ -12,7 +12,7 @@ A collection of miscellaneous tools for reproducible research with R.
 
 - `LoadandCite`: a function for installing and loading R packages. The command also creates a [BibTeX](http://en.wikipedia.org/wiki/BibTeX) bibliography file with package citations.
 
-\ `source_GitHubData`: a function for loading plain-text formatted data (e.g. CSV, TSV) into R.
+- `source_GitHubData`: a function for loading plain-text formatted data (e.g. CSV, TSV) into R.
 
 ## Installation
 
