@@ -21,7 +21,6 @@
 
 LoadandCite <- function(pkgs, file = "", install = FALSE, versions, repos = "http://cran.us.r-project.org", lib = .libPaths(), ...)
 {
-	pkgs <- packages
 	doInstall <- install
 
 	if(is.null(versions)){
