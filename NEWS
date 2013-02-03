@@ -1,7 +1,7 @@
 	Version 0.02
 - Add tools to install old R package versions both in a stand alone function (`InstallOldPackages`) and as part of `LoadandCite`.
 
-- the `package` argument for `LoadandCite` is depricated. Use `pkgs` to match `install.packages syntax better. 
+- the `package` argument for `LoadandCite` is depricated. Use `pkgs` instead. This is so the syntax matches `install.packages syntax better. 
 
 	Version 0.01.1
 Documentation and external package load fixes.

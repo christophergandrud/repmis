@@ -2,8 +2,9 @@
 #' 
 #' \code{LoadandCite} can install and load R packages as well as automatically generate a BibTeX file citing the packages.
 #' @param pkgs a character vector of R package names.
-#' @param file the name of the BibTeX file.
+#' @param versions character vector of package version numbers. to install. Only works if \code{install = TRUE}. The order must match the order of package names in \code{pkgs}.
 #' @param install a logical option for whether or not to install the packages. The default is \code{install = FALSE}.
+#' @param file the name of the BibTeX file.
 #' @param repos character vector specifying which repository to download packages from. Only relevant if \code{install = TRUE}. Default is \code{repos = "http://cran.us.r-project.org"}. 
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If missing, defaults to the first element of \code{\link{.libPaths()}}. Only relevant if \code{install = TRUE}.
 #' @param ... other arguments passed to specific methods.
@@ -11,21 +12,28 @@
 #' @examples
 #' # Create vector of package names
 #' PackNames <- c("knitr", "ggplot2")
-#' 
 #' # Load the packages and create a BibTeX file
 #' LoadandCite(PackNames, file = 'PackageCites.bib')
+#' # Install, load, and cite specific package versions
+#' Names <- c("e1071", "gtools") 
+#' Vers <- c("1.6", "2.6.1")
+#' LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
 #' @source This function is partially based on: <https://gist.github.com/3710171>.
 #' @seealso \link{knitr}, \code{\link{write_bib}}, \code{\link{install.packages}}, and \code{\link{library}}
 #' @import knitr 
 #' @export
 
-LoadandCite <- function(pkgs, file = "", install = FALSE, versions, repos = "http://cran.us.r-project.org", lib = .libPaths(), ...)
+LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = "", repos = "http://cran.us.r-project.org", ...)
 {
-	doInstall <- install
+  doInstall <- install
 
-	if(is.null(versions)){
-		if(doInstall){install.packages(pkgs, repos = repos, lib = lib)}
-		lapply(packages, library, character.only = TRUE)
-		knitr::write_bib(pkgs, file = file)
-	} else if(!is.null(versions))
+  if(doInstall == TRUE){
+  	if (is.null(versions)){
+  		install.packages(pkgs, repos = "http://cran.us.r-project.org")
+  		} else if (!is.null(versions)){
+  			InstallOldPackages(pkgs = pkgs, versions = versions)
+  		} 
+  } 
+  lapply(pkgs, library, character.only = TRUE)
+  knitr::write_bib(pkgs, file = file)
 }

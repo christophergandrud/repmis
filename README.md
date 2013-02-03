@@ -2,7 +2,7 @@ repmis
 ===
 
 ### Christopher Gandrud
-### Version 0.01
+### Version 0.02
 
 ---
 
@@ -11,6 +11,8 @@ A collection of miscellaneous tools for reproducible research with R.
 *repmis* currently contains two functions:
 
 - `LoadandCite`: a function for installing and loading R packages. The command also creates a [BibTeX](http://en.wikipedia.org/wiki/BibTeX) bibliography file with package citations.
+
+- `InstallOldPackages`: installs specific R package versions.
 
 - `source_GitHubData`: a function for loading plain-text formatted data (e.g. CSV, TSV) into R.
 

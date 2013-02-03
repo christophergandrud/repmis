@@ -1,4 +1,6 @@
+export(InstallOldPackages)
 export(LoadandCite)
 export(source_GitHubData)
 import(httr)
 import(knitr)
+import(plyr)

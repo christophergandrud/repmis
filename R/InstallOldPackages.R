@@ -1,33 +1,34 @@
 #' Install old versions of R packages.
 #' 
-#' \code{InstallOldPackages} installs specific R package versions from .
+#' \code{InstallOldPackages} installs specific R package versions.
 #' @param pkgs character vector of package names to install.
-#' @param versions character vector of package version numbers to install. The order must match the order of package names in \code(pkgs).
-#' @param repos character name of repository to download the packages from. Default is \code{repos = "http://cran.r-project.org}.
+#' @param versions character vector of package version numbers. to install. The order must match the order of package names in \code{pkgs}.
+#' @param oldRepos character name of repository to download the packages old package versions from. Default is \code{oldRepos = "http://cran.r-project.org"}.
 #' @param ... other arguments passed to specific methods.
-#'
+#' @details Installs specific R package versions. 
 #' @examples
 #' # Install old versions of the e1071 and gtools packages. 
 #' # Used R version 2.15.2
 #' Names <- c("e1071", "gtools")
-#' Vers <- c("1.6", "2.7.0")
+#' Vers <- c("1.6", "2.6.1")
 #' InstallOldPackages(pkgs = Names, versions = Vers)
 #' @seealso \code{\link{install.packages}} and \code{link{download.file}}
 #' @import plyr
 #' @export
 
-InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.org", ...)
+InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project.org", ...)
 {	
-	require(plyr)
 	TempPackages <- data.frame(pkgs, versions)
-	reposClean <- gsub("/", "\\/", repos)
+	reposClean <- gsub("/", "\\/", oldRepos)
+	
+	available <- available.packages(contriburl = contrib.url(repos = "http://cran.us.r-project.org", type = "source"))
+	available <- data.frame(unique(available[, c("Package", "Version")]))
+	names(available) <- c("pkgs", "versions")
+	available$pkgs <- as.character(available$pkgs)
+	available$versions <- as.character(available$versions)
+
 
 	IOP <- function(x){
-		available <- available.packages()
-		available <- data.frame(unique(available[, c("Package", "Version")]))
-		names(available) <- c("pkgs", "versions")
-    	available$pkgs <- as.character(available$pkgs)
-		available$versions <- as.character(available$versions)
 		Matched <- merge(x, available, all = FALSE)
 
 		if (nrow(Matched) == 1){
