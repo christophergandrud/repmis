@@ -8,7 +8,7 @@ repmis
 
 A collection of miscellaneous tools for reproducible research with R.
 
-*repmis* currently contains two functions:
+*repmis* currently has three functions:
 
 - `LoadandCite`: a function for installing and loading R packages. The command also creates a [BibTeX](http://en.wikipedia.org/wiki/BibTeX) bibliography file with package citations.
 
