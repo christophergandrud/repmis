@@ -18,5 +18,6 @@ Imports:
     knitr,
     httr
 Collate:
+	'InstallOldPackages.R'
     'LoadandCite.R'
     'source_GitHubData.R'

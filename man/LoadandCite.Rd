@@ -6,7 +6,9 @@
   <https://gist.github.com/3710171>.
 }
 \usage{
-  LoadandCite(packages, file = "", install = FALSE)
+  LoadandCite(packages, file = "", install = FALSE,
+    repos = "http://cran.us.r-project.org",
+    lib = .libPaths())
 }
 \arguments{
   \item{packages}{a character vector of R package names.}
@@ -16,6 +18,10 @@
   \item{install}{a logical option for whether or not to
   install the packages. The default is \code{install =
   FALSE}.}
+
+  \item{repos}{which repository to download packages from.
+  Only necessary if \code{install = TRUE}. Default is
+  \code{repos = "http://cran.us.r-project.org"}.}
 }
 \description{
   \code{LoadandCite} can install and load R packages as
