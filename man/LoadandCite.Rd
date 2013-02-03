@@ -7,7 +7,9 @@
 }
 \usage{
   LoadandCite(pkgs, versions = NULL, install = FALSE,
-    file = "", repos = "http://cran.us.r-project.org", ...)
+    file = "",
+    repos = ifelse(!is.null(getOption("repos")), getOption("repos"), "http://cran.us.r-project.org"),
+    ...)
 }
 \arguments{
   \item{pkgs}{a character vector of R package names.}
@@ -25,8 +27,9 @@
 
   \item{repos}{character vector specifying which repository
   to download packages from. Only relevant if \code{install
-  = TRUE}. Default is \code{repos =
-  "http://cran.us.r-project.org"}.}
+  = TRUE}. Automatically reads user defined repository (via
+  \code{options}) but defaults to \code{repos =
+  "http://cran.us.r-project.org"} if not set.}
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as

@@ -1,4 +1,7 @@
-	Version 0.02
+  Version 0.02.1
+`LoadandCite` repo option now gets repo information from `.Rprofile. Thanks to Karthik Ram.
+
+  Version 0.02
 - Add tools to install old R package versions both in a stand alone function (`InstallOldPackages`) and as part of `LoadandCite`.
 
 - the `package` argument for `LoadandCite` is depricated. Use `pkgs` instead. This is so the syntax matches `install.packages syntax better. 
