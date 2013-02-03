@@ -11,7 +11,7 @@
 #' 
 #' # Load the packages and create a BibTeX file
 #' LoadandCite(PackNames, file = 'PackageCites.bib')
-#' @source This function is partially based on: \link{https://gist.github.com/3710171}.
+#' @source This function is partially based on: <https://gist.github.com/3710171>.
 #' @seealso \link{knitr}, \code{\link{write_bib}}, \code{\link{install.packages}}, and \code{\link{library}}
 #' @import knitr 
 #' @export
