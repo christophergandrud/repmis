@@ -1,5 +1,8 @@
+  Version 0.02.2
+Change how default repo in `LoadandCite` is determined/set.
+
   Version 0.02.1
-`LoadandCite` repo option now gets repo information from `.Rprofile. Thanks to Karthik Ram.
+`LoadandCite` repo option now gets repo information from `.Rprofile`. Thanks to Karthik Ram.
 
   Version 0.02
 - Add tools to install old R package versions both in a stand alone function (`InstallOldPackages`) and as part of `LoadandCite`.

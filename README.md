@@ -2,7 +2,7 @@ repmis
 ===
 
 ### Christopher Gandrud
-### Version 0.02.1
+### Version 0.02.2
 
 ---
 
