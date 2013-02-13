@@ -1,36 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="repmis : A collection of miscellaneous tools for reproducible research with R." />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>repmis by christophergandrud</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>repmis</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>repmis</h1>
+        <p>A collection of miscellaneous tools for reproducible research with R.</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/christophergandrud/repmis">View on GitHub</a>
+        <p class="view"><a href="https://github.com/christophergandrud/repmis">View the Project on GitHub <small>christophergandrud/repmis</small></a></p>
 
-          <h1 id="project_title">repmis</h1>
-          <h2 id="project_tagline">A collection of miscellaneous tools for reproducible research with R.</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/christophergandrud/repmis/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/christophergandrud/repmis/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <ul>
+          <li><a href="https://github.com/christophergandrud/repmis/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/christophergandrud/repmis/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/christophergandrud/repmis">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>repmis</h1>
 
 <h3>Christopher Gandrud</h3>
@@ -44,7 +41,7 @@
 <ul>
 <li><p><code>LoadandCite</code>: a function for installing and loading R packages. The command also creates a <a href="http://en.wikipedia.org/wiki/BibTeX">BibTeX</a> bibliography file with package citations.</p></li>
 <li><p><code>InstallOldPackages</code>: installs specific R package versions.</p></li>
-<li><p><code>source_GitHubData</code>: a function for loading plain-text formatted data (e.g. CSV, TSV) into R.</p></li>
+<li><p><code>source_GitHubData</code>: a function for loading plain-text formatted data (e.g. CSV, TSV) into R from <a href="https://github.com/">GitHub</a>. <strong>Note:</strong> the command can download data from any secure (<code>https</code>) URL. This includes <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details).</p></li>
 </ul><h2>Installation</h2>
 
 <p>Use the <a href="https://github.com/hadley/devtools">devtools</a> command <code>install_github</code> to install <em>repmis</em> in R. Here is the exact code for installing the current version:</p>
@@ -52,16 +49,12 @@
 <div class="highlight"><pre>devtools<span class="p">::</span>install_github<span class="p">(</span><span class="s">"repmis"</span><span class="p">,</span> <span class="s">"christophergandrud"</span><span class="p">)</span>
 </pre></div>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">repmis maintained by <a href="https://github.com/christophergandrud">christophergandrud</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/christophergandrud">christophergandrud</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -72,7 +65,6 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
