@@ -14,7 +14,7 @@ A collection of miscellaneous tools for reproducible research with R.
 
 - `InstallOldPackages`: installs specific R package versions.
 
-- `source_GitHubData`: a function for loading plain-text formatted data (e.g. CSV, TSV) into R.
+- `source_GitHubData`: a function for loading plain-text formatted data (e.g. CSV, TSV) into R from [GitHub](https://github.com/). **Note:** the command can download data from any secure (`https`) URL. This includes *published* Google Docs plain-text formatted data sets.
 
 ## Installation
 
