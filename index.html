@@ -32,7 +32,7 @@
 
 <h3>Christopher Gandrud</h3>
 
-<h3>Version 0.02.2</h3>
+<h3>Version 0.02.3</h3>
 
 <hr><p>A collection of miscellaneous tools for reproducible research with R.</p>
 
@@ -41,12 +41,13 @@
 <ul>
 <li><p><code>LoadandCite</code>: a function for installing and loading R packages. The command also creates a <a href="http://en.wikipedia.org/wiki/BibTeX">BibTeX</a> bibliography file with package citations.</p></li>
 <li><p><code>InstallOldPackages</code>: installs specific R package versions.</p></li>
-<li><p><code>source_GitHubData</code>: a function for loading plain-text formatted data (e.g. CSV, TSV) into R from <a href="https://github.com/">GitHub</a>. <strong>Note:</strong> the command can download data from any secure (<code>https</code>) URL. This includes <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details).</p></li>
+<li><p><code>source_data</code>: loads plain-text formatted data stored at a URL (both http and https) into R. <strong>Note:</strong> the command can download data from any secure (<code>https</code>) URL. This includes <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details).</p></li>
+<li><p><code>source_GitHubData</code>: a function for loading plain-text formatted data (e.g. CSV, TSV) into R. This function is basically a wrapper for <code>source_data</code>.</p></li>
 </ul><h2>Installation</h2>
 
 <p>Use the <a href="https://github.com/hadley/devtools">devtools</a> command <code>install_github</code> to install <strong>repmis</strong> in R. Here is the exact code for installing the current version:</p>
 
-<div class="highlight"><pre>devtools<span class="p">::</span>install_github<span class="p">(</span><span class="s">"repmis"</span><span class="p">,</span> <span class="s">"christophergandrud"</span><span class="p">)</span>
+<div class="highlight"><pre><span class="c">devtools::install_github("repmis", "christophergandrud")</span>
 </pre></div>
       </section>
       <footer>
