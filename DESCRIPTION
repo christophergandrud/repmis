@@ -21,4 +21,5 @@ Imports:
 Collate:
     'InstallOldPackages.R'
     'LoadandCite.R'
+    'source_data.R'
     'source_GitHubData.R'
