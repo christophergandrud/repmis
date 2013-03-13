@@ -1,6 +1,6 @@
 Version 0.02.3
 
-Add `source_data` (basically the same thing as `source_GitHubData`)
+Add `source_data`. `source_GitHubData` turned into a wrapper for `source_data`.
 
 Version 0.02.2
 
