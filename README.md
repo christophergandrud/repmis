@@ -2,7 +2,7 @@ repmis
 ===
 
 ### Christopher Gandrud
-### Version 0.02.2
+### Version 0.02.3
 
 ---
 
@@ -14,7 +14,9 @@ A collection of miscellaneous tools for reproducible research with R.
 
 - `InstallOldPackages`: installs specific R package versions.
 
-- `source_GitHubData`: a function for loading plain-text formatted data (e.g. CSV, TSV) into R.
+- `source_data`: loads plain-text formatted data stored at a URL (both http and https) into R.
+
+- `source_GitHubData`: a function for loading plain-text formatted data (e.g. CSV, TSV) into R. This function is basically a wrapper for `source_data`.
 
 ## Installation
 

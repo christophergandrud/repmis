@@ -30,10 +30,13 @@
 }
 \details{
   Loads plain-text data (e.g. CSV, TSV) data from GitHub
-  into R. Note: the GitHub URL you give for the \code{url}
-  argument must be for the RAW version of the file. The
-  function should work to download plain-text data from any
-  secure URL (https), though I have not verified this.
+  into R. The function is basically the same as
+  \code{\link{source_data}}, but with defaults choosen to
+  make loading CSV files easier. Note: the GitHub URL you
+  give for the \code{url} argument must be for the RAW
+  version of the file. The function should work to download
+  plain-text data from any secure URL (https), though I
+  have not verified this.
 }
 \examples{
 # Download electoral disproportionality data stored on GitHub
@@ -41,6 +44,7 @@
 DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 }
 \seealso{
-  \link{httr} and \code{\link{read.table}}
+  \link{source_data}, \link{httr} and
+  \code{\link{read.table}}
 }
 

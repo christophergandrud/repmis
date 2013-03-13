@@ -5,13 +5,15 @@
 #' @param sep The separator method for the data. By default \code{sep = ","} to load comma-separated values data (CSV). To load tab-separated values data (TSV) use \code{sep = "\t"}.
 #' @param header whether or not the first line of the file is the header (i.e. variable names). The default is \code{header = TRUE}
 #' @return a data frame
-#' @details Loads plain-text data (e.g. CSV, TSV) data from GitHub into R. Note: the GitHub URL you give for the \code{url} argument must be for the RAW version of the file. The function should work to download plain-text data from any secure URL (https), though I have not verified this.
+#' @details Loads plain-text data (e.g. CSV, TSV) data from GitHub into R.
+#' The function is basically the same as \code{\link{source_data}}, but with defaults choosen to make loading CSV files easier.
+#' Note: the GitHub URL you give for the \code{url} argument must be for the RAW version of the file. The function should work to download plain-text data from any secure URL (https), though I have not verified this.
 #' @examples
 #' # Download electoral disproportionality data stored on GitHub
 #' # Note: Using shortened URL created by bitly
 #' DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 #' @source Based on \code{\link{source_url}} from the Hadley Wickham's \link{devtools} package.
-#' @seealso \link{httr} and \code{\link{read.table}}
+#' @seealso \link{source_data}, \link{httr} and \code{\link{read.table}}
 #' @import httr
 #' @export
 
