@@ -20,7 +20,9 @@ A collection of miscellaneous tools for reproducible research with R.
 
 ## Installation
 
-Use the [devtools](https://github.com/hadley/devtools) command `install_github` to install **repmis** in R. Here is the exact code for installing the current version:
+The package is available for download from [CRAN](http://cran.r-project.org/). 
+
+You can also download the most recent version using the [devtools](https://github.com/hadley/devtools) command `install_github` to install **repmis** in R. Here is the exact code for installing the current version:
 
 ```r
 devtools::install_github("repmis", "christophergandrud")
