@@ -13,7 +13,7 @@
 #' # Names <- c("e1071", "gtools")
 #' # Vers <- c("1.6", "2.6.1")
 #' # InstallOldPackages(pkgs = Names, versions = Vers)
-#' @seealso \code{\link{install.packages}} and \code{link{download.file}}
+#' @seealso \code{\link{install.packages}} and \code{\link{download.file}}
 #' @import plyr
 #' @export
 

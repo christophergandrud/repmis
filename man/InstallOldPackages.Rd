@@ -36,6 +36,6 @@
 }
 \seealso{
   \code{\link{install.packages}} and
-  \code{link{download.file}}
+  \code{\link{download.file}}
 }
 
