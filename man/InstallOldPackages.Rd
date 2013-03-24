@@ -27,11 +27,12 @@
   Installs specific R package versions.
 }
 \examples{
+# Not Run
 # Install old versions of the e1071 and gtools packages.
-# Used R version 2.15.2
-Names <- c("e1071", "gtools")
-Vers <- c("1.6", "2.6.1")
-InstallOldPackages(pkgs = Names, versions = Vers)
+# Used R version 2.15.3
+# Names <- c("e1071", "gtools")
+# Vers <- c("1.6", "2.6.1")
+# InstallOldPackages(pkgs = Names, versions = Vers)
 }
 \seealso{
   \code{\link{install.packages}} and

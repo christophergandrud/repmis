@@ -2,8 +2,8 @@
 \alias{source_GitHubData}
 \title{Load plain-text data from GitHub}
 \source{
-  Based on \code{\link{source_url}} from the Hadley
-  Wickham's \link{devtools} package.
+  Based on source_url from the Hadley Wickham's devtools
+  package.
 }
 \usage{
   source_GitHubData(url, sep = ",", header = TRUE)
@@ -44,7 +44,6 @@
 DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 }
 \seealso{
-  \link{source_data}, \link{httr} and
-  \code{\link{read.table}}
+  \link{httr} and \code{\link{read.table}}
 }
 

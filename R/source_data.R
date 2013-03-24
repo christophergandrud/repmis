@@ -10,7 +10,7 @@
 #' # Download electoral disproportionality data stored on GitHub
 #' # Note: Using shortened URL created by bitly
 #' DisData <- source_data("http://bit.ly/Ss6zDO", sep = ",", header = TRUE)
-#' @source Based on \code{\link{source_url}} from the Hadley Wickham's \link{devtools} package.
+#' @source Based on source_url from the Hadley Wickham's devtools package.
 #' @seealso \link{httr} and \code{\link{read.table}}
 #' @import httr
 #' @export

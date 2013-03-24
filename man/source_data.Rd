@@ -2,8 +2,8 @@
 \alias{source_data}
 \title{Load plain-text data from a URL (either http or https)}
 \source{
-  Based on \code{\link{source_url}} from the Hadley
-  Wickham's \link{devtools} package.
+  Based on source_url from the Hadley Wickham's devtools
+  package.
 }
 \usage{
   source_data(url, sep, header)

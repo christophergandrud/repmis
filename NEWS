@@ -1,26 +1,26 @@
-Version 0.02.3
+Version 0.2.3
 
 Add `source_data`. `source_GitHubData` turned into a wrapper for `source_data`.
 
-Version 0.02.2
+Version 0.2.2
 
 Change how default repo in `LoadandCite` is determined/set.
 
-Version 0.02.1
+Version 0.2.1
 
 `LoadandCite` repo option now gets repo information from `.Rprofile`. Thanks to Karthik Ram.
 
-Version 0.02
+Version 0.2
 
 - Add tools to install old R package versions both in a stand alone function (`InstallOldPackages`) and as part of `LoadandCite`.
 
 - the `package` argument for `LoadandCite` is depricated. Use `pkgs` instead. This is so the syntax matches `install.packages syntax better. 
 
 
-Version 0.01.1
+Version 0.1.1
 
 Documentation and external package load fixes.
 
-Version 0.01
+Version 0.1
 
 Includes the functions `LoadandCite` for loading and citing R packages as well as `source_GitHubData` for downloading plain-text data from GitHub.
