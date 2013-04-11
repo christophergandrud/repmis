@@ -1,4 +1,4 @@
-#' Load plain-text data from Dropbox
+#' Load plain-text data from Dropbox non-Public folders
 #' 
 #' \code{source_DropboxData} loads plain-text formatted data stored on Dropbox in a non-Public folder.
 #' @param file The plain-text formatted data's file name as a character string.

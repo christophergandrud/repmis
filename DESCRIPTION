@@ -4,7 +4,7 @@ Title: A collection of miscellaneous tools for reproducible research with R.
 Description: A collection of miscellaneous tools for reproducible research with
     R. Currently the package includes tools to load R packages and
     automatically generate BibTeX files citing them as well as load plain-text
-    data stored on GitHub.
+    data stored on Dropbox and GitHub.
 Version: 0.2.4
 Date: 2013-04-11
 Author: Christopher Gandrud

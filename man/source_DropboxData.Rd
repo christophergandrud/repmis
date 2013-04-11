@@ -1,6 +1,6 @@
 \name{source_DropboxData}
 \alias{source_DropboxData}
-\title{Load plain-text data from Dropbox}
+\title{Load plain-text data from Dropbox non-Public folders}
 \source{
   Based on \code{source_url} from the Hadley Wickham's
   devtools package and \code{url_dl} from the qdap package.
