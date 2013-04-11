@@ -32,20 +32,26 @@
 
 <h3>Christopher Gandrud</h3>
 
-<h3>Version 0.2.3</h3>
+<h3>Version 0.2.4</h3>
 
 <hr><p>A collection of miscellaneous tools for reproducible research with R.</p>
 
-<p><strong>repmis</strong> currently has three functions:</p>
+<p><strong>repmis</strong> currently has the following functions:</p>
+
+<h3>Functions for installing, loading, and citing R packages:</h3>
 
 <ul>
 <li><p><code>LoadandCite</code>: a function for installing and loading R packages. The command also creates a <a href="http://en.wikipedia.org/wiki/BibTeX">BibTeX</a> bibliography file with package citations.</p></li>
 <li><p><code>InstallOldPackages</code>: installs specific R package versions.</p></li>
-<li><p><code>source_data</code>: loads plain-text formatted data stored at a URL (both http and https) into R. <strong>Note:</strong> the command can download data from any secure (<code>https</code>) URL. This includes <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details).</p></li>
-<li><p><code>source_GitHubData</code>: a function for loading plain-text formatted data (e.g. CSV, TSV) into R. This function is basically a wrapper for <code>source_data</code>.</p></li>
+</ul><h3>Functions for loading data into R from the internet:</h3>
+
+<ul>
+<li><p><code>source_data</code>: loads plain-text formatted data (e.g. CSV, TSV) stored at a URL (both http and https) into R. <strong>Note:</strong> the command can download data from any secure (<code>https</code>) URL. This includes <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details).</p></li>
+<li><p><code>source_DropboxData</code>: loads plain-text formatted data stored on Dropbox in a <strong>non-Public</strong> folder. (If your data is stored in a Dropbox Public folder you can just use the file's URL as the file name with base R's <code>read.table</code> command.)</p></li>
+<li><p><code>source_GitHubData</code>: a function for loading plain-text formatted data into R. This function is basically a wrapper for <code>source_data</code>.</p></li>
 </ul><h2>Installation</h2>
 
-<p>The package is available for download from <a href="http://cran.r-project.org/">CRAN</a>. </p>
+<p>The package is available for download from <a href="http://cran.r-project.org/web/packages/repmis/">CRAN</a>. </p>
 
 <p>You can also download the most recent version using the <a href="https://github.com/hadley/devtools">devtools</a> command <code>install_github</code> to install <strong>repmis</strong> in R. Here is the exact code for installing the current version:</p>
 
