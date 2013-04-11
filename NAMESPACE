@@ -1,6 +1,7 @@
 export(InstallOldPackages)
 export(LoadandCite)
 export(source_data)
+export(source_DropboxData)
 export(source_GitHubData)
 import(httr)
 import(knitr)

@@ -5,8 +5,8 @@ Description: A collection of miscellaneous tools for reproducible research with
     R. Currently the package includes tools to load R packages and
     automatically generate BibTeX files citing them as well as load plain-text
     data stored on GitHub.
-Version: 0.2.3
-Date: 2013-03-13
+Version: 0.2.4
+Date: 2013-04-11
 Author: Christopher Gandrud
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 License: GPL (>= 2)
@@ -23,3 +23,4 @@ Collate:
     'LoadandCite.R'
     'source_data.R'
     'source_GitHubData.R'
+    'source_DropboxData.R'

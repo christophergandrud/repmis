@@ -1,3 +1,9 @@
+Version 0.2.4
+
+Add `source_DropboxData` for loading plain-text data from a non-Public Dropbox folder.
+
+Big hat tip to Kay Cichini (http://thebiobucket.blogspot.com/2013/04/download-files-from-dropbox.html)
+
 Version 0.2.3
 
 Add `source_data`. `source_GitHubData` turned into a wrapper for `source_data`.

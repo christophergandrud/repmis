@@ -9,15 +9,15 @@
   source_data(url, sep, header)
 }
 \arguments{
-  \item{url}{The plain-text formatted data's RAW URL.}
+  \item{url}{The plain-text formatted data's URL.}
 
   \item{sep}{The separator method for the data. For
   example, to load comma-separated values data (CSV) use
   \code{sep = ","}. To load tab-separated values data (TSV)
   use \code{sep = "\t"}.}
 
-  \item{header}{whether or not the first line of the file
-  is the header (i.e. variable names).}
+  \item{header}{Logical, whether or not the first line of
+  the file is the header (i.e. variable names).}
 }
 \value{
   a data frame
