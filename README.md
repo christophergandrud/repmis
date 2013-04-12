@@ -18,9 +18,9 @@ A collection of miscellaneous tools for reproducible research with R.
 
 ### Functions for loading data into R from the internet:
 
-- `source_data`: loads plain-text formatted data (e.g. CSV, TSV) stored at a URL (both http and https) into R. **Note:** the command can download data from any secure (`https`) URL. This includes *published* Google Docs plain-text formatted data sets (see [Google Docs support pages](http://support.google.com/drive/bin/answer.py?hl=en&answer=37579) for details).
+- `source_data`: loads plain-text formatted data (e.g. CSV, TSV) stored at a URL (both http and https) into R. **Note:** the command can download data from almost any secure (`https`) URL. This includes data in Dropbox Public folders and *published* Google Docs plain-text formatted data sets (see [Google Docs support pages](http://support.google.com/drive/bin/answer.py?hl=en&answer=37579) for details).
 
-- `source_DropboxData`: loads plain-text formatted data stored on Dropbox in a **non-Public** folder. If your data is stored in a Dropbox Public folder you can just use the file's URL as the file name with the `source_data` command. Also, if you are looking for full Dropbox control (not just data downloading) from R see Karthik Ram's [rDrop](https://github.com/karthikram/rDrop) package.
+- `source_DropboxData`: loads plain-text formatted data stored in a Dropbox **non-Public** folder. See [this blog post](http://christophergandrud.blogspot.com/2013/04/dropbox-r-data.html) for more details. Also, if you are looking for full Dropbox control (not just data downloading) from R see Karthik Ram's [rDrop](https://github.com/karthikram/rDrop) package.
 
 - `source_GitHubData`: a function for loading plain-text formatted data into R. This function is basically a wrapper for `source_data`.
 
