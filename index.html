@@ -46,8 +46,8 @@
 </ul><h3>Functions for loading data into R from the internet:</h3>
 
 <ul>
-<li><p><code>source_data</code>: loads plain-text formatted data (e.g. CSV, TSV) stored at a URL (both http and https) into R. <strong>Note:</strong> the command can download data from any secure (<code>https</code>) URL. This includes <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details).</p></li>
-<li><p><code>source_DropboxData</code>: loads plain-text formatted data stored on Dropbox in a <strong>non-Public</strong> folder. (If your data is stored in a Dropbox Public folder you can just use the file's URL as the file name with base R's <code>read.table</code> command.)</p></li>
+<li><p><code>source_data</code>: loads plain-text formatted data (e.g. CSV, TSV) stored at a URL (both http and https) into R. <strong>Note:</strong> the command can download data from almost any secure (<code>https</code>) URL. This includes data in Dropbox Public folders and <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details).</p></li>
+<li><p><code>source_DropboxData</code>: loads plain-text formatted data stored in a Dropbox <strong>non-Public</strong> folder. See <a href="http://christophergandrud.blogspot.com/2013/04/dropbox-r-data.html">this blog post</a> for more details. Also, if you are looking for full Dropbox control (not just data downloading) from R see Karthik Ram's <a href="https://github.com/karthikram/rDrop">rDrop</a> package.</p></li>
 <li><p><code>source_GitHubData</code>: a function for loading plain-text formatted data into R. This function is basically a wrapper for <code>source_data</code>.</p></li>
 </ul><h2>Installation</h2>
 
