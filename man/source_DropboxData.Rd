@@ -9,7 +9,7 @@
   International Political Economy: 1-36.
 }
 \usage{
-  source_DropboxData(file, key, sep, header)
+  source_DropboxData(file, key, sep = ",", header = TRUE)
 }
 \arguments{
   \item{file}{The plain-text formatted data's file name as
@@ -23,10 +23,11 @@
   \item{sep}{The separator method for the data. For
   example, to load comma-separated values data (CSV) use
   \code{sep = ","}. To load tab-separated values data (TSV)
-  use \code{sep = "\t"}.}
+  use \code{sep = "\t"}. Default is \code{sep = ","}.}
 
   \item{header}{Logical, whether or not the first line of
-  the file is the header (i.e. variable names).}
+  the file is the header (i.e. variable names). Default is
+  \code{header = TRUE}.}
 }
 \value{
   a data frame

@@ -3,8 +3,8 @@
 #' \code{source_DropboxData} loads plain-text formatted data stored on Dropbox in a non-Public folder.
 #' @param file The plain-text formatted data's file name as a character string.
 #' @param key The file's Dropbox key as a character string. This can be found by clicking "Share Link". The key will then be listed as part of the URL directly after "https://www.dropbox.com/s/" and before the file name.
-#' @param sep The separator method for the data. For example, to load comma-separated values data (CSV) use \code{sep = ","}. To load tab-separated values data (TSV) use \code{sep = "\t"}.
-#' @param header Logical, whether or not the first line of the file is the header (i.e. variable names).
+#' @param sep The separator method for the data. For example, to load comma-separated values data (CSV) use \code{sep = ","}. To load tab-separated values data (TSV) use \code{sep = "\t"}. Default is \code{sep = ","}.
+#' @param header Logical, whether or not the first line of the file is the header (i.e. variable names). Default is \code{header = TRUE}.
 #' @return a data frame
 #' @details Loads plain-text data (e.g. CSV, TSV) data from a Dropbox non-public folder. To download data from a Drobpox Public folder simply use \code{read.table}, giving the public URL as the file name.
 #' @examples
@@ -19,7 +19,7 @@
 #' @import httr
 #' @export
 
-source_DropboxData <-function(file, key, sep, header)
+source_DropboxData <-function(file, key, sep = ",", header = TRUE)
 {
   URL <- paste0('https://dl.dropboxusercontent.com/s/', 
   				key, '/', file)

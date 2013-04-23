@@ -1,3 +1,7 @@
+Version 0.2.4.1
+
+Minor default settings change for data commands.
+
 Version 0.2.4
 
 Add `source_DropboxData` for loading plain-text data from a non-Public Dropbox folder.
