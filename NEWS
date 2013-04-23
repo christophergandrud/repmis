@@ -1,3 +1,9 @@
+Version 0.2.5
+
+Drawing on devtools version 1.2, this `source_data` now us finds sha-1 hashes for files and lets the user compare these with the version of the file they have downloaded. This makes it easier to see if you downloaded the same file you thought you had downloaded.
+
+`source_GitHubData` is now depricated and will not be updated from this point. Please use `source_data` instead.
+
 Version 0.2.4
 
 Add `source_DropboxData` for loading plain-text data from a non-Public Dropbox folder.
