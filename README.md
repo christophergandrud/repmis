@@ -22,7 +22,7 @@ A collection of miscellaneous tools for reproducible research with R.
 
 - `source_DropboxData`: loads plain-text formatted data stored in a Dropbox **non-Public** folder. See [this blog post](http://christophergandrud.blogspot.com/2013/04/dropbox-r-data.html) for more details. Also, if you are looking for full Dropbox control (not just data downloading) from R see Karthik Ram's [rDrop](https://github.com/karthikram/rDrop) package.
 
-- `source_GitHubData`: a function for loading plain-text formatted data into R. This function is equivelent to `source_data`.
+- `source_GitHubData`: a function for loading plain-text formatted data into R. This function is equivalent to `source_data`.
 
 ## Installation
 
