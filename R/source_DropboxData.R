@@ -21,11 +21,12 @@
 
 source_DropboxData <-function(file, key, sep, header)
 {
-  URL <- paste0('https://dl.dropboxusercontent.com/s/', 
-  				key, '/', file)
-  request <- GET(URL)
-  stop_for_status(request)
-  handle <- textConnection(content(request, as = 'text'))
-  on.exit(close(handle))
-  read.table(handle, sep = sep, header = header)
+	URL <- paste0('https://dl.dropboxusercontent.com/s/', 
+					key, '/', file)
+	stopifnot(is.character(URL), length(url) == 1)
+	request <- GET(URL)
+	stop_for_status(request)
+	handle <- textConnection(content(request, as = 'text'))
+	on.exit(close(handle))
+	read.table(handle, sep = sep, header = header)
 }

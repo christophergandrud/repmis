@@ -6,7 +6,7 @@
   package.
 }
 \usage{
-  source_data(url, sep, header)
+  source_data(url, sep = ",", header = TRUE)
 }
 \arguments{
   \item{url}{The plain-text formatted data's URL.}

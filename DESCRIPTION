@@ -15,6 +15,7 @@ Depends:
 URL: https://github.com/christophergandrud/repmis
 BugReports: https://github.com/christophergandrud/repmis/issues
 Imports:
+    digest,
     knitr,
     httr,
     plyr

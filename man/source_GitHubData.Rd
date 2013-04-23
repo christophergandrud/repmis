@@ -6,10 +6,13 @@
   package.
 }
 \usage{
-  source_GitHubData(url, sep = ",", header = TRUE)
+  source_GitHubData(url, sha1 = NULL, sep = ",",
+    header = TRUE)
 }
 \arguments{
   \item{url}{The plain-text formatted data's RAW URL.}
+
+  \item{sha1}{Character string of the file's SHA-1 hash.}
 
   \item{sep}{The separator method for the data. By default
   \code{sep = ","} to load comma-separated values data
@@ -44,6 +47,6 @@
 DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 }
 \seealso{
-  \link{httr} and \code{\link{read.table}}
+  \link{httr}, \link{digest}, and \code{\link{read.table}}
 }
 
