@@ -9,6 +9,8 @@
 #' @details Loads plain-text data (e.g. CSV, TSV) data from GitHub into R.
 #' The function is basically the same as \code{\link{source_data}}, but with defaults choosen to make loading CSV files easier.
 #' Note: the GitHub URL you give for the \code{url} argument must be for the RAW version of the file. The function should work to download plain-text data from any secure URL (https), though I have not verified this.
+#'
+#' From the source_url documentation: "If a SHA-1 hash is specified with the sha1 argument, then this function will check the SHA-1 hash of the downloaded file to make sure it matches the expected value, and throw an error if it does not match. If the SHA-1 hash is not specified, it will print a message displaying the hash of the downloaded file. The purpose of this is to improve security when running remotely-hosted code; if you have a hash of the file, you can be sure that it has not changed."
 #' @examples
 #' # Download electoral disproportionality data stored on GitHub
 #' # Note: Using shortened URL created by bitly

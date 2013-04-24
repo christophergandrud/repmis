@@ -4,6 +4,8 @@ Drawing on devtools version 1.2, this `source_data` now us finds sha-1 hashes fo
 
 `source_GitHubData` is now depricated and will not be updated from this point. Please use `source_data` instead.
 
+Minor default settings change for data commands.
+
 Version 0.2.4
 
 Add `source_DropboxData` for loading plain-text data from a non-Public Dropbox folder.
