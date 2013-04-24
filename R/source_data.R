@@ -18,7 +18,7 @@
 #' DisDataHash <- source_data("http://bit.ly/Ss6zDO", sha1 = "195637339e8483dd634fae38e16ad8f24a403aef")
 #' @source Based on source_url from the Hadley Wickham's devtools package.
 #' @seealso \link{httr} and \code{\link{read.table}}
-#' @import digest
+#' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content content
 #' @export
 

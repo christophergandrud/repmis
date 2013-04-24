@@ -21,7 +21,7 @@
 #' @source Based on \code{source_url} from the Hadley Wickham's devtools package and \code{url_dl} from the qdap package.
 #' Data from: Gandrud, Christopher. 2012. "The Diffusion of Financial Supervisory Governance Ideas." Review of International Political Economy: 1-36.
 #' @seealso \link{httr} and \code{\link{read.table}}
-#' @import digest
+#' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content content
 #' @export
 

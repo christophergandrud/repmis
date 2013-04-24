@@ -17,7 +17,7 @@
 #' DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 #' @source Based on source_url from the Hadley Wickham's devtools package.
 #' @seealso \link{httr} and \code{\link{read.table}}
-#' @import digest
+#' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content
 #' @export
 

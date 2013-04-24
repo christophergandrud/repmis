@@ -22,7 +22,7 @@
 #' # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
 #' @source This function is partially based on: <https://gist.github.com/3710171>.
 #' @seealso \link{knitr}, \code{\link{write_bib}}, \code{\link{install.packages}}, and \code{\link{library}}
-#' @import knitr
+#' @importFrom knitr write_bib
 #' @export
 
 

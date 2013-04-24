@@ -14,7 +14,7 @@
 #' # Vers <- c("1.6", "2.6.1")
 #' # InstallOldPackages(pkgs = Names, versions = Vers)
 #' @seealso \code{\link{install.packages}} and \code{\link{download.file}}
-#' @import plyr
+#' @importFrom plyr ddply
 #' @export
 
 InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project.org", ...)
