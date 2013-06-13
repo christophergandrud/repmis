@@ -4,7 +4,7 @@
 #' @param pkgs a character vector of R package names.
 #' @param versions character vector of package version numbers. to install. Only works if \code{install = TRUE}. The order must match the order of package names in \code{pkgs}.
 #' @param install a logical option for whether or not to install the packages. The default is \code{install = FALSE}.
-#' @param file the name of the BibTeX file.
+#' @param file the name of the BibTeX file you want to create. If \code{file = NULL} then the packages are loaded, but no BibTeX file is created.
 #' @param repos character vector specifying which repository to download packages from. Only relevant if \code{install = TRUE} and versions are not specified. If \code{repos = NULL}, automatically reads user defined repository (via \code{options}), but defaults to \code{repos = "http://cran.us.r-project.org"} if default is not set.
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If missing, defaults to the first element of \code{.libPaths()}. Only relevant if \code{install = TRUE}.
 #' @param ... other arguments passed to specific methods.
@@ -26,7 +26,7 @@
 #' @export
 
 
-LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = '', repos = NULL, lib, ...)
+LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = NULL, repos = NULL, lib, ...)
 {
 	if (is.null(repos)){
   		r <- ifelse(!is.null(getOption('repos')), getOption('repos'),  "http://cran.us.r-project.org") 
@@ -42,5 +42,7 @@ LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = '', repos
   		}
   }
   lapply(pkgs, library, character.only = TRUE)
-  knitr::write_bib(pkgs, file = file)
+  if (!is.null(file)){
+    knitr::write_bib(pkgs, file = file)
+  }
 }

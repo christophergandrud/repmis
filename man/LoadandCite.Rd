@@ -7,7 +7,7 @@
 }
 \usage{
   LoadandCite(pkgs, versions = NULL, install = FALSE,
-    file = "", repos = NULL, lib, ...)
+    file = NULL, repos = NULL, lib, ...)
 }
 \arguments{
   \item{pkgs}{a character vector of R package names.}
@@ -21,7 +21,9 @@
   install the packages. The default is \code{install =
   FALSE}.}
 
-  \item{file}{the name of the BibTeX file.}
+  \item{file}{the name of the BibTeX file you want to
+  create. If \code{file = NULL} then the packages are
+  loaded, but no BibTeX file is created.}
 
   \item{repos}{character vector specifying which repository
   to download packages from. Only relevant if \code{install
