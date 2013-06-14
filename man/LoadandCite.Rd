@@ -3,7 +3,8 @@
 \title{Install, load, and cite R packages}
 \source{
   This function is partially based on:
-  <https://gist.github.com/3710171>.
+  <https://gist.github.com/3710171>. It also borrows code
+  from knitr's \code{write_bib}.
 }
 \usage{
   LoadandCite(pkgs, versions = NULL, install = FALSE,

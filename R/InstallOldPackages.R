@@ -4,7 +4,6 @@
 #' @param pkgs character vector of package names to install.
 #' @param versions character vector of package version numbers. to install. The order must match the order of package names in \code{pkgs}.
 #' @param oldRepos character name of repository to download the packages old package versions from. Default is \code{oldRepos = "http://cran.r-project.org"}.
-#' @param ... other arguments passed to specific methods.
 #' @details Installs specific R package versions. 
 #' @examples
 #' # Not Run
@@ -17,7 +16,7 @@
 #' @importFrom plyr ddply
 #' @export
 
-InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project.org", ...)
+InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project.org")
 {	
 	TempPackages <- data.frame(pkgs, versions)
 	reposClean <- gsub("/", "\\/", oldRepos)
@@ -27,7 +26,6 @@ InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project
 	names(available) <- c("pkgs", "versions")
 	available$pkgs <- as.character(available$pkgs)
 	available$versions <- as.character(available$versions)
-
 
 	IOP <- function(x){
 		Matched <- merge(x, available, all = FALSE)

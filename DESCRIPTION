@@ -16,7 +16,6 @@ URL: http://cran.r-project.org/web/packages/repmis/
 BugReports: https://github.com/christophergandrud/repmis/issues
 Imports:
     digest,
-    knitr,
     httr,
     plyr
 Collate:
