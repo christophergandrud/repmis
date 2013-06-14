@@ -30,7 +30,7 @@
   Installs specific R package versions.
 }
 \examples{
-# Not Run
+# dontrun
 # Install old versions of the e1071 and gtools packages.
 # Used R version 2.15.3
 # Names <- c("e1071", "gtools")

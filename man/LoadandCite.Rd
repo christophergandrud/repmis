@@ -4,7 +4,10 @@
 \source{
   This function is partially based on:
   <https://gist.github.com/3710171>. It also borrows code
-  from knitr's \code{write_bib}.
+  from knitr's \code{write_bib}. See: Y. Xie. knitr: A
+  general-purpose package for dynamic report generation in
+  R, 2013. URL http://CRAN.R-project. org/package=knitr. R
+  package version 1.2.
 }
 \usage{
   LoadandCite(pkgs, versions = NULL, install = FALSE,
@@ -48,14 +51,14 @@
   The command can install R packages, load them, and create
   a BibTeX file that can be used to cite the packages in a
   LaTeX or similar document. It can be useful to place this
-  command in a \code{\link{knitr}} code chunk at the
-  beginning of a reproducible research document. Note: the
-  command will overwrite existing files with the same name
-  as \code{file}, so it is generally a good idea to create
-  a new BibTeX file with \code{LoadandCite}.
+  command in a \code{knitr} code chunk at the beginning of
+  a reproducible research document. Note: the command will
+  overwrite existing files with the same name as
+  \code{file}, so it is generally a good idea to create a
+  new BibTeX file with \code{LoadandCite}.
 }
 \examples{
-# Not Run
+# dont
 # Create vector of package names
 ## In this example you need to have the packages installed aready.
 # PackNames <- c("knitr", "ggplot2")

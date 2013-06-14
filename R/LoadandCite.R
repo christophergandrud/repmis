@@ -7,7 +7,7 @@
 #' @param file the name of the BibTeX file you want to create. If \code{file = NULL} then the packages are loaded, but no BibTeX file is created.
 #' @param repos character vector specifying which repository to download packages from. Only relevant if \code{install = TRUE} and versions are not specified. If \code{repos = NULL}, automatically reads user defined repository (via \code{options}), but defaults to \code{repos = "http://cran.us.r-project.org"} if default is not set.
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}. Only relevant if \code{install = TRUE}.
-#' @details The command can install R packages, load them, and create a BibTeX file that can be used to cite the packages in a LaTeX or similar document. It can be useful to place this command in a \code{\link{knitr}} code chunk at the beginning of a reproducible research document. Note: the command will overwrite existing files with the same name as \code{file}, so it is generally a good idea to create a new BibTeX file with \code{LoadandCite}.
+#' @details The command can install R packages, load them, and create a BibTeX file that can be used to cite the packages in a LaTeX or similar document. It can be useful to place this command in a \code{knitr} code chunk at the beginning of a reproducible research document. Note: the command will overwrite existing files with the same name as \code{file}, so it is generally a good idea to create a new BibTeX file with \code{LoadandCite}.
 #' @examples
 #' # dont
 #' # Create vector of package names
@@ -19,7 +19,8 @@
 #' # Names <- c("e1071", "gtools")
 #' # Vers <- c("1.6", "2.6.1")
 #' # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
-#' @source This function is partially based on: <https://gist.github.com/3710171>. It also borrows code from knitr's \code{write_bib}.
+#' @source This function is partially based on: <https://gist.github.com/3710171>. 
+#' It also borrows code from knitr's \code{write_bib}. See: Y. Xie. knitr: A general-purpose package for dynamic report generation in R, 2013. URL http://CRAN.R-project. org/package=knitr. R package version 1.2.
 #' @seealso \code{write_bib}, \code{\link{install.packages}}, and \code{\link{library}}
 #'
 #' @export
