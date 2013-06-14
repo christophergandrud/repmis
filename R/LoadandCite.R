@@ -27,6 +27,9 @@
 
 LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = NULL, repos = NULL, lib)
 {
+  if (!isTRUE(install) & !is.null(versions)){
+    stop("If you want to install specific package versions, also set install = TRUE.")
+  }
 	if (is.null(repos)){
   		r <- ifelse(!is.null(getOption('repos')), getOption('repos'),  "http://cran.us.r-project.org") 
   	} else if (!is.null(repos)){
