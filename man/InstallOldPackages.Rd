@@ -3,7 +3,7 @@
 \title{Install old versions of R packages.}
 \usage{
   InstallOldPackages(pkgs, versions,
-    oldRepos = "http://cran.r-project.org")
+    oldRepos = "http://cran.r-project.org", lib = NULL)
 }
 \arguments{
   \item{pkgs}{character vector of package names to
@@ -16,6 +16,11 @@
   \item{oldRepos}{character name of repository to download
   the packages old package versions from. Default is
   \code{oldRepos = "http://cran.r-project.org"}.}
+
+  \item{lib}{character vector giving the library
+  directories where to install the packages. Recycled as
+  needed. If \code{NULL}, defaults to the first element of
+  \code{.libPaths()}.}
 }
 \description{
   \code{InstallOldPackages} installs specific R package

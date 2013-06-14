@@ -2,7 +2,7 @@ Version 0.2.5.1
 
 Minor changes to `LoadandCite`, if `file = NULL` then the packages are loaded but no BibTeX file is created.
 
-Other minor improvements.
+Other internal improvements and bug fixes.
 
 Version 0.2.5
 

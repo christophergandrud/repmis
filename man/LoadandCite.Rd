@@ -8,7 +8,7 @@
 }
 \usage{
   LoadandCite(pkgs, versions = NULL, install = FALSE,
-    file = NULL, repos = NULL, lib)
+    file = NULL, repos = NULL, lib = NULL)
 }
 \arguments{
   \item{pkgs}{a character vector of R package names.}
@@ -35,7 +35,7 @@
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as
-  needed. If missing, defaults to the first element of
+  needed. If \code{NULL}, defaults to the first element of
   \code{.libPaths()}. Only relevant if \code{install =
   TRUE}.}
 }
@@ -67,7 +67,7 @@
 # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
 }
 \seealso{
-  \link{knitr}, \code{\link{write_bib}},
-  \code{\link{install.packages}}, and \code{\link{library}}
+  \code{write_bib}, \code{\link{install.packages}}, and
+  \code{\link{library}}
 }
 

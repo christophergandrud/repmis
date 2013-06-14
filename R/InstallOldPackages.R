@@ -4,6 +4,7 @@
 #' @param pkgs character vector of package names to install.
 #' @param versions character vector of package version numbers. to install. The order must match the order of package names in \code{pkgs}.
 #' @param oldRepos character name of repository to download the packages old package versions from. Default is \code{oldRepos = "http://cran.r-project.org"}.
+#' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}.
 #' @details Installs specific R package versions. 
 #' @examples
 #' # Not Run
@@ -16,7 +17,7 @@
 #' @importFrom plyr ddply
 #' @export
 
-InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project.org")
+InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project.org", lib = NULL)
 {	
 	TempPackages <- data.frame(pkgs, versions)
 	reposClean <- gsub("/", "\\/", oldRepos)
@@ -32,12 +33,12 @@ InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project
 
 		if (nrow(Matched) == 1){
 			newpack <- as.character(Matched[, 1])
-			install.packages(newpack)
+			install.packages(newpack, lib = lib)
 		} else if (nrow(Matched) == 0){
 			from <- paste0(reposClean, "/src/contrib/Archive/", x[, 1], "/", x[, 1], "_", x[,2], ".tar.gz")
 			TempFile <- paste0(x[, 1], "_", x[,2], ".tar.gz")
 			download.file(url = from, destfile = TempFile)
-			install.packages(TempFile, repos = NULL, type = "source")
+			install.packages(TempFile, repos = NULL, type = "source", lib = lib)
 			unlink(TempFile)
 		}
 	}
