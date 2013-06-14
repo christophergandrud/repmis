@@ -7,7 +7,7 @@
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}.
 #' @details Installs specific R package versions. 
 #' @examples
-#' # Not Run
+#' # dontrun
 #' # Install old versions of the e1071 and gtools packages. 
 #' # Used R version 2.15.3
 #' # Names <- c("e1071", "gtools")

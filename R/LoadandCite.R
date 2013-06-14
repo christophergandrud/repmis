@@ -9,7 +9,7 @@
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}. Only relevant if \code{install = TRUE}.
 #' @details The command can install R packages, load them, and create a BibTeX file that can be used to cite the packages in a LaTeX or similar document. It can be useful to place this command in a \code{\link{knitr}} code chunk at the beginning of a reproducible research document. Note: the command will overwrite existing files with the same name as \code{file}, so it is generally a good idea to create a new BibTeX file with \code{LoadandCite}.
 #' @examples
-#' # Not Run
+#' # dont
 #' # Create vector of package names
 #' ## In this example you need to have the packages installed aready.
 #' # PackNames <- c("knitr", "ggplot2")
