@@ -7,7 +7,7 @@
 }
 \usage{
   LoadandCite(pkgs, versions = NULL, install = FALSE,
-    file = NULL, repos = NULL, lib, ...)
+    file = NULL, repos = NULL, lib)
 }
 \arguments{
   \item{pkgs}{a character vector of R package names.}
@@ -37,8 +37,6 @@
   needed. If missing, defaults to the first element of
   \code{.libPaths()}. Only relevant if \code{install =
   TRUE}.}
-
-  \item{...}{other arguments passed to specific methods.}
 }
 \description{
   \code{LoadandCite} can install and load R packages as
