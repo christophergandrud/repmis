@@ -7,7 +7,6 @@
 #' @param file the name of the BibTeX file you want to create. If \code{file = NULL} then the packages are loaded, but no BibTeX file is created.
 #' @param repos character vector specifying which repository to download packages from. Only relevant if \code{install = TRUE} and versions are not specified. If \code{repos = NULL}, automatically reads user defined repository (via \code{options}), but defaults to \code{repos = "http://cran.us.r-project.org"} if default is not set.
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If missing, defaults to the first element of \code{.libPaths()}. Only relevant if \code{install = TRUE}.
-#' @param ... other arguments passed to specific methods.
 #' @details The command can install R packages, load them, and create a BibTeX file that can be used to cite the packages in a LaTeX or similar document. It can be useful to place this command in a \code{\link{knitr}} code chunk at the beginning of a reproducible research document. Note: the command will overwrite existing files with the same name as \code{file}, so it is generally a good idea to create a new BibTeX file with \code{LoadandCite}.
 #' @examples
 #' # Not Run
@@ -26,7 +25,7 @@
 #' @export
 
 
-LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = NULL, repos = NULL, lib, ...)
+LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = NULL, repos = NULL, lib)
 {
 	if (is.null(repos)){
   		r <- ifelse(!is.null(getOption('repos')), getOption('repos'),  "http://cran.us.r-project.org") 
