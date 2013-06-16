@@ -42,5 +42,5 @@ InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project
 			unlink(TempFile)
 		}
 	}
-	ddply(TempPackages, .(pkgs), IOP)
+	ddply(TempPackages, "pkgs", IOP)
 }

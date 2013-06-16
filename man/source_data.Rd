@@ -57,7 +57,8 @@
 DisData <- source_data("http://bit.ly/Ss6zDO")
 
 # Check to see if SHA-1 hash matches downloaded file
-DisDataHash <- source_data("http://bit.ly/Ss6zDO", sha1 = "195637339e8483dd634fae38e16ad8f24a403aef")
+DisDataHash <- source_data("http://bit.ly/Ss6zDO",
+ sha1 = "195637339e8483dd634fae38e16ad8f24a403aef")
 }
 \seealso{
   \link{httr} and \code{\link{read.table}}

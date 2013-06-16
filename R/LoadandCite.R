@@ -56,6 +56,11 @@ LoadandCite <- function(pkgs, versions = NULL, install = FALSE, file = NULL, rep
   if (!is.null(file)){
       # write_bib is directly from knitr (version 1.2) write_bib
       # Loading the function here makes it possible to install different versions of knitr with LoadandCite.
+      merge_list = function(x, y) {
+        x[names(y)] = y
+        x
+      }
+    
       write_bibMini <- function (x = .packages(), file = "", tweak = TRUE) {
       idx = mapply(system.file, package = x) == ''
       if (any(idx)) {
