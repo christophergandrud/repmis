@@ -5,7 +5,7 @@ Description: A collection of miscellaneous tools for reproducible research with
     R. Currently the package includes tools to load R packages and
     automatically generate BibTeX files citing them as well as load plain-text
     data stored on Dropbox, GitHub, and from other sources.
-Version: 0.2.5.1
+Version: 0.2.6
 Date: 2013-06-13
 Author: Christopher Gandrud
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
