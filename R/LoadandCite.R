@@ -19,8 +19,8 @@
 #' # Names <- c("e1071", "gtools")
 #' # Vers <- c("1.6", "2.6.1")
 #' # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
-#' @source This function is partially based on: <https://gist.github.com/3710171>. 
-#' It also borrows code from knitr's \code{write_bib}. See: Y. Xie. knitr: A general-purpose package for dynamic report generation in R, 2013. URL http://CRAN.R-project.org/package=knitr. R package version 1.2.
+#' @source This function is partially based on: \url{https://gist.github.com/3710171}. 
+#' It also borrows code from knitr's \code{write_bib}. See: Y. Xie. knitr: A general-purpose package for dynamic report generation in R, 2013. URL \url{http://CRAN.R-project.org/package=knitr}. R package version 1.2.
 #' @seealso \code{write_bib}, \code{\link{install.packages}}, and \code{\link{library}}
 #'
 #' @export

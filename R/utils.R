@@ -1,7 +1,7 @@
 #' Merge a list together.
 #'
 #' @details The functino is directly from knitr, but is loaded here so that \code{\link{LoadandCite}} can install specific knitr versions.
-#' @source Directly from knitr <http://yihui.name/knitr/> version 1.2
+#' @source Directly from Y. Xie. knitr: A general-purpose package for dynamic report generation in R, 2013. URL \url{http://CRAN.R-project.org/package=knitr}. R package version 1.2.
 #' @keywords internal
 #' @noRd
 
@@ -13,7 +13,7 @@ merge_list = function(x, y) {
 #' Write package bibliographies to a file.
 #'
 #' @details The functino is directly from knitr (\code{write_bib}), but is loaded here so that \code{\link{LoadandCite}} can install specific knitr versions.
-#' @source Directly from knitr <http://yihui.name/knitr/> version 1.2
+#' @source Directly from Y. Xie. knitr: A general-purpose package for dynamic report generation in R, 2013. URL \url{http://CRAN.R-project.org/package=knitr}. R package version 1.2.
 #' @keywords internal
 #' @noRd
 
