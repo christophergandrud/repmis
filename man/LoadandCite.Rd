@@ -6,7 +6,7 @@
   <https://gist.github.com/3710171>. It also borrows code
   from knitr's \code{write_bib}. See: Y. Xie. knitr: A
   general-purpose package for dynamic report generation in
-  R, 2013. URL http://CRAN.R-project. org/package=knitr. R
+  R, 2013. URL http://CRAN.R-project.org/package=knitr. R
   package version 1.2.
 }
 \usage{
@@ -58,7 +58,7 @@
   new BibTeX file with \code{LoadandCite}.
 }
 \examples{
-# dont
+# dontrun
 # Create vector of package names
 ## In this example you need to have the packages installed aready.
 # PackNames <- c("knitr", "ggplot2")
