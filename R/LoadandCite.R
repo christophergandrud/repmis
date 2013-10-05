@@ -2,7 +2,7 @@
 #'
 #' \code{LoadandCite} can install and load R packages as well as automatically generate a BibTeX file citing the packages.
 #' @param pkgs a character vector of R package names. If \code{pkgs = NULL} then \code{LoadandCite} only cites the non-base packages in the current session. It does not load or install any packages.
-#' @param versions character vector of package version numbers. to install. Only works if \code{install = TRUE}. The order must match the order of package names in \code{pkgs}.
+#' @param versions character vector of package version numbers to install. Only works if \code{install = TRUE}. The order must match the order of package names in \code{pkgs}.
 #' @param Rversion a character string specifying a particular R version. If the version of R currently running differs from \code{Rversion} \code{LoadandCite} a warning will be given. This argument is for replication purposes. 
 #' @param bibtex logical. If \code{TRUE} than a BibTeX formatted citation file is created. If \code{FALSE} than the citations are returned as plain text.
 #' @param style character string indicating stylistic elements to add to the citations. Currently supports \code{'plain'}, i.e. no special formatting and \code{'JSS'} to match the BibTeX style for the \emph{Journal of Statistical Software} (see \url{http://www.jstatsoft.org/style}).
@@ -60,20 +60,33 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
     	} else if (!is.null(repos)){
     		r <- repos
     	}
-    	
+    
+    # Find packages/package versions that are not already installed
+    InstalledpkgsFull <- installed.packages()
+    IPSub <- InstalledpkgsFull[InstalledpkgsFull[, "Package"] %in% pkgs, ]
+    if (!is.null(versions)){
+      IPSub <- IPSub[IPSub["Version"] %in% versions]
+      if (length(IPSub) == 0){
+        install = FALSE
+        message("All installed packages are the of the specified version. No packages will be installed.")
+      }
+    }
+    Installpkgs <- IPSub[, "Package"]
+    ############ Need subed package and version list in the same order #######
     if(install){
     	if (is.null(versions)){
-    		install.packages(pkgs = pkgs, repos = r, lib = lib)
+    		install.packages(pkgs = IPSub, repos = r, lib = lib)
     		} else if (!is.null(versions)){
-    			InstallOldPackages(pkgs = pkgs, versions = versions, lib = lib)
+    			InstallOldPackages(pkgs = IPSub, versions = versions, lib = lib)
     		}
     }
-    
+
     # Load unloaded packages 
-    pkgs <- pkgs[!(pkgs %in% Loadedpkgs)]
-    lapply(pkgs, library, character.only = TRUE)
+    NotLoadedpkgs <- pkgs[!(pkgs %in% Loadedpkgs)]
+    lapply(NotLoadedpkgs, library, character.only = TRUE)
 
     # Write BibTeX file
+    ########## Add in packages that are loaded but not in pkgs ##########
     if (!is.null(file)){
       write_bibExtra(pkgs, file = file, bibtex = bibtex, style = style, tweak = tweak)
     }

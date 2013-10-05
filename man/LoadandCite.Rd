@@ -28,7 +28,7 @@
   load or install any packages.}
 
   \item{versions}{character vector of package version
-  numbers. to install. Only works if \code{install = TRUE}.
+  numbers to install. Only works if \code{install = TRUE}.
   The order must match the order of package names in
   \code{pkgs}.}
 
