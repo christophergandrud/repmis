@@ -86,7 +86,7 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
     lapply(NotLoadedpkgs, library, character.only = TRUE)
 
     # Write BibTeX file
-    ########## Add in packages that are loaded but not in pkgs ##########
+    ########## Add in packages that are loaded but not in pkgs #########
     if (!is.null(file)){
       write_bibExtra(pkgs, file = file, bibtex = bibtex, style = style, tweak = tweak)
     }
