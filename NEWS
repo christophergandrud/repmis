@@ -1,3 +1,13 @@
+Version 0.2.7
+
+Improvements made to `LoadandCite` largely suggested by R Journal reviewers. These include:
+
+- automatically includes a citation for the current R version
+
+Version 0.2.6.2
+
+Minor example changes.
+
 Version 0.2.6.1 
 
 Minor internal changes.

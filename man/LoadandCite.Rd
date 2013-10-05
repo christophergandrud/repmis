@@ -8,11 +8,14 @@
   general-purpose package for dynamic report generation in
   R, 2013. URL
   \url{http://CRAN.R-project.org/package=knitr}. R package
-  version 1.2.
+  version 1.2. Note that it does not formally depend on
+  knitr so that knitr can be included in \code{LoadandCite}
+  so that it is possible to install old versions of that
+  package.
 }
 \usage{
-  LoadandCite(pkgs, versions = NULL, install = FALSE,
-    file = NULL, repos = NULL, lib = NULL)
+  LoadandCite(pkgs, versions = NULL, Rversion = NULL,
+    install = FALSE, file = NULL, repos = NULL, lib = NULL)
 }
 \arguments{
   \item{pkgs}{a character vector of R package names.}
@@ -21,6 +24,12 @@
   numbers. to install. Only works if \code{install = TRUE}.
   The order must match the order of package names in
   \code{pkgs}.}
+
+  \item{Rversion}{a character string specifying a
+  particular R version. If the version of R currently
+  running differs from \code{Rversion} \code{LoadandCite} a
+  warning will be given. This argument is for replication
+  purposes.}
 
   \item{install}{a logical option for whether or not to
   install the packages. The default is \code{install =
@@ -35,7 +44,8 @@
   = TRUE} and versions are not specified. If \code{repos =
   NULL}, automatically reads user defined repository (via
   \code{options}), but defaults to \code{repos =
-  "http://cran.us.r-project.org"} if default is not set.}
+  "http://cran.us.r-project.org"} if \code{repos} is not
+  set.}
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as

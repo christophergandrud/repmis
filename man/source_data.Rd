@@ -54,11 +54,11 @@
 \examples{
 # Download electoral disproportionality data stored on GitHub
 # Note: Using shortened URL created by bitly
-DisData <- source_data("http://bit.ly/Ss6zDO")
+DisData <- source_data("http://bit.ly/156oQ7a")
 
 # Check to see if SHA-1 hash matches downloaded file
 DisDataHash <- source_data("http://bit.ly/Ss6zDO",
- sha1 = "195637339e8483dd634fae38e16ad8f24a403aef")
+ sha1 = "dc8110d6dff32f682bd2f2fdbacb89e37b94f95d")
 }
 \seealso{
   \link{httr} and \code{\link{read.table}}
