@@ -4,6 +4,8 @@
 #' @param pkgs a character vector of R package names.
 #' @param versions character vector of package version numbers. to install. Only works if \code{install = TRUE}. The order must match the order of package names in \code{pkgs}.
 #' @param Rversion a character string specifying a particular R version. If the version of R currently running differs from \code{Rversion} \code{LoadandCite} a warning will be given. This argument is for replication purposes. 
+#' @param bibtex logical. If \code{TRUE} than a BibTeX formatted citation file is created. If \code{FALSE} than the citations are returned as plain text.
+#' @param style character string indicating stylistic elements to add to the citations. Currently supports \code{'plain'}, i.e. no special formatting and \code{'JSS'} to match the BibTeX style for the \emph{Journal of Statistical Software}.
 #' @param install a logical option for whether or not to install the packages. The default is \code{install = FALSE}.
 #' @param file the name of the BibTeX file you want to create. If \code{file = NULL} then the packages are loaded, but no BibTeX file is created.
 #' @param repos character vector specifying which repository to download packages from. Only relevant if \code{install = TRUE} and versions are not specified. If \code{repos = NULL}, automatically reads user defined repository (via \code{options}), but defaults to \code{repos = "http://cran.us.r-project.org"} if \code{repos} is not set.
@@ -20,14 +22,16 @@
 #' # Names <- c("e1071", "gtools")
 #' # Vers <- c("1.6", "2.6.1")
 #' # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
-#' @source This function is partially based on: \url{https://gist.github.com/3710171}. 
-#' It also borrows code from knitr's \code{write_bib}. See: Y. Xie. knitr: A general-purpose package for dynamic report generation in R, 2013. URL \url{http://CRAN.R-project.org/package=knitr}. R package version 1.2. Note that it does not formally depend on knitr so that knitr can be included in \code{LoadandCite} so that it is possible to install old versions of that package.
+#' @source 
+#' Gandrud, Christopher (2013). Automating R Package Citations in Reproducible Research Documents. SSRN.
+#' This function is partially based on: \url{https://gist.github.com/3710171}. 
+#' It also builds on code from knitr's \code{write_bib}. See: Y. Xie. knitr: A general-purpose package for dynamic report generation in R, 2013. URL \url{http://CRAN.R-project.org/package=knitr}. R package version 1.5. Note that it does not formally depend on knitr so that knitr can be included in \code{LoadandCite} so that it is possible to install old versions of that package.
 #' @seealso \code{write_bib}, \code{\link{install.packages}}, and \code{\link{library}}
 #'
 #' @export
 
 
-LoadandCite <- function(pkgs, versions = NULL, Rversion = NULL, install = FALSE, file = NULL, repos = NULL, lib = NULL)
+LoadandCite <- function(pkgs, versions = NULL, Rversion = NULL, bibtex = TRUE, style = 'plain', install = FALSE, file = NULL, repos = NULL, lib = NULL)
 {
   if (!is.null(Rversion)){
     RV <- RVNumber()
@@ -61,6 +65,6 @@ LoadandCite <- function(pkgs, versions = NULL, Rversion = NULL, install = FALSE,
 
   # Write BibTeX file
   if (!is.null(file)){
-    write_bibMini(pkgs, file = file)
+    write_bibExtra(pkgs, file = file, bibtex = bibtex, style = style)
   }
 }

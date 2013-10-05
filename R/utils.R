@@ -30,40 +30,50 @@ RVNumber <- function(){
 #' @keywords internal
 #' @noRd
 
-write_bibMini <- function (x = .packages(), file = "", tweak = TRUE) {
+write_bibExtra <- function (x = .packages(), file = "", bibtex, style, tweak = TRUE) {
   idx = mapply(system.file, package = x) == ''
   if (any(idx)) {
     warning('package(s) ', paste(x[idx], collapse = ', '), ' not found')
     x = x[!idx]
   }
   x = setdiff(x, .base.pkgs) # remove base packages
-  bib = sapply(x, function(pkg) {
-    cite = citation(pkg, auto = if (pkg == 'base') NULL else TRUE)
-    entry = toBibtex(cite)
-    entry[1] = sub('\\{,$', sprintf('{R-%s,', pkg), entry[1])
-    gsub('', '', entry)
-  }, simplify = FALSE)  
-  if (tweak) {
-    for (i in intersect(names(.tweak.bib), x)) {
-      message('tweaking ', i)
-      bib[[i]] = merge_list(bib[[i]], .tweak.bib[[i]])
+  if (isTRUE(bibtex)){
+    bib = sapply(x, function(pkg) {
+      cite = citation(pkg, auto = if (pkg == 'base') NULL else TRUE)
+      entry = toBibtex(cite)
+      entry[1] = sub('\\{,$', sprintf('{R-%s,', pkg), entry[1])
+      if (style == 'JSS'){
+        entry[2] = sub('\\{', '\\{\\\\pkg{', entry[2])
+        entry[2] = sub(':', '\\}:', entry[2])
+      }
+      gsub('', '', entry)
+    }, simplify = FALSE)  
+    if (tweak) {
+      for (i in intersect(names(.tweak.bib), x)) {
+        message('tweaking ', i)
+        bib[[i]] = merge_list(bib[[i]], .tweak.bib[[i]])
+      }
+      bib = lapply(bib, function(b) {
+        b['author'] = sub('Duncan Temple Lang', 'Duncan {Temple Lang}', b['author'])
+        if (!('year' %in% names(b))) b['year'] = .this.year
+        idx = which(names(b) == '')
+        structure(c(b[idx[1L]], b[-idx], b[idx[2L]]), class = 'Bibtex')
+      })
     }
-    bib = lapply(bib, function(b) {
-      b['author'] = sub('Duncan Temple Lang', 'Duncan {Temple Lang}', b['author'])
-      if (!('year' %in% names(b))) b['year'] = .this.year
-      idx = which(names(b) == '')
-      structure(c(b[idx[1L]], b[-idx], b[idx[2L]]), class = 'Bibtex')
-    })
+    bib = bib[sort(x)]
+    
+    RCite = toBibtex(citation())
+    RCite[1] = sub('\\{,$', '\\{CiteR,', RCite[1])
+    RV = RVNumber()
+    RowT = length(RCite) 
+    RCite[RowT] = paste0("  note = {Version ", RV, "}, \n}")
+    if (style == 'JSS'){
+      RCite[2] = sub('\\{', '\\{\\\\proglang\\{', RCite[2])
+      RCite[2] = sub(':', '\\}:', RCite[2])
+    }
   }
-  bib = bib[sort(x)]
   
-  RCite = toBibtex(citation())
-  RCite = sub('Manual\\{', 'Manual\\{CiteR', RCite)
-  RV = RVNumber()
-  RVNote = paste0(".org/\\}, \n  note = \\{Version ", RV, "\\},")
-  RCite = sub(".org/\\},", RVNote, RCite)
-  
-  if (!is.null(file)) cat(unlist(bib), RCite, sep = '\n', file = file)
+  if (!is.null(file)) cat(RCite, unlist(bib), sep = '\n', file = file)
   invisible(bib)
 }
 

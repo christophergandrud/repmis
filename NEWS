@@ -2,7 +2,9 @@ Version 0.2.7
 
 Improvements made to `LoadandCite` largely suggested by R Journal reviewers. These include:
 
-- automatically includes a citation for the current R version
+- can use the `style` argument to style the citations for the Journal of Statistical Software.
+
+- automatically includes a citation for the current R version and can check to see if the version of R running matches a specified version.
 
 Version 0.2.6.2
 
