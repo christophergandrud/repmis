@@ -45,6 +45,7 @@ write_bibExtra <- function (x = .packages(), file = "", bibtex, style, tweak = T
       if (style == 'JSS'){
         entry[2] = sub('\\{', '\\{\\\\pkg{', entry[2])
         entry[2] = sub(':', '\\}:', entry[2])
+        entry = sub("note = \\{R", "note = \\{\\\\proglang{R\\}", entry)
       }
       gsub('', '', entry)
     }, simplify = FALSE)  

@@ -16,12 +16,16 @@
   package.
 }
 \usage{
-  LoadandCite(pkgs, versions = NULL, Rversion = NULL,
-    bibtex = TRUE, style = "plain", install = FALSE,
-    file = NULL, repos = NULL, lib = NULL)
+  LoadandCite(pkgs = NULL, versions = NULL,
+    Rversion = NULL, bibtex = TRUE, style = "plain",
+    tweak = TRUE, install = FALSE, file = NULL,
+    repos = NULL, lib = NULL)
 }
 \arguments{
-  \item{pkgs}{a character vector of R package names.}
+  \item{pkgs}{a character vector of R package names. If
+  \code{pkgs = NULL} then \code{LoadandCite} only cites the
+  non-base packages in the current session. It does not
+  load or install any packages.}
 
   \item{versions}{character vector of package version
   numbers. to install. Only works if \code{install = TRUE}.
@@ -42,7 +46,12 @@
   elements to add to the citations. Currently supports
   \code{'plain'}, i.e. no special formatting and
   \code{'JSS'} to match the BibTeX style for the
-  \emph{Journal of Statistical Software}.}
+  \emph{Journal of Statistical Software} (see
+  \url{http://www.jstatsoft.org/style}).}
+
+  \item{tweak}{logical. Whether to fix some known problems
+  in the citations, especially non-standard format of
+  authors.}
 
   \item{install}{a logical option for whether or not to
   install the packages. The default is \code{install =
@@ -82,13 +91,13 @@
   new BibTeX file with \code{LoadandCite}.
 }
 \examples{
-# dontrun
 # Create vector of package names
 ## In this example you need to have the packages installed aready.
-# PackNames <- c("knitr", "ggplot2")
+PackNames <- c("repmis")
 # Load the packages and create a BibTeX file
-# LoadandCite(pkgs = PackNames, file = 'PackageCites.bib')
+LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
 # Install, load, and cite specific package versions
+# dontrun due to CRAN restrictions
 # Names <- c("e1071", "gtools")
 # Vers <- c("1.6", "2.6.1")
 # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
