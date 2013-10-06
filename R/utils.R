@@ -1,7 +1,7 @@
 #' Subset a vectors of packages and package versions to those that are that are not already installed.
 #'
 #' @keywords internal
-#' @noRD
+#' @noRd
 
 PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
   if (is.null(pkgs)){
@@ -22,10 +22,12 @@ PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
   }
   # If versions are specified, subset package and version lists
   else if (!is.null(versions)){
-  
-    PV <- data.frame
-    IPSub <- InstalledpkgsFull[InstalledpkgsFull[, 'Package'] %in% pkgs, ]
-    IPSub <- IPSub[IPSub['Version'] %in% versions]
+    PV <- data.frame(pkgs, versions)
+    Full <- data.frame(IP[, 'Package'], IP[, 'Version'])
+    names(Full) <- c('pkgs', 'versions')
+    IPSub <- Full[Full[, 'pkgs'] %in% pkgs, ]
+    Pairs <- with(IPSub, paste(pkgs, versions, sep = "."))
+    Out <- PV[!(paste(PV$pkgs, PV$versions, sep = ".") %in% Pairs), ]
   }
   Out
 }

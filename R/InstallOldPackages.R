@@ -19,10 +19,19 @@
 
 InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.org", lib = NULL)
 {	
-	# Do not install package versions that are already in the library.
+	# Check to see if pkgs and versions are the same length
+	if (length(pkgs) != length(versions)){
+		stop("pkgs and versions must be the same length.")
+  	}
+	# Exclude package versions that are already installed.
+  	TempPackages <- PackInstallCheck(pkgs = pkgs, versions = versions, lib = lib)
 
+  	# Stop if all packages and versions are already installed
+  	if (nrow(TempPackages) == 0){
+  		stop("All packages/versions are already installed. \n\n Nothing will be installed.")
+  	}
 
-	TempPackages <- data.frame(pkgs, versions)
+  	# Create pastable repo path
 	reposClean <- gsub("/", "\\/", repos)
 	
 	available <- available.packages(contriburl = contrib.url(repos = repos, type = "source"))
