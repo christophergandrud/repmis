@@ -66,8 +66,7 @@
   = TRUE} and versions are not specified. If \code{repos =
   NULL}, automatically reads user defined repository (via
   \code{options}), but defaults to \code{repos =
-  "http://cran.us.r-project.org"} if \code{repos} is not
-  set.}
+  "http://cran.r-project.org"} if \code{repos} is not set.}
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as

@@ -1,12 +1,20 @@
-Version 0.2.7
+Version 0.3
 
 Improvements made to `LoadandCite` largely suggested by R Journal reviewers. These include:
+
+- improved warnings.
+
+- old packages can be downloaded from any CRAN mirror.
 
 - if `pkgs = NULL` then non-base packages loaded in the current session are cited.
 
 - can use the `style` argument to style the citations for the Journal of Statistical Software.
 
 - automatically includes a citation for the current R version and can check to see if the version of R running matches a specified version.
+
+Other changes
+
+`InstallOldPackages` uses `repo` rather than `oldRepo` argument.
 
 Version 0.2.6.2
 

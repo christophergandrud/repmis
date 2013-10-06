@@ -3,7 +3,7 @@
 \title{Install old versions of R packages.}
 \usage{
   InstallOldPackages(pkgs, versions,
-    oldRepos = "http://cran.r-project.org", lib = NULL)
+    repos = "http://cran.r-project.org", lib = NULL)
 }
 \arguments{
   \item{pkgs}{character vector of package names to
@@ -13,9 +13,9 @@
   numbers. to install. The order must match the order of
   package names in \code{pkgs}.}
 
-  \item{oldRepos}{character name of repository to download
-  the packages old package versions from. Default is
-  \code{oldRepos = "http://cran.r-project.org"}.}
+  \item{repos}{character name of repository to download the
+  packages old package versions from. Default is
+  \code{repos = "http://cran.r-project.org"}.}
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as

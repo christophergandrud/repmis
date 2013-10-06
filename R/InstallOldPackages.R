@@ -3,7 +3,7 @@
 #' \code{InstallOldPackages} installs specific R package versions.
 #' @param pkgs character vector of package names to install.
 #' @param versions character vector of package version numbers. to install. The order must match the order of package names in \code{pkgs}.
-#' @param oldRepos character name of repository to download the packages old package versions from. Default is \code{oldRepos = "http://cran.r-project.org"}.
+#' @param repos character name of repository to download the packages old package versions from. Default is \code{repos = "http://cran.r-project.org"}.
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}.
 #' @details Installs specific R package versions. 
 #' @examples
@@ -17,12 +17,15 @@
 #' @importFrom plyr ddply
 #' @export
 
-InstallOldPackages <- function(pkgs, versions, oldRepos = "http://cran.r-project.org", lib = NULL)
+InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.org", lib = NULL)
 {	
+	# Do not install package versions that are already in the library.
+
+
 	TempPackages <- data.frame(pkgs, versions)
-	reposClean <- gsub("/", "\\/", oldRepos)
+	reposClean <- gsub("/", "\\/", repos)
 	
-	available <- available.packages(contriburl = contrib.url(repos = "http://cran.us.r-project.org", type = "source"))
+	available <- available.packages(contriburl = contrib.url(repos = repos, type = "source"))
 	available <- data.frame(unique(available[, c("Package", "Version")]))
 	names(available) <- c("pkgs", "versions")
 	available$pkgs <- as.character(available$pkgs)

@@ -1,3 +1,35 @@
+#' Subset a vectors of packages and package versions to those that are that are not already installed.
+#'
+#' @keywords internal
+#' @noRD
+
+PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
+  if (is.null(pkgs)){
+    stop('Must specify pkgs.')
+  }
+
+  # Find all installed packages
+  IP <- installed.packages()
+  
+  # Subset to only the specified library (if any)
+  if (!is.null(lib)){
+    IP <- IP[IP[, 'LibPath'] == lib,] 
+  }
+  
+  # If no versions are specified, subset package list
+  if (is.null(versions)){
+    Out <- pkgs[!pkgs %in% IP]
+  }
+  # If versions are specified, subset package and version lists
+  else if (!is.null(versions)){
+  
+    PV <- data.frame
+    IPSub <- InstalledpkgsFull[InstalledpkgsFull[, 'Package'] %in% pkgs, ]
+    IPSub <- IPSub[IPSub['Version'] %in% versions]
+  }
+  Out
+}
+
 #' Merge a list together.
 #'
 #' @details The function is directly from knitr, but is loaded here so that \code{\link{LoadandCite}} can install specific knitr versions.
@@ -51,7 +83,7 @@ write_bibExtra <- function (x = .packages(), file = "", bibtex, style, tweak = T
     }, simplify = FALSE)  
     if (tweak) {
       for (i in intersect(names(.tweak.bib), x)) {
-        message('tweaking ', i)
+        message(paste('Tweaking citation for the', i, "package."))
         bib[[i]] = merge_list(bib[[i]], .tweak.bib[[i]])
       }
       bib = lapply(bib, function(b) {
