@@ -3,7 +3,7 @@
 #' @keywords internal
 #' @noRd
 
-IOP_cran <- function(x, repos, lib = lib)
+IOP_cran <- function(x, repos, lib)
 {
 	# Create paste-able repo path
 	reposClean <- gsub("/", "\\/", repos)
@@ -24,9 +24,21 @@ IOP_cran <- function(x, repos, lib = lib)
 	# If old version, install from archive
 	} else if (nrow(Matched) == 0){
 		from <- paste0(reposClean, "/src/contrib/Archive/", x[, 1], "/", x[, 1], "_", x[,2], ".tar.gz")
-		TempFile <- paste0(x[, 1], "_", x[,2], ".tar.gz")
+		TempFile <- paste0(x[, 1], "_", x[, 2], ".tar.gz")
 		download.file(url = from, destfile = TempFile)
 		install.packages(TempFile, repos = NULL, type = "source", lib = lib)
 		unlink(TempFile)
 	}
+}
+
+#' Internal function to download packages from a full URL
+#'
+#' @keywords internal
+#' @noRd
+
+IOP_url <- function(x, repos, lib){
+	TempFile <- paste0(x, ".tar.gz")
+	download.file(url = repos, destfile = TempFile)
+	install.packages(TempFile, repos = NULL, type = "source", lib = lib)
+	unlink(TempFile)
 }

@@ -3,13 +3,13 @@
 #' @keywords internal
 #' @noRd
 
-cranMirror <- function(repos){
-  if (is.null(repos)){
-    r <- ifelse(!is.null(getOption('repos')), getOption('repos'), "http://cran.r-project.org") 
+Mirror <- function(repos, versions){
+  if (is.null(repos) & !is.null(versions)){
+    r <- ifelse(!is.null(getOption('repos')), getOption('repos'), 'http://cran.r-project.org') 
   } else if(repos == 'CRAN'){
      r <- 'http://cran.r-project.org'
   } else if (!is.null(repos) & repos != 'CRAN'){
-    r <- repos
+    r <- 'http://cran.r-project.org'
   } 
   r
 }

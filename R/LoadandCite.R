@@ -71,20 +71,15 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
       }
     }
 
-    # Use current library path if non-specified.
+    # Use first current library path if none specified.
     if (is.null(lib)){
       lp <- .libPaths()
       lib <- lp[1]
     }
-
-    if (length(repos) == 1 | is.null(repos)){
-      r <- cranMirror(repos = repos)
-    } else {
-      r <- repos
-    }
     
     # Install packages    
     if(install){
+      r <- Mirror(repos = repos, versions = versions)
     	if (is.null(versions)){
     		install.packages(pkgs = pkgsInstall, repos = r, lib = lib)
     	} else if (!is.null(versions)){

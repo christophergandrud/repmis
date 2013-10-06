@@ -9,7 +9,6 @@
 #' @examples
 #' # dontrun
 #' # Install old versions of the e1071 and gtools packages. 
-#' # Used R version 3.0.2
 #' # Names <- c("e1071", "gtools")
 #' # Vers <- c("1.6", "2.6.1")
 #' # InstallOldPackages(pkgs = Names, versions = Vers)
@@ -17,10 +16,10 @@
 #' @importFrom plyr ddply
 #' @export
 
-InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.org", lib = NULL)
+InstallOldPackages <- function(pkgs, versions = NULL, repos = "http://cran.r-project.org", lib = NULL)
 {	
 	# Check to see if pkgs and versions are the same length
-	if (length(pkgs) != length(versions)){
+	if (length(pkgs) != length(versions) & !is.null(versions)){
 		stop('pkgs and versions must be the same length.\n')
   	}
 
@@ -32,11 +31,13 @@ InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.or
   		message('All packages/versions are already installed. \n\nNothing will be installed.\n')
   	}
   	else{
+  		pvlDF <- data.frame(TempPackages, repos)
+  		names(pvlDF) <- c('pkgs', 'versions', 'repos')
   		if (length(repos) == 1){
-		    r <- cranMirror(repos = repos)
+		    r <- Mirror(repos = repos, versions = versions)
   			if (grepl(r, pattern = 'cran')){
-				  ddply(TempPackages, 'pkgs', IOP_cran, repos = r, lib = lib)
-			}
+				  ddply(pvlDF, 'pkgs', IOP_cran, repos = r, lib = lib)
+			} 
 		}
 	}
 }

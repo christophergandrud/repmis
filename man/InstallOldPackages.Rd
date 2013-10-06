@@ -2,7 +2,7 @@
 \alias{InstallOldPackages}
 \title{Install old versions of R packages.}
 \usage{
-  InstallOldPackages(pkgs, versions,
+  InstallOldPackages(pkgs, versions = NULL,
     repos = "http://cran.r-project.org", lib = NULL)
 }
 \arguments{
@@ -41,7 +41,6 @@
 \examples{
 # dontrun
 # Install old versions of the e1071 and gtools packages.
-# Used R version 3.0.2
 # Names <- c("e1071", "gtools")
 # Vers <- c("1.6", "2.6.1")
 # InstallOldPackages(pkgs = Names, versions = Vers)
