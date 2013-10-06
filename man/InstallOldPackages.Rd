@@ -20,7 +20,8 @@
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as
   needed. If \code{NULL}, defaults to the first element of
-  \code{.libPaths()}.}
+  \code{.libPaths()}. Packages/versions will not be
+  reinstalled if they are already in \code{lib}.}
 }
 \description{
   \code{InstallOldPackages} installs specific R package
@@ -32,7 +33,7 @@
 \examples{
 # dontrun
 # Install old versions of the e1071 and gtools packages.
-# Used R version 2.15.3
+# Used R version 3.0.2
 # Names <- c("e1071", "gtools")
 # Vers <- c("1.6", "2.6.1")
 # InstallOldPackages(pkgs = Names, versions = Vers)

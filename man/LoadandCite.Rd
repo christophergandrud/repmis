@@ -72,7 +72,8 @@
   directories where to install the packages. Recycled as
   needed. If \code{NULL}, defaults to the first element of
   \code{.libPaths()}. Only relevant if \code{install =
-  TRUE}.}
+  TRUE}. Packages/versions will not be reinstalled if they
+  are already in \code{lib}.}
 }
 \description{
   \code{LoadandCite} can install and load R packages as

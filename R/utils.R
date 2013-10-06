@@ -8,13 +8,8 @@ PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
     stop('Must specify pkgs.')
   }
 
-  # Find all installed packages
-  IP <- installed.packages()
-  
-  # Subset to only the specified library (if any)
-  if (!is.null(lib)){
-    IP <- IP[IP[, 'LibPath'] == lib,] 
-  }
+  # Find all installed packages. Subset to only the specified library (if any).
+  IP <- installed.packages(lib.loc = if(!is.null(lib)) lib else NULL)
   
   # If no versions are specified, subset package list
   if (is.null(versions)){

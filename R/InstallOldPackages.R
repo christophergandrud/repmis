@@ -4,12 +4,12 @@
 #' @param pkgs character vector of package names to install.
 #' @param versions character vector of package version numbers. to install. The order must match the order of package names in \code{pkgs}.
 #' @param repos character name of repository to download the packages old package versions from. Default is \code{repos = "http://cran.r-project.org"}.
-#' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}.
+#' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}. Packages/versions will not be reinstalled if they are already in \code{lib}.
 #' @details Installs specific R package versions. 
 #' @examples
 #' # dontrun
 #' # Install old versions of the e1071 and gtools packages. 
-#' # Used R version 2.15.3
+#' # Used R version 3.0.2
 #' # Names <- c("e1071", "gtools")
 #' # Vers <- c("1.6", "2.6.1")
 #' # InstallOldPackages(pkgs = Names, versions = Vers)
@@ -28,7 +28,7 @@ InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.or
 
   	# Stop if all packages and versions are already installed
   	if (nrow(TempPackages) == 0){
-  		stop("All packages/versions are already installed. \n\n Nothing will be installed.")
+  		stop("All packages/versions are already installed. \n\nNothing will be installed.")
   	}
 
   	# Create pastable repo path
