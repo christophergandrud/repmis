@@ -6,16 +6,21 @@
     repos = "http://cran.r-project.org", lib = NULL)
 }
 \arguments{
-  \item{pkgs}{character vector of package names to
-  install.}
+  \item{pkgs}{character vector of package names to install
+  from CRAN.}
 
   \item{versions}{character vector of package version
-  numbers. to install. The order must match the order of
-  package names in \code{pkgs}.}
+  numbers to install from CRAN. The order must match the
+  order of package names in \code{pkgs}.}
 
-  \item{repos}{character name of repository to download the
-  packages old package versions from. Default is
-  \code{repos = "http://cran.r-project.org"}.}
+  \item{repos}{character URL or name of repository to
+  download the packages old package versions from. If
+  \code{repos = NULL}, automatically reads user defined
+  repository (via \code{options}), but defaults to
+  \code{repos = "http://cran.r-project.org"} if
+  \code{repos} is not set. If \code{'CRAN'} is specified
+  then packages will be downloaded from
+  \url{http://cran.r-project.org}.}
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as
@@ -28,7 +33,10 @@
   versions.
 }
 \details{
-  Installs specific R package versions.
+  Installs specific R package versions. You can either
+  specify the packages and versions using the \code{pkgs}
+  and \code{versions} arguments, respectively if you wish
+  to install the packages from a CRAN mirror.
 }
 \examples{
 # dontrun

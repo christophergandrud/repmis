@@ -62,11 +62,13 @@
   loaded, but no BibTeX file is created.}
 
   \item{repos}{character vector specifying which repository
-  to download packages from. Only relevant if \code{install
-  = TRUE} and versions are not specified. If \code{repos =
-  NULL}, automatically reads user defined repository (via
+  to download packages from.  If \code{repos = NULL},
+  automatically reads user defined repository (via
   \code{options}), but defaults to \code{repos =
-  "http://cran.r-project.org"} if \code{repos} is not set.}
+  "http://cran.r-project.org"} if \code{repos} is not set.
+  If \code{'CRAN'} is specified then packages will be
+  downloaded from \url{http://cran.r-project.org}. Only
+  relevant if \code{install = TRUE}.}
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as

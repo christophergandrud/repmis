@@ -2,7 +2,7 @@ Version 0.3
 
 Improvements made to `LoadandCite` largely suggested by R Journal reviewers. These include:
 
-- improved warnings.
+- only loads/installs packages that are not already loaded/installed in `.libPath()` or `lib`, if it is specified.
 
 - old packages can be downloaded from any CRAN mirror.
 
@@ -11,6 +11,8 @@ Improvements made to `LoadandCite` largely suggested by R Journal reviewers. The
 - can use the `style` argument to style the citations for the Journal of Statistical Software.
 
 - automatically includes a citation for the current R version and can check to see if the version of R running matches a specified version.
+
+- improved warnings.
 
 Other changes
 

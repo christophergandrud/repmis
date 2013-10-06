@@ -9,7 +9,7 @@
 #' @param tweak logical. Whether to fix some known problems in the citations, especially non-standard format of authors.
 #' @param install a logical option for whether or not to install the packages. The default is \code{install = FALSE}.
 #' @param file the name of the BibTeX file you want to create. If \code{file = NULL} then the packages are loaded, but no BibTeX file is created.
-#' @param repos character vector specifying which repository to download packages from. Only relevant if \code{install = TRUE} and versions are not specified. If \code{repos = NULL}, automatically reads user defined repository (via \code{options}), but defaults to \code{repos = "http://cran.r-project.org"} if \code{repos} is not set.
+#' @param repos character vector specifying which repository to download packages from.  If \code{repos = NULL}, automatically reads user defined repository (via \code{options}), but defaults to \code{repos = "http://cran.r-project.org"} if \code{repos} is not set. If \code{'CRAN'} is specified then packages will be downloaded from \url{http://cran.r-project.org}. Only relevant if \code{install = TRUE}.
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}. Only relevant if \code{install = TRUE}. Packages/versions will not be reinstalled if they are already in \code{lib}.
 #' @details The command can install R packages, load them, and create a BibTeX file that can be used to cite the packages in a LaTeX or similar document. It can be useful to place this command in a \code{knitr} code chunk at the beginning of a reproducible research document. Note: the command will overwrite existing files with the same name as \code{file}, so it is generally a good idea to create a new BibTeX file with \code{LoadandCite}.
 #' @examples
@@ -77,21 +77,19 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
       lib <- lp[1]
     }
 
-    # Determine which CRAN repo to use.
-  	if (is.null(repos)){
-    		r <- ifelse(!is.null(getOption('repos')), getOption('repos'),  "http://cran.r-project.org") 
-    	} else if (!is.null(repos)){
-    		r <- repos
-    	}
+    if (length(repos) == 1 | is.null(repos)){
+      r <- cranMirror(repos = repos)
+    } else {
+      r <- repos
+    }
     
-    ############ Need subed package and version list in the same order #######
-    
+    # Install packages    
     if(install){
     	if (is.null(versions)){
     		install.packages(pkgs = pkgsInstall, repos = r, lib = lib)
-    		} else if (!is.null(versions)){
-    			InstallOldPackages(pkgs = pkgs, versions = versions, lib = lib, repos = r)
-    		}
+    	} else if (!is.null(versions)){
+    		InstallOldPackages(pkgs = pkgs, versions = versions, lib = lib, repos = r)
+  		}
     }
 
     # Load unloaded packages 

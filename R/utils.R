@@ -1,3 +1,20 @@
+#' Set the CRAN mirror
+#'
+#' @keywords internal
+#' @noRd
+
+cranMirror <- function(repos){
+  if (is.null(repos)){
+    r <- ifelse(!is.null(getOption('repos')), getOption('repos'), "http://cran.r-project.org") 
+  } else if(repos == 'CRAN'){
+     r <- 'http://cran.r-project.org'
+  } else if (!is.null(repos) & repos != 'CRAN'){
+    r <- repos
+  } 
+  r
+}
+
+
 #' Subset a vectors of packages and package versions to those that are that are not already installed.
 #'
 #' @keywords internal

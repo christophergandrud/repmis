@@ -1,11 +1,11 @@
 #' Install old versions of R packages.
 #' 
 #' \code{InstallOldPackages} installs specific R package versions.
-#' @param pkgs character vector of package names to install.
-#' @param versions character vector of package version numbers. to install. The order must match the order of package names in \code{pkgs}.
-#' @param repos character name of repository to download the packages old package versions from. Default is \code{repos = "http://cran.r-project.org"}.
+#' @param pkgs character vector of package names to install from CRAN.
+#' @param versions character vector of package version numbers to install from CRAN. The order must match the order of package names in \code{pkgs}.
+#' @param repos character URL or name of repository to download the packages old package versions from. If \code{repos = NULL}, automatically reads user defined repository (via \code{options}), but defaults to \code{repos = "http://cran.r-project.org"} if \code{repos} is not set. If \code{'CRAN'} is specified then packages will be downloaded from \url{http://cran.r-project.org}.
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}. Packages/versions will not be reinstalled if they are already in \code{lib}.
-#' @details Installs specific R package versions. 
+#' @details Installs specific R package versions. You can either specify the packages and versions using the \code{pkgs} and \code{versions} arguments, respectively if you wish to install the packages from a CRAN mirror.  
 #' @examples
 #' # dontrun
 #' # Install old versions of the e1071 and gtools packages. 
@@ -23,6 +23,7 @@ InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.or
 	if (length(pkgs) != length(versions)){
 		stop('pkgs and versions must be the same length.\n')
   	}
+
 	# Exclude package versions that are already installed.
   	TempPackages <- PackInstallCheck(pkgs = pkgs, versions = versions, lib = lib)
 
@@ -31,7 +32,11 @@ InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.or
   		message('All packages/versions are already installed. \n\nNothing will be installed.\n')
   	}
   	else{
-
-		ddply(TempPackages, 'pkgs', IOP_cran, repos = repos, lib = lib)
+  		if (length(repos) == 1){
+		    r <- cranMirror(repos = repos)
+  			if (grepl(r, pattern = 'cran')){
+				  ddply(TempPackages, 'pkgs', IOP_cran, repos = r, lib = lib)
+			}
+		}
 	}
 }
