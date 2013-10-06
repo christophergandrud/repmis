@@ -19,6 +19,10 @@ PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
   # If no versions are specified, subset package list
   if (is.null(versions)){
     Out <- pkgs[!pkgs %in% IP]
+    In <- pkgs[pkgs %in% IP]
+    if (length(In != 0)){
+      message("The following packages are already installed:\n\n", paste(In, collapse = "\n"))
+    }
   }
   # If versions are specified, subset package and version lists
   else if (!is.null(versions)){
@@ -28,6 +32,11 @@ PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
     IPSub <- Full[Full[, 'pkgs'] %in% pkgs, ]
     Pairs <- with(IPSub, paste(pkgs, versions, sep = "."))
     Out <- PV[!(paste(PV$pkgs, PV$versions, sep = ".") %in% Pairs), ]
+    In <- PV[paste(PV$pkgs, PV$versions, sep = ".") %in% Pairs, ]
+    if (nrow(In) != 0){
+      InPairs <- with(In, paste(pkgs, versions, sep = " "))
+      message("The following packages/versions are already installed:\n\n", paste(InPairs, collapse = "\n"))
+    }
   }
   Out
 }
