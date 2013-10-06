@@ -21,38 +21,17 @@ InstallOldPackages <- function(pkgs, versions, repos = "http://cran.r-project.or
 {	
 	# Check to see if pkgs and versions are the same length
 	if (length(pkgs) != length(versions)){
-		stop("pkgs and versions must be the same length.")
+		stop('pkgs and versions must be the same length.\n')
   	}
 	# Exclude package versions that are already installed.
   	TempPackages <- PackInstallCheck(pkgs = pkgs, versions = versions, lib = lib)
 
   	# Stop if all packages and versions are already installed
   	if (nrow(TempPackages) == 0){
-  		stop("All packages/versions are already installed. \n\nNothing will be installed.")
+  		message('All packages/versions are already installed. \n\nNothing will be installed.\n')
   	}
+  	else{
 
-  	# Create pastable repo path
-	reposClean <- gsub("/", "\\/", repos)
-	
-	available <- available.packages(contriburl = contrib.url(repos = repos, type = "source"))
-	available <- data.frame(unique(available[, c("Package", "Version")]))
-	names(available) <- c("pkgs", "versions")
-	available$pkgs <- as.character(available$pkgs)
-	available$versions <- as.character(available$versions)
-
-	IOP <- function(x){
-		Matched <- merge(x, available, all = FALSE)
-
-		if (nrow(Matched) == 1){
-			newpack <- as.character(Matched[, 1])
-			install.packages(newpack, lib = lib)
-		} else if (nrow(Matched) == 0){
-			from <- paste0(reposClean, "/src/contrib/Archive/", x[, 1], "/", x[, 1], "_", x[,2], ".tar.gz")
-			TempFile <- paste0(x[, 1], "_", x[,2], ".tar.gz")
-			download.file(url = from, destfile = TempFile)
-			install.packages(TempFile, repos = NULL, type = "source", lib = lib)
-			unlink(TempFile)
-		}
+		ddply(TempPackages, 'pkgs', IOP_cran, repos = repos, lib = lib)
 	}
-	ddply(TempPackages, "pkgs", IOP)
 }

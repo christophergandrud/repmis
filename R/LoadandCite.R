@@ -50,16 +50,16 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
     if (!is.null(Rversion)){
       RV <- RVNumber()
       if (!isTRUE(Rversion == RV)){
-        warning(paste0("The version of R currently running (", RV, ") is different from the version specified (", Rversion, "). \nTo improve replication, please install the archived version from your local CRAN mirror."))
+        warning(paste0("The version of R currently running (", RV, ") is different from the version specified (", Rversion, "). \nTo improve replication, please install the archived version from your local CRAN mirror.\n"))
       }
     }
 
     # 'Double key' safety measures and warnings for installing old package versions.
-    if (isTRUE(install) & !is.null(versions)){
-      message("Specific package versions will be installed. \nNote: always be careful with installing old package versions. \nConsider installing them into a project specific library.")
+    if (isTRUE(install) & !is.null(versions) & is.null(lib)){
+      message("Specific package versions will be installed. \nNote: always be careful with installing old package versions. \nConsider installing them into a project specific library.\n")
     } 
     if (!isTRUE(install) & !is.null(versions)){
-      warning("Double Key Safety: If you want to install specific package versions, also set install = TRUE. \nNote: always be careful with installing old package versions. \nConsider installing them into a project specific library.")
+      warning("Double Key Safety: If you want to install specific package versions, also set install = TRUE. \nNote: always be careful with installing old package versions. \nConsider installing them into a project specific library.\n")
     }
 
     # Find packages/package versions that are not already installed
@@ -67,7 +67,7 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
       pkgsInstall <- PackInstallCheck(pkgs = pkgs, lib = lib)
       if (length(pkgsInstall) == 0){
         install = FALSE
-        message("All packages are already installed. \n No packages will be installed.")
+        message("All packages are already installed. \n No packages will be installed.\n")
       }
     }
 

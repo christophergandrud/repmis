@@ -16,7 +16,7 @@ PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
     Out <- pkgs[!pkgs %in% IP]
     In <- pkgs[pkgs %in% IP]
     if (length(In != 0)){
-      message("The following packages are already installed:\n\n", paste(In, collapse = "\n"))
+      message("The following packages are already installed:\n\n", paste(In, collapse = "\n"), "\n")
     }
   }
   # If versions are specified, subset package and version lists
@@ -30,7 +30,7 @@ PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
     In <- PV[paste(PV$pkgs, PV$versions, sep = ".") %in% Pairs, ]
     if (nrow(In) != 0){
       InPairs <- with(In, paste(pkgs, versions, sep = " "))
-      message("The following packages/versions are already installed:\n\n", paste(InPairs, collapse = "\n"))
+      message("The following packages/versions are already installed:\n\n", paste(InPairs, collapse = "\n"), "\n")
     }
   }
   Out
