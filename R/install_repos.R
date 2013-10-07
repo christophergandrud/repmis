@@ -31,6 +31,17 @@ IOP_cran <- function(x, repos, lib)
 	}
 }
 
+#' Internal function to download packages from GitHub
+#'
+#' @importFrom devtools install_github
+#' @keywords internal
+#' @noRd
+
+IOP_github <- function(x, lib){
+	username <- gsub("^GITHUB.", "", x[, 3])
+	from <- paste0("https://github.com/", username, "/", x[, 1], "/archive/", x[, 2], ".zip")
+}
+
 #' Internal function to download packages from a full URL
 #'
 #' @keywords internal

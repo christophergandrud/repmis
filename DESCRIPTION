@@ -6,7 +6,7 @@ Description: A collection of miscellaneous tools for reproducible research with
     automatically generate BibTeX files citing them as well as load plain-text
     data stored on Dropbox, GitHub, and from other sources.
 Version: 0.3
-Date: 2013-08-24
+Date: 2013-10-07
 Author: Christopher Gandrud
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 License: GPL (>= 3)
@@ -15,6 +15,7 @@ Depends:
 URL: http://cran.r-project.org/web/packages/repmis/
 BugReports: https://github.com/christophergandrud/repmis/issues
 Imports:
+    devtools,
     digest,
     httr,
     plyr

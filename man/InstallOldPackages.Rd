@@ -2,8 +2,8 @@
 \alias{InstallOldPackages}
 \title{Install old versions of R packages.}
 \usage{
-  InstallOldPackages(pkgs, versions = NULL,
-    repos = "http://cran.r-project.org", lib = NULL)
+  InstallOldPackages(pkgs, versions = NULL, repos = NULL,
+    lib = NULL)
 }
 \arguments{
   \item{pkgs}{character vector of package names to install
@@ -17,7 +17,7 @@
   download the packages old package versions from. If
   \code{repos = NULL}, automatically reads user defined
   repository (via \code{options}), but defaults to
-  \code{repos = "http://cran.r-project.org"} if
+  \code{repos = 'http://cran.r-project.org'} if
   \code{repos} is not set. If \code{'CRAN'} is specified
   then packages will be downloaded from
   \url{http://cran.r-project.org}.}
@@ -41,8 +41,8 @@
 \examples{
 # dontrun
 # Install old versions of the e1071 and gtools packages.
-# Names <- c("e1071", "gtools")
-# Vers <- c("1.6", "2.6.1")
+# Names <- c('e1071', 'gtools')
+# Vers <- c('1.6', '2.6.1')
 # InstallOldPackages(pkgs = Names, versions = Vers)
 }
 \seealso{

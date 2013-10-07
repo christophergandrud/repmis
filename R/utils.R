@@ -3,13 +3,13 @@
 #' @keywords internal
 #' @noRd
 
-Mirror <- function(repos, versions){
-  if (is.null(repos) & !is.null(versions)){
+Mirror <- function(repos){
+  if (is.null(repos)){
     r <- ifelse(!is.null(getOption('repos')), getOption('repos'), 'http://cran.r-project.org') 
   } else if(repos == 'CRAN'){
      r <- 'http://cran.r-project.org'
   } else if (!is.null(repos) & repos != 'CRAN'){
-    r <- 'http://cran.r-project.org'
+    r <- repos
   } 
   r
 }
@@ -20,7 +20,7 @@ Mirror <- function(repos, versions){
 #' @keywords internal
 #' @noRd
 
-PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
+PackInstallCheck <- function(pkgs = NULL, versions = NULL, repos = NULL, lib = NULL){
   if (is.null(pkgs)){
     stop('Must specify pkgs.')
   }
@@ -38,7 +38,7 @@ PackInstallCheck <- function(pkgs = NULL, versions = NULL, lib = NULL){
   }
   # If versions are specified, subset package and version lists
   else if (!is.null(versions)){
-    PV <- data.frame(pkgs, versions)
+    PV <- data.frame(pkgs, versions, repos)
     Full <- data.frame(IP[, 'Package'], IP[, 'Version'])
     names(Full) <- c('pkgs', 'versions')
     IPSub <- Full[Full[, 'pkgs'] %in% pkgs, ]
