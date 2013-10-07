@@ -37,15 +37,15 @@ InstallOldPackages <- function(pkgs, versions = NULL, repos = NULL, lib = NULL)
 		Gits <- subset(pvrDF, grepl('^GITHUB.', pvrDF$repos))
 		
 	    if (nrow(CRANs) > 0){
-	    	message('Installing CRAN packages.')
+	    	message('Installing CRAN packages...\n')
 		    for (i in 1:nrow(CRANs)){
-	      		IOP_cran(CRANs[i, ], repos = CRANs[i, 'repos'], lib = lib)
+	      		IOP_cran(CRANs[i, ], lib = lib)
 	      	}
 		}
 		if (nrow(Gits) > 0){
-			message('Installing packages from GitHub packages.')
-		    for (i in 1:nrow(CRANs)){
-		    	IOP_github()
+			message('Installing packages from GitHub packages...\n')
+		    for (i in 1:nrow(Gits)){
+		    	IOP_github(Gits[i, ], lib = lib)
 		    }
 		}
 	}

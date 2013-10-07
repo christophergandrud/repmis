@@ -3,13 +3,13 @@
 #' @keywords internal
 #' @noRd
 
-IOP_cran <- function(x, repos, lib)
+IOP_cran <- function(x, lib)
 {
 	# Create paste-able repo path
-	reposClean <- gsub("/", "\\/", repos)
+	reposClean <- gsub("/", "\\/", x[, 3])
 	
 	# Find main (not old versions) available packages
-	available <- available.packages(contriburl = contrib.url(repos = repos, type = "source"))
+	available <- available.packages(contriburl = contrib.url(repos = x[, 3], type = "source"))
 	available <- data.frame(unique(available[, c("Package", "Version")]))
 	names(available) <- c("pkgs", "versions")
 	available$pkgs <- as.character(available$pkgs)
@@ -33,13 +33,15 @@ IOP_cran <- function(x, repos, lib)
 
 #' Internal function to download packages from GitHub
 #'
-#' @importFrom devtools install_github
+#' @importFrom devtools install_url
 #' @keywords internal
 #' @noRd
 
 IOP_github <- function(x, lib){
+	if(x[, 2] == "") x[, 2] <- "master"
 	username <- gsub("^GITHUB.", "", x[, 3])
 	from <- paste0("https://github.com/", username, "/", x[, 1], "/archive/", x[, 2], ".zip")
+  	install_url(from, name = x[, 1], lib = lib)
 }
 
 #' Internal function to download packages from a full URL

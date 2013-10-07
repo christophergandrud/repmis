@@ -77,6 +77,15 @@ RVNumber <- function(){
   RV = paste(Major, Minor, sep = ".")
   RV
 } 
+
+#' Install a url. Function directly from devtools.
+#' 
+#' @importFrom httr GET
+#' @keywords internals
+#' @noRd
+
+download_https <- function(url){ 
+}
   
 #' Write package bibliographies to a file.
 #'

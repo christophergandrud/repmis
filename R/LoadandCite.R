@@ -73,13 +73,12 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
 
     # Use first current library path if none specified.
     if (is.null(lib)){
-      lp <- .libPaths()
-      lib <- lp[1]
+      lp <- .libPaths()[1]
     }
     
     # Install packages    
     if(install){
-      r <- Mirror(repos = repos, versions = versions)
+      r <- Mirror(repos = repos)
     	if (is.null(versions)){
     		install.packages(pkgs = pkgsInstall, repos = r, lib = lib)
     	} else if (!is.null(versions)){
