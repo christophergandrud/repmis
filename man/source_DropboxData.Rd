@@ -2,15 +2,14 @@
 \alias{source_DropboxData}
 \title{Load plain-text data from Dropbox non-Public folders}
 \source{
-  Based on \code{source_url} from the Hadley Wickham's
-  devtools package and \code{url_dl} from the qdap package.
-  Data from: Gandrud, Christopher. 2012. "The Diffusion of
-  Financial Supervisory Governance Ideas." Review of
-  International Political Economy: 1-36.
+Based on \code{source_url} from the Hadley Wickham's
+devtools package and \code{url_dl} from the qdap package.
+Data from: Gandrud, Christopher. 2012. "The Diffusion of
+Financial Supervisory Governance Ideas." Review of
+International Political Economy: 1-36.
 }
 \usage{
-  source_DropboxData(file, key, sha1 = NULL, sep = ",",
-    header = TRUE)
+source_DropboxData(file, key, sha1 = NULL, sep = ",", header = TRUE)
 }
 \arguments{
   \item{file}{The plain-text formatted data's file name as
@@ -31,34 +30,33 @@
   is \code{header = TRUE}.}
 }
 \value{
-  a data frame
+a data frame
 }
 \description{
-  \code{source_DropboxData} loads plain-text formatted data
-  stored on Dropbox in a non-Public folder.
+\code{source_DropboxData} loads plain-text formatted data
+stored on Dropbox in a non-Public folder.
 }
 \details{
-  Loads plain-text data (e.g. CSV, TSV) data from a Dropbox
-  non-public folder. To download data from a Drobpox Public
-  folder simply use \code{read.table}, giving the public
-  URL as the file name.
+Loads plain-text data (e.g. CSV, TSV) data from a Dropbox
+non-public folder. To download data from a Drobpox Public
+folder simply use \code{read.table}, giving the public URL
+as the file name.
 
-  To download data using \code{source_DropboxData} you will
-  need (a) the file's name and (b) its Dropbox key. The key
-  can be found by clicking "Share Link". The key will then
-  be listed as part of the URL directly after
-  "https://www.dropbox.com/s/" and before the file name.
+To download data using \code{source_DropboxData} you will
+need (a) the file's name and (b) its Dropbox key. The key
+can be found by clicking "Share Link". The key will then be
+listed as part of the URL directly after
+"https://www.dropbox.com/s/" and before the file name.
 
-  From the source_url documentation: "If a SHA-1 hash is
-  specified with the sha1 argument, then this function will
-  check the SHA-1 hash of the downloaded file to make sure
-  it matches the expected value, and throw an error if it
-  does not match. If the SHA-1 hash is not specified, it
-  will print a message displaying the hash of the
-  downloaded file. The purpose of this is to improve
-  security when running remotely-hosted code; if you have a
-  hash of the file, you can be sure that it has not
-  changed."
+From the source_url documentation: "If a SHA-1 hash is
+specified with the sha1 argument, then this function will
+check the SHA-1 hash of the downloaded file to make sure it
+matches the expected value, and throw an error if it does
+not match. If the SHA-1 hash is not specified, it will
+print a message displaying the hash of the downloaded file.
+The purpose of this is to improve security when running
+remotely-hosted code; if you have a hash of the file, you
+can be sure that it has not changed."
 }
 \examples{
 # Download Financial Regulatory Governance data (see Gandrud 2012)
@@ -67,6 +65,6 @@ FinData <- source_DropboxData(file = "fin_research_note.csv",
 				 				 sep = ",", header = TRUE)
 }
 \seealso{
-  \link{httr} and \code{\link{read.table}}
+\link{httr} and \code{\link{read.table}}
 }
 

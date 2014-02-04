@@ -19,11 +19,3 @@ Imports:
     digest,
     httr,
     plyr
-Collate:
-    'InstallOldPackages.R'
-    'install_repos.R'
-    'LoadandCite.R'
-    'source_data.R'
-    'source_GitHubData.R'
-    'source_DropboxData.R'
-    'utils.R'

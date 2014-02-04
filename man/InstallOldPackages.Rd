@@ -2,8 +2,7 @@
 \alias{InstallOldPackages}
 \title{Install old versions of R packages.}
 \usage{
-  InstallOldPackages(pkgs, versions = NULL, repos = NULL,
-    lib = NULL)
+InstallOldPackages(pkgs, versions = NULL, repos = NULL, lib = NULL)
 }
 \arguments{
   \item{pkgs}{character vector of package names to install
@@ -29,14 +28,14 @@
   reinstalled if they are already in \code{lib}.}
 }
 \description{
-  \code{InstallOldPackages} installs specific R package
-  versions.
+\code{InstallOldPackages} installs specific R package
+versions.
 }
 \details{
-  Installs specific R package versions. You can either
-  specify the packages and versions using the \code{pkgs}
-  and \code{versions} arguments, respectively if you wish
-  to install the packages from a CRAN mirror.
+Installs specific R package versions. You can either
+specify the packages and versions using the \code{pkgs} and
+\code{versions} arguments, respectively if you wish to
+install the packages from a CRAN mirror.
 }
 \examples{
 # dontrun
@@ -46,7 +45,7 @@
 # InstallOldPackages(pkgs = Names, versions = Vers)
 }
 \seealso{
-  \code{\link{install.packages}} and
-  \code{\link{download.file}}
+\code{\link{install.packages}} and
+\code{\link{download.file}}
 }
 

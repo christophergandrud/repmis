@@ -2,24 +2,21 @@
 \alias{LoadandCite}
 \title{Install, load, and cite R packages}
 \source{
-  Gandrud, Christopher (2013). Automating R Package
-  Citations in Reproducible Research Documents. SSRN. This
-  function is partially based on:
-  \url{https://gist.github.com/3710171}. It also builds on
-  code from knitr's \code{write_bib}. See: Y. Xie. knitr: A
-  general-purpose package for dynamic report generation in
-  R, 2013. URL
-  \url{http://CRAN.R-project.org/package=knitr}. R package
-  version 1.5. Note that it does not formally depend on
-  knitr so that knitr can be included in \code{LoadandCite}
-  so that it is possible to install old versions of that
-  package.
+Gandrud, Christopher (2013). Automating R Package Citations
+in Reproducible Research Documents. SSRN. This function is
+partially based on: \url{https://gist.github.com/3710171}.
+It also builds on code from knitr's \code{write_bib}. See:
+Y. Xie. knitr: A general-purpose package for dynamic report
+generation in R, 2013. URL
+\url{http://CRAN.R-project.org/package=knitr}. R package
+version 1.5. Note that it does not formally depend on knitr
+so that knitr can be included in \code{LoadandCite} so that
+it is possible to install old versions of that package.
 }
 \usage{
-  LoadandCite(pkgs = NULL, versions = NULL,
-    Rversion = NULL, bibtex = TRUE, style = "plain",
-    tweak = TRUE, install = FALSE, file = NULL,
-    repos = NULL, lib = NULL)
+LoadandCite(pkgs = NULL, versions = NULL, Rversion = NULL,
+  bibtex = TRUE, style = "plain", tweak = TRUE, install = FALSE,
+  file = NULL, repos = NULL, lib = NULL)
 }
 \arguments{
   \item{pkgs}{a character vector of R package names. If
@@ -78,19 +75,19 @@
   are already in \code{lib}.}
 }
 \description{
-  \code{LoadandCite} can install and load R packages as
-  well as automatically generate a BibTeX file citing the
-  packages.
+\code{LoadandCite} can install and load R packages as well
+as automatically generate a BibTeX file citing the
+packages.
 }
 \details{
-  The command can install R packages, load them, and create
-  a BibTeX file that can be used to cite the packages in a
-  LaTeX or similar document. It can be useful to place this
-  command in a \code{knitr} code chunk at the beginning of
-  a reproducible research document. Note: the command will
-  overwrite existing files with the same name as
-  \code{file}, so it is generally a good idea to create a
-  new BibTeX file with \code{LoadandCite}.
+The command can install R packages, load them, and create a
+BibTeX file that can be used to cite the packages in a
+LaTeX or similar document. It can be useful to place this
+command in a \code{knitr} code chunk at the beginning of a
+reproducible research document. Note: the command will
+overwrite existing files with the same name as \code{file},
+so it is generally a good idea to create a new BibTeX file
+with \code{LoadandCite}.
 }
 \examples{
 # Create vector of package names
@@ -105,7 +102,7 @@ LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
 # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
 }
 \seealso{
-  \code{write_bib}, \code{\link{install.packages}}, and
-  \code{\link{library}}
+\code{write_bib}, \code{\link{install.packages}}, and
+\code{\link{library}}
 }
 

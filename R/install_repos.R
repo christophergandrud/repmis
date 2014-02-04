@@ -52,6 +52,7 @@ IOP_github <- function(x, lib){
 IOP_url <- function(x, repos, lib){
 	TempFile <- paste0(x, ".tar.gz")
 	download.file(url = repos, destfile = TempFile)
+	## Should use install_url
 	install.packages(TempFile, repos = NULL, type = "source", lib = lib)
 	unlink(TempFile)
 }
