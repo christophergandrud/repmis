@@ -23,7 +23,7 @@ source_data(url, sha1 = NULL, sep = ",",
   values data (TSV) use \code{sep = "\t"}.}
 
   \item{quote}{the set of quoting characters. To disable
-  quoting altogether, use \codequote = ""}. See
+  quoting altogether, use \code{quote = ""}. See
   \code{\link{scan}} for the behaviour on quotes embedded
   in quotes.}
 
