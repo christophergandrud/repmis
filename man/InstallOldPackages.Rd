@@ -2,8 +2,8 @@
 \alias{InstallOldPackages}
 \title{Install old versions of R packages.}
 \usage{
-  InstallOldPackages(pkgs, versions,
-    oldRepos = "http://cran.r-project.org", lib = NULL)
+InstallOldPackages(pkgs, versions, oldRepos = "http://cran.r-project.org",
+  lib = NULL)
 }
 \arguments{
   \item{pkgs}{character vector of package names to
@@ -23,11 +23,11 @@
   \code{.libPaths()}.}
 }
 \description{
-  \code{InstallOldPackages} installs specific R package
-  versions.
+\code{InstallOldPackages} installs specific R package
+versions.
 }
 \details{
-  Installs specific R package versions.
+Installs specific R package versions.
 }
 \examples{
 # dontrun
@@ -38,7 +38,7 @@
 # InstallOldPackages(pkgs = Names, versions = Vers)
 }
 \seealso{
-  \code{\link{install.packages}} and
-  \code{\link{download.file}}
+\code{\link{install.packages}} and
+\code{\link{download.file}}
 }
 

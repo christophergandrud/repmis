@@ -2,11 +2,12 @@
 \alias{source_data}
 \title{Load plain-text data from a URL (either http or https)}
 \source{
-  Based on source_url from the Hadley Wickham's devtools
-  package.
+Based on source_url from the Hadley Wickham's devtools
+package.
 }
 \usage{
-  source_data(url, sha1 = NULL, sep = ",", header = TRUE)
+source_data(url, sha1 = NULL, sep = ",",
+  quote = "\\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors())
 }
 \arguments{
   \item{url}{The plain-text formatted data's URL.}
@@ -21,35 +22,39 @@
   \code{sep = ","} (the default). To load tab-separated
   values data (TSV) use \code{sep = "\t"}.}
 
+  \item{quote}{the set of quoting characters. To disable
+  quoting altogether, use \code{quote = ""}. See
+  \code{\link{scan}} for the behaviour on quotes embedded
+  in quotes.}
+
   \item{header}{Logical, whether or not the first line of
   the file is the header (i.e. variable names). The default
   is \code{header = TRUE}.}
 }
 \value{
-  a data frame
+a data frame
 }
 \description{
-  \code{source_data} loads plain-text formatted data stored
-  at a URL (both http and https) into R.
+\code{source_data} loads plain-text formatted data stored
+at a URL (both http and https) into R.
 }
 \details{
-  Loads plain-text data (e.g. CSV, TSV) data from a URL.
-  Works with both HTTP and HTTPS sites. Note: the URL you
-  give for the \code{url} argument must be for the RAW
-  version of the file. The function should work to download
-  plain-text data from any secure URL (https), though I
-  have not verified this.
+Loads plain-text data (e.g. CSV, TSV) data from a URL.
+Works with both HTTP and HTTPS sites. Note: the URL you
+give for the \code{url} argument must be for the RAW
+version of the file. The function should work to download
+plain-text data from any secure URL (https), though I have
+not verified this.
 
-  From the source_url documentation: "If a SHA-1 hash is
-  specified with the sha1 argument, then this function will
-  check the SHA-1 hash of the downloaded file to make sure
-  it matches the expected value, and throw an error if it
-  does not match. If the SHA-1 hash is not specified, it
-  will print a message displaying the hash of the
-  downloaded file. The purpose of this is to improve
-  security when running remotely-hosted code; if you have a
-  hash of the file, you can be sure that it has not
-  changed."
+From the source_url documentation: "If a SHA-1 hash is
+specified with the sha1 argument, then this function will
+check the SHA-1 hash of the downloaded file to make sure it
+matches the expected value, and throw an error if it does
+not match. If the SHA-1 hash is not specified, it will
+print a message displaying the hash of the downloaded file.
+The purpose of this is to improve security when running
+remotely-hosted code; if you have a hash of the file, you
+can be sure that it has not changed."
 }
 \examples{
 # Download electoral disproportionality data stored on GitHub
@@ -61,6 +66,6 @@ DisDataHash <- source_data("http://bit.ly/Ss6zDO",
  sha1 = "dc8110d6dff32f682bd2f2fdbacb89e37b94f95d")
 }
 \seealso{
-  \link{httr} and \code{\link{read.table}}
+\link{httr} and \code{\link{read.table}}
 }
 

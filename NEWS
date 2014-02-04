@@ -1,3 +1,7 @@
+Version 0.2.7.1
+
+Added arguments to `source_data` from `read.table`.
+
 Version 0.2.7
 
 Improvements made to `LoadandCite` largely suggested by R Journal reviewers. These include:

@@ -2,12 +2,11 @@
 \alias{source_GitHubData}
 \title{Load plain-text data from GitHub}
 \source{
-  Based on source_url from the Hadley Wickham's devtools
-  package.
+Based on source_url from the Hadley Wickham's devtools
+package.
 }
 \usage{
-  source_GitHubData(url, sha1 = NULL, sep = ",",
-    header = TRUE)
+source_GitHubData(url, sha1 = NULL, sep = ",", header = TRUE)
 }
 \arguments{
   \item{url}{The plain-text formatted data's RAW URL.}
@@ -25,34 +24,33 @@
   \code{header = TRUE}}
 }
 \value{
-  a data frame
+a data frame
 }
 \description{
-  \code{source_GitHubData} loads plain-text formatted data
-  stored on GitHub (and other secure-https-websites) into
-  R. NOTE: this command is depricated. Use
-  \link{source_data} instead.
+\code{source_GitHubData} loads plain-text formatted data
+stored on GitHub (and other secure-https-websites) into R.
+NOTE: this command is depricated. Use \link{source_data}
+instead.
 }
 \details{
-  Loads plain-text data (e.g. CSV, TSV) data from GitHub
-  into R. The function is basically the same as
-  \code{\link{source_data}}, but with defaults choosen to
-  make loading CSV files easier. Note: the GitHub URL you
-  give for the \code{url} argument must be for the RAW
-  version of the file. The function should work to download
-  plain-text data from any secure URL (https), though I
-  have not verified this.
+Loads plain-text data (e.g. CSV, TSV) data from GitHub into
+R. The function is basically the same as
+\code{\link{source_data}}, but with defaults choosen to
+make loading CSV files easier. Note: the GitHub URL you
+give for the \code{url} argument must be for the RAW
+version of the file. The function should work to download
+plain-text data from any secure URL (https), though I have
+not verified this.
 
-  From the source_url documentation: "If a SHA-1 hash is
-  specified with the sha1 argument, then this function will
-  check the SHA-1 hash of the downloaded file to make sure
-  it matches the expected value, and throw an error if it
-  does not match. If the SHA-1 hash is not specified, it
-  will print a message displaying the hash of the
-  downloaded file. The purpose of this is to improve
-  security when running remotely-hosted code; if you have a
-  hash of the file, you can be sure that it has not
-  changed."
+From the source_url documentation: "If a SHA-1 hash is
+specified with the sha1 argument, then this function will
+check the SHA-1 hash of the downloaded file to make sure it
+matches the expected value, and throw an error if it does
+not match. If the SHA-1 hash is not specified, it will
+print a message displaying the hash of the downloaded file.
+The purpose of this is to improve security when running
+remotely-hosted code; if you have a hash of the file, you
+can be sure that it has not changed."
 }
 \examples{
 # Download electoral disproportionality data stored on GitHub
@@ -60,6 +58,6 @@
 DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
 }
 \seealso{
-  \link{httr} and \code{\link{read.table}}
+\link{httr} and \code{\link{read.table}}
 }
 
