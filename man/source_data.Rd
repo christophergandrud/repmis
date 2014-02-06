@@ -7,7 +7,7 @@ package.
 }
 \usage{
 source_data(url, sha1 = NULL, sep = ",",
-  quote = "\\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors())
+  quote = "\\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors(), ...)
 }
 \arguments{
   \item{url}{The plain-text formatted data's URL.}
@@ -30,6 +30,14 @@ source_data(url, sha1 = NULL, sep = ",",
   \item{header}{Logical, whether or not the first line of
   the file is the header (i.e. variable names). The default
   is \code{header = TRUE}.}
+
+  \item{stringsAsFactors}{logical. Should character vectors
+  be converted to factors? Note that this is overridden by
+  \code{as.is} and \code{colClasses}, both of which allow
+  finer control.}
+
+  \item{...}{additional arguments passed to
+  \code{\link{read.table}}.}
 }
 \value{
 a data frame

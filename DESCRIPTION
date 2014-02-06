@@ -6,7 +6,7 @@ Description: A collection of miscellaneous tools for reproducible research with
     automatically generate BibTeX files citing them as well as load plain-text
     data stored on Dropbox, GitHub, and from other sources.
 Version: 0.2.7.1
-Date: 2014-02-04
+Date: 2014-02-06
 Author: Christopher Gandrud
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 License: GPL (>= 3)

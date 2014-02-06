@@ -9,7 +9,7 @@ Financial Supervisory Governance Ideas." Review of
 International Political Economy: 1-36.
 }
 \usage{
-source_DropboxData(file, key, sha1 = NULL, sep = ",", header = TRUE)
+source_DropboxData(file, key, sha1 = NULL, sep = ",", header = TRUE, ...)
 }
 \arguments{
   \item{file}{The plain-text formatted data's file name as
@@ -28,6 +28,9 @@ source_DropboxData(file, key, sha1 = NULL, sep = ",", header = TRUE)
   \item{header}{Logical, whether or not the first line of
   the file is the header (i.e. variable names). The default
   is \code{header = TRUE}.}
+
+  \item{...}{additional arguments passed to
+  \code{\link{read.table}}.}
 }
 \value{
 a data frame

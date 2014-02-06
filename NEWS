@@ -1,6 +1,6 @@
 Version 0.2.7.1
 
-Added arguments to `source_data` from `read.table`.
+Added ability to pass arguments to `source_data`, `source_DropboxData`, and `source_GitHubData`.
 
 Version 0.2.7
 

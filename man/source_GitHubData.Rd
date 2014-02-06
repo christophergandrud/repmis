@@ -6,7 +6,7 @@ Based on source_url from the Hadley Wickham's devtools
 package.
 }
 \usage{
-source_GitHubData(url, sha1 = NULL, sep = ",", header = TRUE)
+source_GitHubData(url, sha1 = NULL, sep = ",", header = TRUE, ...)
 }
 \arguments{
   \item{url}{The plain-text formatted data's RAW URL.}
@@ -22,6 +22,9 @@ source_GitHubData(url, sha1 = NULL, sep = ",", header = TRUE)
   \item{header}{whether or not the first line of the file
   is the header (i.e. variable names). The default is
   \code{header = TRUE}}
+
+  \item{...}{additional arguments passed to
+  \code{\link{read.table}}.}
 }
 \value{
 a data frame
