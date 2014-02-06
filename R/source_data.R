@@ -6,6 +6,7 @@
 #' @param sep The separator method for the data. For example, to load comma-separated values data (CSV) use \code{sep = ","} (the default). To load tab-separated values data (TSV) use \code{sep = "\t"}.
 #' @param quote  the set of quoting characters. To disable quoting altogether, use \code{quote = ""}. See \code{\link{scan}} for the behaviour on quotes embedded in quotes. 
 #' @param header Logical, whether or not the first line of the file is the header (i.e. variable names). The default is \code{header = TRUE}.
+#' @param ... additional arguments.
 #' @return a data frame
 #' @details Loads plain-text data (e.g. CSV, TSV) data from a URL. Works with both HTTP and HTTPS sites. Note: the URL you give for the \code{url} argument must be for the RAW version of the file. The function should work to download plain-text data from any secure URL (https), though I have not verified this.
 #'
@@ -24,7 +25,7 @@
 #' @importFrom httr GET stop_for_status text_content content
 #' @export
 
-source_data <-function(url, sha1 = NULL, sep = ",", quote = "\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors())
+source_data <-function(url, sha1 = NULL, sep = ",", quote = "\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors(), ...)
 {
     stopifnot(is.character(url), length(url) == 1)
     

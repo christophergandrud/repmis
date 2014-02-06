@@ -7,7 +7,7 @@ package.
 }
 \usage{
 source_data(url, sha1 = NULL, sep = ",",
-  quote = "\\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors())
+  quote = "\\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors(), ...)
 }
 \arguments{
   \item{url}{The plain-text formatted data's URL.}
@@ -30,6 +30,8 @@ source_data(url, sha1 = NULL, sep = ",",
   \item{header}{Logical, whether or not the first line of
   the file is the header (i.e. variable names). The default
   is \code{header = TRUE}.}
+
+  \item{...}{additional arguments.}
 }
 \value{
 a data frame
