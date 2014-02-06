@@ -90,7 +90,7 @@ with \code{LoadandCite}.
 \examples{
 # Create vector of package names
 ## In this example you need to have the packages installed aready.
-PackNames <- c("repmis")
+PackNames <- "repmis"
 # Load the packages and create a BibTeX file
 LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
 # Install, load, and cite specific package versions

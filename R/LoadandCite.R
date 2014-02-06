@@ -15,7 +15,7 @@
 #' @examples
 #' # Create vector of package names
 #' ## In this example you need to have the packages installed aready.
-#' PackNames <- c("repmis")
+#' PackNames <- "repmis"
 #' # Load the packages and create a BibTeX file
 #' LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
 #' # Install, load, and cite specific package versions
@@ -34,7 +34,9 @@
 
 LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = TRUE, style = 'plain', tweak = TRUE, install = FALSE, file = NULL, repos = NULL, lib = NULL)
 {
-  Loadedpkgs <- names(sessionInfo()[[5]])
+  Loaded <- search()
+  Loaded <- subset(Loaded, grepl(pattern = 'package:', Loaded))
+  Loadedpkgs <- gsub(pattern = 'package:', replacement = '', Loaded)
   if (is.null(pkgs)){
     if (is.null(file)){
       stop("A file must be specified for saving the citations to if pkgs = NULL.")
@@ -71,7 +73,6 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL, bibtex = 
         message("All installed packages are the of the specified version. No packages will be installed.")
       }
     }
-    Installpkgs <- IPSub[, "Package"]
     ############ Need subed package and version list in the same order #######
     if(install){
     	if (is.null(versions)){
