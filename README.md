@@ -1,8 +1,11 @@
 repmis
 ===
 
-### Christopher Gandrud
 ### Version 0.2.7
+
+[![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+
+### Christopher Gandrud
 
 ---
 
@@ -31,6 +34,6 @@ The package is available for download from [CRAN](http://cran.r-project.org/web/
 
 You can also download the most recent version using the [devtools](https://github.com/hadley/devtools) command `install_github` to install **repmis** in R. Here is the exact code for installing the current version:
 
-```r
-devtools::install_github("repmis", "christophergandrud")
+```{S}
+devtools::install_github('repmis/christophergandrud')
 ```
