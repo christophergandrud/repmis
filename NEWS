@@ -1,3 +1,7 @@
+Version 0.2.8
+
+Added `cache` and `clearCache` arguments to `source_data. This allows the user to cache the downloaded data frame so that it does not need to be downloaded every time the function is called.
+
 Version 0.2.7.1
 
 Added ability to pass arguments to `source_data`, `source_DropboxData`, and `source_GitHubData`.

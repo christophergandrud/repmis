@@ -5,8 +5,8 @@ Description: A collection of miscellaneous tools for reproducible research with
     R. Currently the package includes tools to load R packages and
     automatically generate BibTeX files citing them as well as load plain-text
     data stored on Dropbox, GitHub, and from other sources.
-Version: 0.2.7.1
-Date: 2014-02-06
+Version: 0.2.8
+Date: 2014-03-07
 Author: Christopher Gandrud
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 License: GPL (>= 3)
@@ -17,4 +17,5 @@ BugReports: https://github.com/christophergandrud/repmis/issues
 Imports:
     digest,
     httr,
-    plyr
+    plyr,
+    R.cache
