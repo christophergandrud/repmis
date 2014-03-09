@@ -1,2 +1,7 @@
 ^.*\.Rproj$
+<<<<<<< HEAD
 ^\.Rproj\.user$
+=======
+^\.Rproj\.user$
+.travis.yml
+>>>>>>> d302572eead79974b9f4b793a99ad338ed2d2d27
