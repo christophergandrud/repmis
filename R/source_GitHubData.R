@@ -24,6 +24,7 @@
 
 source_GitHubData <-function(url, sha1 = NULL, sep = ",", header = TRUE, ...)
 {
+  warning('source_GitHubData is depricated. Use source_data instead.')
     stopifnot(is.character(url), length(url) == 1)
     
     temp_file <- tempfile()
