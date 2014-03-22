@@ -1,6 +1,7 @@
 export(InstallOldPackages)
 export(LoadandCite)
 export(source_DropboxData)
+export(source_GitHubData)
 export(source_data)
 importFrom(R.cache,findCache)
 importFrom(R.cache,loadCache)
