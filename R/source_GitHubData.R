@@ -15,7 +15,9 @@
 #' @examples
 #' # Download electoral disproportionality data stored on GitHub
 #' # Note: Using shortened URL created by bitly
+#' \dontrun{
 #' DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
+#' }
 #' @source Based on source_url from the Hadley Wickham's devtools package.
 #' @seealso \link{httr} and \code{\link{read.table}}
 #' @importFrom digest digest
