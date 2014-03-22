@@ -93,11 +93,13 @@ with \code{LoadandCite}.
 PackNames <- "repmis"
 # Load the packages and create a BibTeX file
 LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
+\dontrun{
 # Install, load, and cite specific package versions
 # dontrun due to CRAN restrictions
-# Names <- c("e1071", "gtools")
-# Vers <- c("1.6", "2.6.1")
-# LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
+Names <- c("e1071", "gtools")
+Vers <- c("1.6", "2.6.1")
+LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
+}
 }
 \seealso{
 \code{write_bib}, \code{\link{install.packages}}, and

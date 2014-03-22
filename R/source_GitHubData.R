@@ -20,7 +20,8 @@
 #' @seealso \link{httr} and \code{\link{read.table}}
 #' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content
-#' @export
+#' @keywords depricated
+#' @noRd
 
 source_GitHubData <-function(url, sha1 = NULL, sep = ",", header = TRUE, ...)
 {

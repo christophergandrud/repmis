@@ -22,7 +22,7 @@
 #'
 #' # Check to see if SHA-1 hash matches downloaded file
 #' DisDataHash <- source_data("http://bit.ly/Ss6zDO", 
-#'  sha1 = "dc8110d6dff32f682bd2f2fdbacb89e37b94f95d")
+#'    sha1 = "dc8110d6dff32f682bd2f2fdbacb89e37b94f95d")
 #' @source Based on source_url from the Hadley Wickham's devtools package.
 #' @seealso \link{httr} and \code{\link{read.table}}
 #' @importFrom digest digest
@@ -30,7 +30,9 @@
 #' @importFrom R.cache saveCache loadCache findCache
 #' @export
 
-source_data <-function(url, sha1 = NULL, cache = FALSE, clearCache = FALSE, sep = ",", quote = "\"'", header = TRUE, stringsAsFactors = default.stringsAsFactors(), ...)
+source_data <-function(url, sha1 = NULL, cache = FALSE, clearCache = FALSE, 
+                       sep = ",", quote = "\"'", header = TRUE, 
+                       stringsAsFactors = default.stringsAsFactors(), ...)
 {
   stopifnot(is.character(url), length(url) == 1)
   

@@ -7,12 +7,12 @@
 #' @param lib character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}.
 #' @details Installs specific R package versions. 
 #' @examples
-#' # dontrun
+#' \dontrun{
 #' # Install old versions of the e1071 and gtools packages. 
-#' # Used R version 2.15.3
-#' # Names <- c("e1071", "gtools")
-#' # Vers <- c("1.6", "2.6.1")
-#' # InstallOldPackages(pkgs = Names, versions = Vers)
+#' Names <- c("e1071", "gtools")
+#' Vers <- c("1.6", "2.6.1")
+#' InstallOldPackages(pkgs = Names, versions = Vers)
+#' }
 #' @seealso \code{\link{install.packages}} and \code{\link{download.file}}
 #' @importFrom plyr ddply
 #' @export

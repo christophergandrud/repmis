@@ -18,11 +18,13 @@
 #' PackNames <- "repmis"
 #' # Load the packages and create a BibTeX file
 #' LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
+#' \dontrun{
 #' # Install, load, and cite specific package versions
 #' # dontrun due to CRAN restrictions
-#' # Names <- c("e1071", "gtools")
-#' # Vers <- c("1.6", "2.6.1")
-#' # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
+#' Names <- c("e1071", "gtools")
+#' Vers <- c("1.6", "2.6.1")
+#' LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
+#' }
 #' @source 
 #' Gandrud, Christopher (2013). Automating R Package Citations in Reproducible Research Documents. SSRN.
 #' This function is partially based on: \url{https://gist.github.com/3710171}. 
