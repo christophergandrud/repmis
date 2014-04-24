@@ -29,6 +29,6 @@ the cache.}
  and https) into R.
 }
 \seealso{
-\code{\link{read.xlsx}}
+\code{\link{read.xlsx}}, \link{httr}, \link{\code{source_data}}
 }
 

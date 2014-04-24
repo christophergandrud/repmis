@@ -1,3 +1,9 @@
+## Version 0.2.9
+
+Added `source_XlsxData` function for downloading and loading Excel files.
+
+Internal improvements.
+
 ## Version 0.2.8
 
 Added `cache` and `clearCache` arguments to `source_data. This allows the user to cache the downloaded data frame so that it does not need to be downloaded every time the function is called.
@@ -20,7 +26,7 @@ Improvements made to `LoadandCite` largely suggested by R Journal reviewers. The
 
 Minor example changes.
 
-## Version 0.2.6.1 
+## Version 0.2.6.1
 
 Minor internal changes.
 
@@ -60,7 +66,7 @@ Version 0.2.1
 
 - Add tools to install old R package versions both in a stand alone function (`InstallOldPackages`) and as part of `LoadandCite`.
 
-- the `package` argument for `LoadandCite` is depricated. Use `pkgs` instead. This is so the syntax matches `install.packages syntax better. 
+- the `package` argument for `LoadandCite` is depricated. Use `pkgs` instead. This is so the syntax matches `install.packages syntax better.
 
 ## Version 0.1.1
 

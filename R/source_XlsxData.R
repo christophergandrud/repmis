@@ -1,7 +1,7 @@
-#' Download Excel data set
+#' Download an Excel data set
 #'
 #' \code{source_XlsxData} loads Excel data stored at a URL (both http
-#'  and https) into R.
+#' and https) into R.
 #' @param url character string of the Excel files's URL.
 #' @param sheet character string of number of representing the sheet in the
 #' workbook to return.
@@ -14,7 +14,7 @@
 #' the cache.
 #' @param ... arguments to pass to \code{\link{read.xlsx}}
 #'
-#' @seealso \code{\link{read.xlsx}}
+#' @seealso \code{\link{read.xlsx}}, \link{httr}, \link{\code{source_data}}
 #'
 #' @importFrom xlsx read.xlsx
 #' @export
@@ -25,21 +25,47 @@ source_XlsxData <- function(url, sheet = NULL, sha1 = NULL, cache = FALSE,
     stopifnot(is.character(url), length(url) == 1)
     stopifnot(!is.null(sheet))
 
-    # Create tempfile
     temp_file <- tempfile()
     on.exit(unlink(temp_file))
 
-    # Download Excel file
-    fullData <- download_data_intern(url = url, sha1 = sha1,
-                                    temp_file = temp_file)
-
-    # Extract desired sheet
-    if (class(sheet) == 'character'){
-        data <- read.xlsx(fullData, sheetName = sheet, ...)
+    key <- as.list(url)
+    if (isTRUE(clearCache)){
+        Found <- findCache(key = key)
+        if (is.null(Found)){
+            message('Data not in cache. Nothing to remove.')
+        }
+        else if (!is.null(Found)){
+            message('Clearing data from cache.')
+            file.remove(Found)
+        }
     }
-    else if (class(sheet) != 'character'){
-        data <- read.xlsx(fullData, sheetIndex = sheet, ...)
-    }
 
-    return(data)
+    if (isTRUE(cache)){
+        data <- loadCache(key)
+        if (!is.null(data)){
+            message('Loading cached data.\n')
+            return(data);
+        }
+        fullData <- download_data_intern(url = url, sha1 = sha1,
+                                        temp_file = temp_file)
+        if (class(sheet) == 'character'){
+            data <- read.xlsx(fullData, sheetName = sheet, ...)
+        }
+        else if (class(sheet) != 'character'){
+            data <- read.xlsx(fullData, sheetIndex = sheet, ...)
+        }
+        saveCache(data, key = key)
+        data;
+    }
+    else if (!isTRUE(cache)){
+        fullData <- download_data_intern(url = url, sha1 = sha1,
+                                        temp_file = temp_file)
+        if (class(sheet) == 'character'){
+            data <- read.xlsx(fullData, sheetName = sheet, ...)
+        }
+        else if (class(sheet) != 'character'){
+            data <- read.xlsx(fullData, sheetIndex = sheet, ...)
+        }
+        return(data)
+    }
 }
