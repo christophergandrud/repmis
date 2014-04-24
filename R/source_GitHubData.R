@@ -24,7 +24,6 @@
 #' @importFrom httr GET stop_for_status text_content
 #' @keywords depricated
 #' @noRd
-#' @export
 
 source_GitHubData <-function(url, sha1 = NULL, sep = ",", header = TRUE, ...)
 {
