@@ -12,9 +12,9 @@
 #' downloaded every time the function is called.
 #' @param clearCache logical. Whether or not to clear the downloaded data from
 #' the cache.
-#' @param ... arguments to pass to \code{\link{read.xlsx}}
+#' @param ... arguments to pass to \code{\link{read.xlsx}}.
 #'
-#' @seealso \code{\link{read.xlsx}}, \link{httr}, \link{\code{source_data}}
+#' @seealso \code{\link{read.xlsx}}, \link{httr}, \code{\link{source_data}}
 #'
 #' @importFrom xlsx read.xlsx
 #' @export
