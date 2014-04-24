@@ -32,10 +32,10 @@ source_XlsxData <- function(url, sheet = NULL, sha1 = NULL, cache = FALSE,
     if (isTRUE(clearCache)){
         Found <- findCache(key = key)
         if (is.null(Found)){
-            message('Data not in cache. Nothing to remove.')
+            message('Data not in cache. Nothing to remove.\n')
         }
         else if (!is.null(Found)){
-            message('Clearing data from cache.')
+            message('Clearing data from cache.\n')
             file.remove(Found)
         }
     }
@@ -44,6 +44,7 @@ source_XlsxData <- function(url, sheet = NULL, sha1 = NULL, cache = FALSE,
         data <- loadCache(key)
         if (!is.null(data)){
             message('Loading cached data.\n')
+            message('Use clearCache = TRUE if you would like to have different arguments passed to read.xlsx.\n')
             return(data);
         }
         fullData <- download_data_intern(url = url, sha1 = sha1,
