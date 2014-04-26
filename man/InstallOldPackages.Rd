@@ -9,11 +9,16 @@ InstallOldPackages(pkgs, versions, oldRepos = "http://cran.r-project.org",
 \arguments{
 \item{pkgs}{character vector of package names to install.}
 
-\item{versions}{character vector of package version numbers. to install. The order must match the order of package names in \code{pkgs}.}
+\item{versions}{character vector of package version numbers. to install. The
+order must match the order of package names in \code{pkgs}.}
 
-\item{oldRepos}{character name of repository to download the packages old package versions from. Default is \code{oldRepos = "http://cran.r-project.org"}.}
+\item{oldRepos}{character name of repository to download the packages old
+package versions from. Default is
+\code{oldRepos = "http://cran.r-project.org"}.}
 
-\item{lib}{character vector giving the library directories where to install the packages. Recycled as needed. If \code{NULL}, defaults to the first element of \code{.libPaths()}.}
+\item{lib}{character vector giving the library directories where to install
+the packages. Recycled as needed. If \code{NULL}, defaults to the first
+element of \code{.libPaths()}.}
 }
 \description{
 \code{InstallOldPackages} installs specific R package versions.

@@ -2,6 +2,8 @@
 
 Added `source_XlsxData` function for downloading and loading Excel files.
 
+Internal code improvements
+
 Internal improvements.
 
 ## Version 0.2.8
