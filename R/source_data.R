@@ -22,8 +22,9 @@
 #' factors? Note that this is overridden by \code{as.is} and \code{colClasses},
 #' both of which allow finer control.
 #' @param ... additional arguments passed to \code{\link{read.table}}.
-
+#' 
 #' @return a data frame
+#' 
 #' @details Loads plain-text data (e.g. CSV, TSV) data from a URL. Works with
 #' both HTTP and HTTPS sites. Note: the URL you give for the \code{url} argument
 #' must be for the RAW version of the file. The function should work to download
@@ -67,7 +68,7 @@ source_data <-function(url, sha1 = NULL, cache = FALSE, clearCache = FALSE,
             message('Data not in cache. Nothing to remove.')
         }
         else if (!is.null(Found)){
-            message('Clearing data from cache.')
+            message('Clearing data from cache.\n')
             file.remove(Found)
         }
     }

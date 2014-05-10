@@ -7,7 +7,7 @@ Description: The package includes tools to load R packages
     plain-text and Excel formatted data stored on Dropbox, GitHub, and from
     other sources.
 Version: 0.2.9
-Date: 2014-04-27
+Date: 2014-05-10
 Author: Christopher Gandrud
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 License: GPL (>= 3)
