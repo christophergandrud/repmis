@@ -42,9 +42,11 @@
 #' # Note: Using shortened URL created by bitly
 #' DisData <- source_data("http://bit.ly/156oQ7a")
 #'
+#' \dontrun{
 #' # Check to see if SHA-1 hash matches downloaded file
 #' DisDataHash <- source_data("http://bit.ly/Ss6zDO",
 #'    sha1 = "dc8110d6dff32f682bd2f2fdbacb89e37b94f95d")
+#' }
 #' @source Based on source_url from the Hadley Wickham's devtools package.
 #' @seealso \link{httr} and \code{\link{read.table}}
 #' @importFrom digest digest

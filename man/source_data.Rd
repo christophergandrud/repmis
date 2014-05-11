@@ -66,9 +66,11 @@ the file, you can be sure that it has not changed."
 # Note: Using shortened URL created by bitly
 DisData <- source_data("http://bit.ly/156oQ7a")
 
+\dontrun{
 # Check to see if SHA-1 hash matches downloaded file
 DisDataHash <- source_data("http://bit.ly/Ss6zDO",
    sha1 = "dc8110d6dff32f682bd2f2fdbacb89e37b94f95d")
+}
 }
 \seealso{
 \link{httr} and \code{\link{read.table}}
