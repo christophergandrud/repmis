@@ -51,7 +51,7 @@
 #' @export
 
 source_DropboxData <-function(file, key, sha1 = NULL, cache = FALSE, 
-							clearCache = FALSE, sep = ",", header = TRUE, ...)
+			clearCache = FALSE, sep = ",", header = TRUE, ...)
 {
 	url <- paste0('https://dl.dropboxusercontent.com/s/', 
 					key, '/', file)
@@ -78,15 +78,13 @@ source_DropboxData <-function(file, key, sha1 = NULL, cache = FALSE,
 	    message('Loading cached data.\n')
 	    return(data);
 	  }
-	  data <- download_data_intern(url = url, sha1 = sha1, 
-	  								temp_file = temp_file)
+	  data <- download_data_intern(url = url, sha1 = sha1, temp_file = temp_file)
 	  data <- read.table(data, sep = sep, header = header, ...)
 	  saveCache(data, key = key)
 	  data;
 	}
 	else if (!isTRUE(cache)){
-	  data <- download_data_intern(url = url, sha1 = sha1, 
-	  								temp_file = temp_file)
+	  data <- download_data_intern(url = url, sha1 = sha1, temp_file = temp_file)
 	  data <- read.table(data, sep = sep, header = header, ...)
 	  return(data)
 	}
