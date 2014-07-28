@@ -87,7 +87,9 @@ LoadandCite <- function(pkgs = NULL, versions = NULL, Rversion = NULL,
     if (!is.null(Rversion)){
         RV <- RVNumber()
         if (!isTRUE(Rversion == RV)){
-            warning(paste0("The version of R currently running (", RV, ") is different from the version specified (", Rversion, "). To improve replication, please install the archived version from your local CRAN mirror."))
+            warning(paste0("The version of R currently running (", RV,
+            ") is different from the version specified (", Rversion,
+            "). To improve replication, please install the archived version from your local CRAN mirror."))
         }
     }
     if (is.null(lib)){
