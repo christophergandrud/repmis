@@ -1,6 +1,4 @@
 #' Internal function to download plain text data
-#'
-#'
 #' @keywords internal
 #' @noRd
 
@@ -27,7 +25,6 @@ download_data_intern <- function(url, sha1 = NULL, temp_file){
 }
 
 #' Merge a list together.
-#'
 #' @details The function is directly from knitr, but is loaded here so that 
 #' \code{\link{LoadandCite}} can install specific knitr versions.
 #' @source Directly from Y. Xie. knitr: A general-purpose package for dynamic 
