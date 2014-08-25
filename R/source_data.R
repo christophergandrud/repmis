@@ -72,7 +72,8 @@ source_data <-function(url,
     stopifnot(is.character(url), length(url) == 1)
 
     if (missing(rdata)){
-        rdata_patterns <- c('(.*\\/)([^.]+).Rdata', '(.*\\/)([^.]+).RDATA')
+        rdata_patterns <- c('(.*\\/)([^.]+).Rdata', '(.*\\/)([^.]+).RDATA',
+                            '(.*\\/)([^.]+).Rda')
         rdata <- grepl(paste(rdata_patterns, collapse = '|'), url)
     }
 
