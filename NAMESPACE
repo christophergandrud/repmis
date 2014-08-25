@@ -2,6 +2,7 @@
 
 export(InstallOldPackages)
 export(LoadandCite)
+export(cleanWS)
 export(source_DropboxData)
 export(source_XlsxData)
 export(source_data)
