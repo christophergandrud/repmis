@@ -9,7 +9,7 @@ package.
 \usage{
 source_data(url, rdata, sha1 = NULL, cache = FALSE, clearCache = FALSE,
   sep = ",", header = TRUE, stringsAsFactors = default.stringsAsFactors(),
-  ...)
+  envir = parent.frame(), ...)
 }
 \arguments{
 \item{url}{The data's URL. To distinguish between plain-text and RDATA the
@@ -41,6 +41,8 @@ relevant for plain-text data.}
 \item{stringsAsFactors}{logical. Should character vectors be converted to
 factors? Note that this is overridden by \code{as.is} and \code{colClasses},
 both of which allow finer control. Only relevant for plain-text data.}
+
+\item{envir}{the environment where the data should be loaded.}
 
 \item{...}{additional arguments passed to \code{\link{read.table}} or
 \code{\link{load}} as relevant.}

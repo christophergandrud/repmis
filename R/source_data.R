@@ -24,6 +24,7 @@
 #' @param stringsAsFactors logical. Should character vectors be converted to
 #' factors? Note that this is overridden by \code{as.is} and \code{colClasses},
 #' both of which allow finer control. Only relevant for plain-text data.
+#' @param envir the environment where the data should be loaded.
 #' @param ... additional arguments passed to \code{\link{read.table}} or
 #' \code{\link{load}} as relevant.
 #'
@@ -67,14 +68,15 @@ source_data <-function(url,
                     sep = ",",
                     header = TRUE,
                     stringsAsFactors = default.stringsAsFactors(),
+                    envir = parent.frame(),
                     ...)
 {
     stopifnot(is.character(url), length(url) == 1)
 
     if (missing(rdata)){
-        rdata_patterns <- c('(.*\\/)([^.]+).Rdata', '(.*\\/)([^.]+).RDATA',
-                            '(.*\\/)([^.]+).Rda')
-        rdata <- grepl(paste(rdata_patterns, collapse = '|'), url)
+        rdata_patterns <- c('(.*\\/)([^.]+).rdata', '(.*\\/)([^.]+).rda')
+        rdata <- grepl(paste(rdata_patterns, collapse = '|'), url, 
+                       ignore.case = TRUE)
     }
 
 
@@ -106,7 +108,7 @@ source_data <-function(url,
                                stringsAsFactors = stringsAsFactors, ...)
         }
         else if (isTRUE(rdata)){
-            data <- load(data, ...)
+            data <- load(data, envir = envir, ...)
         }
         saveCache(data, key = key)
         data;
@@ -119,7 +121,7 @@ source_data <-function(url,
                                stringsAsFactors = stringsAsFactors, ...)
         }
         else if (isTRUE(rdata)){
-            data <- load(data, ...)
+            data <- load(data, envir = envir, ...)
         }
         return(data)
     }
