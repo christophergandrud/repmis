@@ -1,3 +1,7 @@
+## Verion 0.3
+
+`source_data` now also loads RDATA files. Thanks to Måns Magnusson.
+
 ## Version 0.2.9
 
 Added `source_XlsxData` function for downloading and loading Excel files.
