@@ -4,24 +4,25 @@
 
 download_data_intern <- function(url, sha1 = NULL, temp_file){
 
-     message(paste('Downloading data from:', url, '\n'))
-     request <- GET(url)
-     stop_for_status(request)
-     writeBin(content(request, type = "raw"), temp_file)
+    message(paste('Downloading data from:', url, '\n'))
+    request <- GET(url)
+    stop_for_status(request)
+    writeBin(content(request, type = "raw"), temp_file)
 
      file_sha1 <- digest(file = temp_file, algo = "sha1")
 
-     if (is.null(sha1)) {
-          message("SHA-1 hash of the downloaded data file is:\n", file_sha1)
-     }
-     else {
-          if (!identical(file_sha1, sha1)) {
-               stop("SHA-1 hash of downloaded file (", file_sha1,
-                     ")\n  does not match expected value (", sha1,
-                     ")", call. = FALSE)
-          }
-     }
-     return(temp_file)
+    if (is.null(sha1)) {
+        message("SHA-1 hash of the downloaded data file is:\n", file_sha1)
+    }
+    else if (identical(file_sha1, sha1)) {
+        message("Specified SHA-1 hash matches downloaded data file.\n")
+    }
+    else if (!identical(file_sha1, sha1)) {
+        stop("SHA-1 hash of downloaded file (", file_sha1,
+            ")\n  does not match expected value (", sha1,
+            ")", call. = FALSE)
+    }
+    return(temp_file)
 }
 
 #' Merge a list together.
