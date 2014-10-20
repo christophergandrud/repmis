@@ -3,6 +3,7 @@
 export(InstallOldPackages)
 export(LoadandCite)
 export(source_DropboxData)
+export(source_RData)
 export(source_XlsxData)
 export(source_data)
 importFrom(R.cache,findCache)
