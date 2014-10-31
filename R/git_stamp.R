@@ -22,6 +22,9 @@ git_stamp <- function(repo = getwd()){
   setwd(repo)
   git_commit <- system(paste0("git rev-parse --verify HEAD"), intern = TRUE)
   git_branch <- system(paste0("git rev-parse --abbrev-ref HEAD"), intern = TRUE)
+  git_message <- system(paste0("git log --format=%B -n 1 ", git_commit), intern = TRUE)[1]
   setwd(start_wd)
-  c("commit" = git_commit, "branch"=git_branch)
+  c("commit" = git_commit, "branch"=git_branch, "message"=git_message)
 }
+
+
