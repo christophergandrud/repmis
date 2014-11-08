@@ -1,3 +1,8 @@
+## Version 0.3.2
+
+Added `git_stamp` function for get git stamp (commit and branch) for a 
+repository. Thanks to Måns Magnusson.
+
 ## Version 0.3.1
 
 Improved SHA1 Hash messages.
