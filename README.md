@@ -1,11 +1,9 @@
 repmis
 ===
 
-### Version 0.3 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+### Version 0.3.2 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
 
 ### Christopher Gandrud
-
----
 
 > A collection of miscellaneous tools for reproducible research with R.
 
@@ -30,6 +28,7 @@ folders and *published* Google Docs plain-text formatted data sets (see
 [Google Docs support pages](http://support.google.com/drive/bin/answer.py?hl=en&answer=37579)
 for details. Note, currently *only the old Google Sheets supports publishing*
 sheets to the Web as plain-text files.)
+
   - `source_data`, and all of the data download commands in *repmis* find and
 report [SHA-1 hashes](http://en.wikipedia.org/wiki/SHA-1) for each file it loads.
 You can use a file's SHA-1 hash to make sure you are downloading the file and
@@ -38,7 +37,8 @@ version of the file you think you are downloading. Note: if you are using
 the same as* the Git commit's SHA-1 hash. (Thanks to Hadley Wickham's
 [devtools](https://github.com/hadley/devtools) package for the code to make this
 possible.)
-  - Data downloaded with  `source_data` can be cached (so you don't have to
+
+  - Data downloaded with `source_data` can be cached (so you don't have to
 re-download it every time you run a script. To do this use the `cache` argument.
 
 - `source_DropboxData`: loads plain-text formatted data stored in a Dropbox
@@ -52,6 +52,11 @@ data downloading) from R see Karthik Ram's
 function relies on the
 [xlsx](http://cran.r-project.org/web/packages/xlsx/index.html) package and can
 take any arguments that `read.xlsx` can.
+
+## Other
+
+- `git_stamp`: function for get git stamp (commit and branch) for a repository.
+Thanks to Måns Magnusson.
 
 ## Installation
 
