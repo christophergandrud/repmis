@@ -11,13 +11,15 @@
 #'  in a run to be able to know exactly which code where used.
 #'
 #' @return
-#  character vector with latest commit and branch
+#'  character vector with latest commit and branch
 #'
-#' @example
+#' @examples
 #' \dontrun{
 #'  git_stamp()
 #' }
+#' 
 #' @export
+#' 
 git_stamp <- function(repo = getwd()){
     start_wd <- getwd()
     setwd(repo)
