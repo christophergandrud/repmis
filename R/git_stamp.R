@@ -13,7 +13,7 @@
 #' @return character vector with latest commit and branch
 #'
 #' @export
-#' 
+#'
 git_stamp <- function(repo = getwd()){
     start_wd <- getwd()
     setwd(repo)
