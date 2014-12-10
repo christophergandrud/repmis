@@ -10,14 +10,10 @@
 #'  The functions makes it possible to include the latest git commit and branch
 #'  in a run to be able to know exactly which code where used.
 #'
-#' @return
-#  character vector with latest commit and branch
+#' @return character vector with latest commit and branch
 #'
-#' @example
-#' \dontrun{
-#'  git_stamp()
-#' }
 #' @export
+#' 
 git_stamp <- function(repo = getwd()){
     start_wd <- getwd()
     setwd(repo)

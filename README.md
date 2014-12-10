@@ -1,7 +1,7 @@
 repmis
 ===
 
-### Version 0.3.2 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+### Version 0.3.3 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
 
 ### Christopher Gandrud
 
@@ -57,6 +57,9 @@ take any arguments that `read.xlsx` can.
 
 - `git_stamp`: function for get git stamp (commit and branch) for a repository.
 Thanks to Måns Magnusson.
+
+- `scan_https`: read a character text file from a secure (https) site into R as
+a single object.
 
 ## Installation
 

@@ -6,8 +6,8 @@ Description: The package includes tools to load R packages
     and automatically generate BibTeX files citing them as well as load
     plain-text and Excel formatted data stored on Dropbox, GitHub, and from
     other sources.
-Version: 0.3.2
-Date: 2014-11-08
+Version: 0.3.3
+Date: 2014-12-10
 Author: Christopher Gandrud
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 License: GPL (>= 3)
