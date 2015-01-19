@@ -26,11 +26,12 @@ source_XlsxData <- function(url, sheet = NULL, sha1 = NULL, cache = FALSE,
 {
     stopifnot(is.character(url), length(url) == 1)
     stopifnot(!is.null(sheet))
-    
+
     if (length(sheet) != 1){
-      sheet <- sheet[1]
-      warning('Only one sheet can be returned per call. The first sheet will be returned.\n',
-              call. = FALSE)
+        sheet <- sheet[1]
+        warning(
+            'Only one sheet can be returned per call. The first sheet will be returned.\n',
+            call. = FALSE)
     }
 
     temp_file <- tempfile()
