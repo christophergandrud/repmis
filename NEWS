@@ -1,3 +1,8 @@
+## Version 0.3.4
+
+`source_data` and `source_DropboxData` now use `fread` from the data.table
+package rather than `read.table` for faster more robust data loading.
+
 ## Version 0.3.3
 
 Added `scan_https` for reading a character text file from a secure (https) site

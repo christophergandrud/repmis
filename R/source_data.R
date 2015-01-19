@@ -15,17 +15,14 @@
 #' @param clearCache logical. Whether or not to clear the downloaded data from
 #' the cache.
 #' @param sep The separator method for the plain-text data. For example, to load
-#' comma-separated values data (CSV) use \code{sep = ","} (the default). To load
+#' comma-separated values data (CSV) use \code{sep = ","}. To load
 #' tab-separated values data (TSV) use \code{sep = "\t"}. Only relevant for
 #' plain-text data.
 #' @param header Logical, whether or not the first line of the file is the
-#' header (i.e. variable names). The default is \code{header = TRUE}. Only
-#' relevant for plain-text data.
-#' @param stringsAsFactors logical. Should character vectors be converted to
-#' factors? Note that this is overridden by \code{as.is} and \code{colClasses},
-#' both of which allow finer control. Only relevant for plain-text data.
+#' header (i.e. variable names).
+#' @param stringsAsFactors logical. Convert all character columns to factors?
 #' @param envir the environment where the data should be loaded.
-#' @param ... additional arguments passed to \code{\link{read.table}} or
+#' @param ... additional arguments passed to \code{\link{fread}} or
 #' \code{\link{load}} as relevant.
 #'
 #' @return a data frame
@@ -54,7 +51,8 @@
 #' }
 #' @source Originally based on source_url from the Hadley Wickham's devtools
 #' package.
-#' @seealso \link{httr}, \code{\link{read.table}}, and \code{\link{load}}
+#' @seealso \link{httr}, \code{\link{fread}}, and \code{\link{load}}
+#' @importFrom data.table fread
 #' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content content
 #' @importFrom R.cache saveCache loadCache findCache
@@ -65,9 +63,9 @@ source_data <-function(url,
                     sha1 = NULL,
                     cache = FALSE,
                     clearCache = FALSE,
-                    sep = ",",
-                    header = TRUE,
-                    stringsAsFactors = default.stringsAsFactors(),
+                    sep = "auto",
+                    header = "auto",
+                    stringsAsFactors = FALSE,
                     envir = parent.frame(),
                     ...)
 {
@@ -75,7 +73,7 @@ source_data <-function(url,
 
     if (missing(rdata)){
         rdata_patterns <- c('(.*\\/)([^.]+).rdata', '(.*\\/)([^.]+).rda')
-        rdata <- grepl(paste(rdata_patterns, collapse = '|'), url, 
+        rdata <- grepl(paste(rdata_patterns, collapse = '|'), url,
                        ignore.case = TRUE)
     }
 
@@ -104,7 +102,7 @@ source_data <-function(url,
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
         if (!isTRUE(rdata)){
-            data <- read.table(data, sep = sep, header = header,
+            data <- fread(data, sep = sep, header = header,
                                stringsAsFactors = stringsAsFactors, ...)
         }
         else if (isTRUE(rdata)){
@@ -117,7 +115,7 @@ source_data <-function(url,
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
         if (!isTRUE(rdata)){
-            data <- read.table(data, sep = sep, header = header,
+            data <- fread(data, sep = sep, header = header,
                                stringsAsFactors = stringsAsFactors, ...)
         }
         else if (isTRUE(rdata)){

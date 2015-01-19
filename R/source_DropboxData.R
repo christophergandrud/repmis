@@ -11,10 +11,10 @@
 #' @param clearCache logical. Whether or not to clear the downloaded data from
 #' the cache.
 #' @param sep The separator method for the data. For example, to load
-#' comma-separated values data (CSV) use \code{sep = ","} (the default). To load
+#' comma-separated values data (CSV) use \code{sep = ","}. To load
 #' tab-separated values data (TSV) use \code{sep = "\t"}.
 #' @param header Logical, whether or not the first line of the file is the
-#' header (i.e. variable names). The default is \code{header = TRUE}.
+#' header (i.e. variable names).
 #' @param ... additional arguments passed to \code{\link{read.table}}.
 #' @return a data frame
 #' @details Loads plain-text data (e.g. CSV, TSV) data from a Dropbox non-public
@@ -44,14 +44,14 @@
 #' Data from: Gandrud, Christopher. 2013. "The Diffusion of Financial
 #' Supervisory Governance Ideas." Review of International Political Economy.
 #' 20(4):881-916
-#' @seealso \link{httr} and \code{\link{read.table}}
+#' @seealso \link{httr} and \code{\link{fread}}
 #' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content content
 #' @importFrom R.cache saveCache loadCache findCache
 #' @export
 
 source_DropboxData <-function(file, key, sha1 = NULL, cache = FALSE,
-            clearCache = FALSE, sep = ",", header = TRUE, ...)
+            clearCache = FALSE, sep = "auto", header = "auto", ...)
 {
     url <- paste0('https://dl.dropboxusercontent.com/s/',
                     key, '/', file)
@@ -80,14 +80,14 @@ source_DropboxData <-function(file, key, sha1 = NULL, cache = FALSE,
         }
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
-        data <- read.table(data, sep = sep, header = header, ...)
+        data <- fread(data, sep = sep, header = header, ...)
         saveCache(data, key = key)
         data;
     }
     else if (!isTRUE(cache)){
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
-        data <- read.table(data, sep = sep, header = header, ...)
+        data <- fread(data, sep = sep, header = header, ...)
         return(data)
     }
 }
