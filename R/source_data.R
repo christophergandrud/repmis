@@ -104,6 +104,7 @@ source_data <-function(url,
         if (!isTRUE(rdata)){
             data <- fread(data, sep = sep, header = header,
                                stringsAsFactors = stringsAsFactors, ...)
+            data <- as.data.frame(data)
         }
         else if (isTRUE(rdata)){
             data <- load(data, envir = envir, ...)
@@ -117,6 +118,7 @@ source_data <-function(url,
         if (!isTRUE(rdata)){
             data <- fread(data, sep = sep, header = header,
                                stringsAsFactors = stringsAsFactors, ...)
+            data <- as.data.frame(data)
         }
         else if (isTRUE(rdata)){
             data <- load(data, envir = envir, ...)

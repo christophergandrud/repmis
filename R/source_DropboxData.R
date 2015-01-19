@@ -81,6 +81,7 @@ source_DropboxData <-function(file, key, sha1 = NULL, cache = FALSE,
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
         data <- fread(data, sep = sep, header = header, ...)
+        data <- as.data.frame(data)
         saveCache(data, key = key)
         data;
     }
@@ -88,6 +89,7 @@ source_DropboxData <-function(file, key, sha1 = NULL, cache = FALSE,
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
         data <- fread(data, sep = sep, header = header, ...)
+        data <- as.data.frame(data)
         return(data)
     }
 }
