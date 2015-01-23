@@ -1,15 +1,16 @@
 Package: repmis
 Type: Package
-Title: A collection of miscellaneous tools for reproducible research with
+Title: A Miscellaneous Tools for Reproducible Research with
     R.
 Description: The package includes tools to load R packages
     and automatically generate BibTeX files citing them as well as load
     plain-text and Excel formatted data stored on Dropbox, GitHub, and from
     other sources.
 Version: 0.4
-Date: 2015-01-19
-Author: Christopher Gandrud
-Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
+Date: 2015-01-23
+Authors@R: as.person(c(
+    "Christopher Gandrud <christopher.gandrud@gmail.com> [aut, cre, cph]"
+    ))
 License: GPL (>= 3)
 Depends:
     R (>= 3.0.0)

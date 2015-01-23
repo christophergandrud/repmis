@@ -1,7 +1,9 @@
-## Version 0.3.4
+## Version 0.4
 
 `source_data` and `source_DropboxData` now use `fread` from the data.table
 package rather than `read.table` for faster more robust data loading.
+
+Note: may break code from previous version in some instances. Please check.
 
 ## Version 0.3.3
 
