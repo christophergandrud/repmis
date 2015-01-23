@@ -29,52 +29,94 @@
       </header>
       <section>
         <h1>
-<a name="repmis" class="anchor" href="#repmis"><span class="octicon octicon-link"></span></a>repmis</h1>
+<a id="repmis" class="anchor" href="#repmis" aria-hidden="true"><span class="octicon octicon-link"></span></a>repmis</h1>
 
 <h3>
-<a name="christopher-gandrud" class="anchor" href="#christopher-gandrud"><span class="octicon octicon-link"></span></a>Christopher Gandrud</h3>
-
-<h3>
-<a name="version-029-" class="anchor" href="#version-029-"><span class="octicon octicon-link"></span></a>Version 0.2.9 <a href="https://travis-ci.org/christophergandrud/repmis"><img src="https://travis-ci.org/christophergandrud/repmis.png" alt="Build Status"></a>
+<a id="version-04-" class="anchor" href="#version-04-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 0.4 <a href="https://travis-ci.org/christophergandrud/repmis"><img src="https://travis-ci.org/christophergandrud/repmis.png" alt="Build Status"></a>
 </h3>
 
 <h3>
-<a name="christopher-gandrud-1" class="anchor" href="#christopher-gandrud-1"><span class="octicon octicon-link"></span></a>Christopher Gandrud</h3>
+<a id="christopher-gandrud" class="anchor" href="#christopher-gandrud" aria-hidden="true"><span class="octicon octicon-link"></span></a>Christopher Gandrud</h3>
 
-<hr><p>A collection of miscellaneous tools for reproducible research with R.</p>
+<blockquote>
+<p>A collection of miscellaneous tools for reproducible research with R.</p>
+</blockquote>
+
+<h2>
+<a id="functions" class="anchor" href="#functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions</h2>
 
 <p><strong>repmis</strong> currently has the following functions:</p>
 
 <h3>
-<a name="functions-for-installing-loading-and-citing-r-packages" class="anchor" href="#functions-for-installing-loading-and-citing-r-packages"><span class="octicon octicon-link"></span></a>Functions for installing, loading, and citing R packages:</h3>
+<a id="functions-for-installing-loading-and-citing-r-packages" class="anchor" href="#functions-for-installing-loading-and-citing-r-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions for installing, loading, and citing R packages:</h3>
 
 <ul>
-<li><p><code>LoadandCite</code>: a function for installing and loading R packages. The command also creates a <a href="http://en.wikipedia.org/wiki/BibTeX">BibTeX</a> bibliography file with package citations.</p></li>
+<li><p><code>LoadandCite</code>: a function for installing and loading R packages. The command
+also creates a <a href="http://en.wikipedia.org/wiki/BibTeX">BibTeX</a> bibliography file
+with package citations.</p></li>
 <li><p><code>InstallOldPackages</code>: installs specific R package versions.</p></li>
-</ul><h3>
-<a name="functions-for-loading-data-into-r-from-the-internet" class="anchor" href="#functions-for-loading-data-into-r-from-the-internet"><span class="octicon octicon-link"></span></a>Functions for loading data into R from the internet:</h3>
+</ul>
+
+<h3>
+<a id="functions-for-loading-data-into-r-from-the-internet" class="anchor" href="#functions-for-loading-data-into-r-from-the-internet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions for loading data into R from the internet:</h3>
 
 <ul>
 <li>
-<p><code>source_data</code>: loads plain-text formatted data (e.g. CSV, TSV) stored at a URL (both http and https) into R. <strong>Note:</strong> the command can download data from almost any secure (<code>https</code>) URL. This includes data in Dropbox Public folders and <em>published</em> Google Docs plain-text formatted data sets (see <a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a> for details. Note, currently <em>only the old Google Sheets supports publishing</em> sheets to the Web as plain-text files.)</p>
+<p><code>source_data</code>: loads plain-text formatted data (e.g. CSV, TSV) or RDATA stored
+at a URL (both http and https) into R. <strong>Note:</strong> the command can download data
+from almost any secure (<code>https</code>) URL. This includes data in Dropbox Public
+folders and <em>published</em> Google Docs plain-text formatted data sets (see
+<a href="http://support.google.com/drive/bin/answer.py?hl=en&amp;answer=37579">Google Docs support pages</a>
+for details. Note, currently <em>only the old Google Sheets supports publishing</em>
+sheets to the Web as plain-text files.)</p>
 
 <ul>
-<li>
-<code>source_data</code>, and all of the data download commands in <em>repmis</em> find and report <a href="http://en.wikipedia.org/wiki/SHA-1">SHA-1 hashes</a> for each file it loads. You can use a file's SHA-1 hash to make sure you are downloading the file and version of the file you think you are downloading. Note: if you are using <code>source_data</code> to download data from GitHub, <code>source_data</code>'s SHA-1 hash is <em>not the same as</em> the Git commit's SHA-1 hash. (Thanks to Hadley Wickham's <a href="https://github.com/hadley/devtools">devtools</a> package for the code to make this possible.)</li>
-<li>Data downloaded with  <code>source_data</code> can be cached (so you don't have to re-download it every time you run a script. To do this use the <code>cache</code> argument.</li>
+<li><p><code>source_data</code>, and all of the data download commands in <em>repmis</em> find and
+report <a href="http://en.wikipedia.org/wiki/SHA-1">SHA-1 hashes</a> for each file it loads.
+You can use a file's SHA-1 hash to make sure you are downloading the file and
+version of the file you think you are downloading. Note: if you are using
+<code>source_data</code> to download data from GitHub, <code>source_data</code>'s SHA-1 hash is <em>not
+the same as</em> the Git commit's SHA-1 hash. (Thanks to Hadley Wickham's
+<a href="https://github.com/hadley/devtools">devtools</a> package for the code to make this
+possible.)</p></li>
+<li><p>Data downloaded with <code>source_data</code> can be cached (so you don't have to
+re-download it every time you run a script. To do this use the <code>cache</code> argument.</p></li>
 </ul>
 </li>
-<li><p><code>source_DropboxData</code>: loads plain-text formatted data stored in a Dropbox <strong>non-Public</strong> folder. See <a href="http://christophergandrud.blogspot.com/2013/04/dropbox-r-data.html">this blog post</a> for more details. Also, if you are looking for full Dropbox control (not just data downloading) from R see Karthik Ram's <a href="https://github.com/karthikram/rDrop">rDrop</a> package.</p></li>
-<li><p><code>source_XlsxData</code>: downloads and loads a data set in Excel format. The function relies on the <a href="http://cran.r-project.org/web/packages/xlsx/index.html">xlsx</a> package and can take any arguments that <code>read.xlsx</code> can.</p></li>
-</ul><h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<li><p><code>source_DropboxData</code>: loads plain-text formatted data stored in a Dropbox
+<strong>non-Public</strong> folder. See
+<a href="http://christophergandrud.blogspot.com/2013/04/dropbox-r-data.html">this blog post</a>
+for more details. Also, if you are looking for full Dropbox control (not just
+data downloading) from R see Karthik Ram's
+<a href="https://github.com/karthikram/rDrop">rDrop</a> package.</p></li>
+<li><p><code>source_XlsxData</code>: downloads and loads a data set in Excel format. The
+function relies on the
+<a href="http://cran.r-project.org/web/packages/xlsx/index.html">xlsx</a> package and can
+take any arguments that <code>read.xlsx</code> can.</p></li>
+</ul>
 
-<p>The package is available for download from <a href="http://cran.r-project.org/web/packages/repmis/">CRAN</a>.</p>
+<h2>
+<a id="other" class="anchor" href="#other" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other</h2>
 
-<p>You can also download the most recent version using the <a href="https://github.com/hadley/devtools">devtools</a> command <code>install_github</code> to install <strong>repmis</strong> in R. Here is the exact code for installing the current version:</p>
+<ul>
+<li><p><code>git_stamp</code>: function for get git stamp (commit and branch) for a repository.
+Thanks to Måns Magnusson.</p></li>
+<li><p><code>scan_https</code>: read a character text file from a secure (https) site into R as
+a single object.</p></li>
+</ul>
 
-<div class="highlight highlight-S"><pre>devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">'christophergandrud/repmis'</span><span class="p">)</span>
-</pre></div>
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The package is available for download from
+<a href="http://cran.r-project.org/web/packages/repmis/">CRAN</a>.</p>
+
+<p>You can also download the most recent version using the
+<a href="https://github.com/hadley/devtools">devtools</a> command <code>install_github</code> to
+install <strong>repmis</strong> in R. Here is the exact code for installing the current
+version:</p>
+
+<div class="highlight highlight-S"><pre>devtools::install_github(<span class="pl-s1"><span class="pl-pds">'</span>christophergandrud/repmis<span class="pl-pds">'</span></span>)</pre></div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/christophergandrud">christophergandrud</a></p>
