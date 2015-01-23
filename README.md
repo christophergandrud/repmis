@@ -5,7 +5,7 @@ repmis
 
 ### Christopher Gandrud
 
-> A collection of miscellaneous tools for reproducible research with R.
+> Miscellaneous tools for reproducible research with R.
 
 ## Functions
 

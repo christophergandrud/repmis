@@ -1,6 +1,6 @@
 Package: repmis
 Type: Package
-Title: A Miscellaneous Tools for Reproducible Research with
+Title: Miscellaneous Tools for Reproducible Research with
     R.
 Description: The package includes tools to load R packages
     and automatically generate BibTeX files citing them as well as load
