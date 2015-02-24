@@ -35,7 +35,7 @@ tab-separated values data (TSV) use \code{sep = "\t"}.}
 \item{header}{Logical, whether or not the first line of the file is the
 header (i.e. variable names).}
 
-\item{...}{additional arguments passed to \code{\link{read.table}}.}
+\item{...}{additional arguments passed to \code{\link{fread}}.}
 }
 \value{
 a data frame

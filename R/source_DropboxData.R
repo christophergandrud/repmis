@@ -15,7 +15,7 @@
 #' tab-separated values data (TSV) use \code{sep = "\t"}.
 #' @param header Logical, whether or not the first line of the file is the
 #' header (i.e. variable names).
-#' @param ... additional arguments passed to \code{\link{read.table}}.
+#' @param ... additional arguments passed to \code{\link{fread}}.
 #' @return a data frame
 #' @details Loads plain-text data (e.g. CSV, TSV) data from a Dropbox non-public
 #' folder. To download data from a Drobpox Public folder simply use
@@ -80,16 +80,14 @@ source_DropboxData <-function(file, key, sha1 = NULL, cache = FALSE,
         }
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
-        data <- fread(data, sep = sep, header = header, ...)
-        data <- as.data.frame(data)
+        data <- fread(data, sep = sep, header = header, data.table = F, ...)
         saveCache(data, key = key)
         data;
     }
     else if (!isTRUE(cache)){
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
-        data <- fread(data, sep = sep, header = header, ...)
-        data <- as.data.frame(data)
+        data <- fread(data, sep = sep, header = header, data.table = F, ...)
         return(data)
     }
 }

@@ -102,9 +102,8 @@ source_data <-function(url,
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
         if (!isTRUE(rdata)){
-            data <- fread(data, sep = sep, header = header,
+            data <- fread(data, sep = sep, header = header, data.table = F,
                                stringsAsFactors = stringsAsFactors, ...)
-            data <- as.data.frame(data)
         }
         else if (isTRUE(rdata)){
             data <- load(data, envir = envir, ...)
@@ -116,9 +115,8 @@ source_data <-function(url,
         data <- download_data_intern(url = url, sha1 = sha1,
                                     temp_file = temp_file)
         if (!isTRUE(rdata)){
-            data <- fread(data, sep = sep, header = header,
+            data <- fread(data, sep = sep, header = header, data.table = F,
                                stringsAsFactors = stringsAsFactors, ...)
-            data <- as.data.frame(data)
         }
         else if (isTRUE(rdata)){
             data <- load(data, envir = envir, ...)

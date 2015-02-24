@@ -1,3 +1,9 @@
+## Version 0.4.1 
+
+Minor internal change to options for sourcing data.
+
+Minor documentation improvements.
+
 ## Version 0.4
 
 `source_data` and `source_DropboxData` now use `fread` from the data.table
