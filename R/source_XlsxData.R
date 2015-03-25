@@ -12,21 +12,29 @@
 #' downloaded every time the function is called.
 #' @param clearCache logical. Whether or not to clear the downloaded data from
 #' the cache.
-#' @param ... arguments to pass to \code{\link{read.xlsx}}.
+#' @param ... arguments to pass to \code{read.xlsx} from the xlsx package.
 #'
 #' @return a data frame
 #'
-#' @seealso \code{\link{read.xlsx}}, \link{httr}, \code{\link{source_data}}
+#' @seealso \code{read.xlsx}, \link{httr}, \code{\link{source_data}}
 #'
-#' @importFrom xlsx read.xlsx
 #' @export
 
-source_XlsxData <- function(url, sheet = NULL, sha1 = NULL, cache = FALSE,
+source_XlsxData <- function(url, sheet, sha1 = NULL, cache = FALSE,
                             clearCache = FALSE, ...)
 {
+    if (!requireNamespace('xlsx', quietly = TRUE)) {
+        stop("xlsx package needed for this function to work. Please install it. \n\nNote: this may involve installing rJava and Java.\n",
+             call. = FALSE)
+    }
+    
     stopifnot(is.character(url), length(url) == 1)
-    stopifnot(!is.null(sheet))
 
+    if (missing(sheet)) {
+        sheet = 1
+        message('The first sheet will be returned.\n')
+    }
+    
     if (length(sheet) != 1){
         sheet <- sheet[1]
         warning(
@@ -59,10 +67,10 @@ source_XlsxData <- function(url, sheet = NULL, sha1 = NULL, cache = FALSE,
         fullData <- download_data_intern(url = url, sha1 = sha1,
                                         temp_file = temp_file)
         if (class(sheet) == 'character'){
-            data <- read.xlsx(fullData, sheetName = sheet, ...)
+            data <- xlsx::read.xlsx(fullData, sheetName = sheet, ...)
         }
         else if (class(sheet) != 'character'){
-            data <- read.xlsx(fullData, sheetIndex = sheet, ...)
+            data <- xlsx::read.xlsx(fullData, sheetIndex = sheet, ...)
         }
         saveCache(data, key = key)
         data;
@@ -71,10 +79,10 @@ source_XlsxData <- function(url, sheet = NULL, sha1 = NULL, cache = FALSE,
         fullData <- download_data_intern(url = url, sha1 = sha1,
                                         temp_file = temp_file)
         if (class(sheet) == 'character'){
-            data <- read.xlsx(fullData, sheetName = sheet, ...)
+            data <- xlsx::read.xlsx(fullData, sheetName = sheet, ...)
         }
         else if (class(sheet) != 'character'){
-            data <- read.xlsx(fullData, sheetIndex = sheet, ...)
+            data <- xlsx::read.xlsx(fullData, sheetIndex = sheet, ...)
         }
         return(data)
     }

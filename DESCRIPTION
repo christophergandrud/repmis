@@ -5,8 +5,8 @@ Description: The package includes tools to load R packages
     and automatically generate BibTeX files citing them as well as load
     plain-text and Excel formatted data stored on Dropbox, GitHub, and from
     other sources.
-Version: 0.4.1
-Date: 2015-02-24
+Version: 0.4.2
+Date: 2015-03-25
 Authors@R: c(
     person("Christopher", "Gandrud", email = "christopher.gandrud@gmail.com",
     role = c("aut", "cre"))
@@ -21,5 +21,6 @@ Imports:
     digest,
     httr,
     plyr,
-    R.cache,
+    R.cache
+Suggests:
     xlsx

@@ -4,7 +4,7 @@
 \alias{source_XlsxData}
 \title{Download an Excel data set}
 \usage{
-source_XlsxData(url, sheet = NULL, sha1 = NULL, cache = FALSE,
+source_XlsxData(url, sheet, sha1 = NULL, cache = FALSE,
   clearCache = FALSE, ...)
 }
 \arguments{
@@ -23,7 +23,7 @@ downloaded every time the function is called.}
 \item{clearCache}{logical. Whether or not to clear the downloaded data from
 the cache.}
 
-\item{...}{arguments to pass to \code{\link{read.xlsx}}.}
+\item{...}{arguments to pass to \code{read.xlsx} from the xlsx package.}
 }
 \value{
 a data frame
@@ -33,6 +33,6 @@ a data frame
 and https) into R.
 }
 \seealso{
-\code{\link{read.xlsx}}, \link{httr}, \code{\link{source_data}}
+\code{read.xlsx}, \link{httr}, \code{\link{source_data}}
 }
 
