@@ -1,3 +1,7 @@
+## Version 0.4.3
+
+`set_valid_wd` sets valid working directory from vector of possible directories.
+
 ## Version 0.4.2
 
 xlsx package moved to suggests. Most of the package can now be used without xlsx 

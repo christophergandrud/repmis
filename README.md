@@ -1,7 +1,7 @@
 repmis
 ===
 
-### Version 0.4 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+### Version 0.4.2 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
 
 ### Christopher Gandrud
 
@@ -60,6 +60,9 @@ Thanks to Måns Magnusson.
 
 - `scan_https`: read a character text file from a secure (https) site into R as
 a single object.
+
+- `set_valid_wd`: sets valid working directory from vector of possible
+directories. This is useful if you run the same script on multiple machines.
 
 ## Installation
 
