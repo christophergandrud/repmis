@@ -1,3 +1,7 @@
+## Version 0.4.4 
+
+`set_valid_wd` informs the user if no valid directory is found.
+
 ## Version 0.4.3
 
 `set_valid_wd` sets valid working directory from vector of possible directories.
