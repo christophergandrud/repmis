@@ -1,7 +1,7 @@
 Package: repmis
 Type: Package
 Title: Miscellaneous Tools for Reproducible Research
-Description: The package includes tools to load R packages
+Description: Tools to load R packages
     and automatically generate BibTeX files citing them as well as load
     plain-text and Excel formatted data stored on Dropbox, GitHub, and from
     other sources.
