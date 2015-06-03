@@ -31,7 +31,7 @@ download_data_intern <- function(url, sha1 = NULL, temp_file){
     stop_for_status(request)
     writeBin(content(request, type = "raw"), temp_file)
 
-     file_sha1 <- digest(file = temp_file, algo = "sha1")
+    file_sha1 <- digest(file = temp_file, algo = "sha1")
 
     if (is.null(sha1)) {
         message("SHA-1 hash of the downloaded data file is:\n", file_sha1)

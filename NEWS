@@ -1,4 +1,9 @@
-## Version 0.4.4 
+## Version 0.5
+
+`source_data` now relies on the rio package for importing data. This greatly
+increases the types of data files that can be imported.
+
+## Version 0.4.4
 
 `set_valid_wd` informs the user if no valid directory is found.
 
@@ -8,10 +13,10 @@
 
 ## Version 0.4.2
 
-xlsx package moved to suggests. Most of the package can now be used without xlsx 
+xlsx package moved to suggests. Most of the package can now be used without xlsx
 installed or its rJava dependency.
 
-## Version 0.4.1 
+## Version 0.4.1
 
 Minor internal change to options for sourcing data.
 

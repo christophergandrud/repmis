@@ -5,7 +5,7 @@ Description: Tools to load 'R' packages
     and automatically generate BibTeX files citing them as well as load
     plain-text and 'Excel' formatted data stored on 'Dropbox', 'GitHub', and
     from other sources.
-Version: 0.4.4
+Version: 0.5
 Date: 2015-06-03
 Authors@R: c(
     person("Christopher", "Gandrud", email = "christopher.gandrud@gmail.com",
@@ -17,10 +17,7 @@ Depends:
 URL:  http://cran.r-project.org/package=repmis
 BugReports: https://github.com/christophergandrud/repmis/issues
 Imports:
-    data.table,
     digest,
-    httr,
     plyr,
-    R.cache
-Suggests:
-    xlsx
+    R.cache,
+    rio
