@@ -2,9 +2,9 @@
 #'
 #' @param possible character vector of possible working directores
 #'
-#' @details Sets the working directory to the first valid directory from a 
+#' @details Sets the working directory to the first valid directory from a
 #' list of possible directories
-#' 
+#'
 #' @export
 
 set_valid_wd <- function(possible) {
@@ -14,7 +14,8 @@ set_valid_wd <- function(possible) {
             message(sprintf('Working directory set to: %s', i))
             break
         }
-        if (possible[length(possible)] == i) message('No valid directory found.')
+        if (possible[length(possible)] == i) message(
+                                                'No valid directory found.')
     }
 }
 
