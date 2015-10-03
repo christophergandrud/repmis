@@ -6,7 +6,7 @@ Description: Tools to load 'R' packages
     plain-text and 'Excel' formatted data stored on 'Dropbox', 'GitHub', and
     from other sources.
 Version: 0.4.4
-Date: 2015-06-03
+Date: 2015-20-03
 Authors@R: c(
     person("Christopher", "Gandrud", email = "christopher.gandrud@gmail.com",
     role = c("aut", "cre"))

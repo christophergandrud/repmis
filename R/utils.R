@@ -3,7 +3,12 @@
 #' @param possible character vector of possible working directores
 #'
 #' @details Sets the working directory to the first valid directory from a
-#' list of possible directories
+#' list of possible directories.
+#' 
+#' @examples 
+#' \dontrun{
+#' set_valid_wd(c('examples/directory1', 'anotherExample/directory2))
+#' }
 #'
 #' @export
 
