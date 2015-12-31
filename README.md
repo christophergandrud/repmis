@@ -1,11 +1,14 @@
 repmis
 ===
 
-### Version 0.4.4 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+Version 0.4.4 
+[![CRAN Version](http://www.r-pkg.org/badges/version/repmis)](http://cran.r-project.org/package=repmis)
+[![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+![CRAN Monthly Downloads](http://cranlogs.r-pkg.org/badges/last-month/repmis)
+![CRAN Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/repmis)
 
-### Christopher Gandrud
 
-> Miscellaneous tools for reproducible research
+Miscellaneous tools for reproducible research
 
 ## Functions
 
