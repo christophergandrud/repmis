@@ -1,3 +1,8 @@
+## Version 0.5
+
+Unfortunately, `source_DropboxData` is no longer supported due to changes in the
+Dropbox API.
+
 ## Version 0.4.4 
 
 `set_valid_wd` informs the user if no valid directory is found.

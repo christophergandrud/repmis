@@ -1,7 +1,7 @@
 repmis
 ===
 
-### Version 0.4.4 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+### Version 0.5 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
 
 ### Christopher Gandrud
 
@@ -40,13 +40,6 @@ possible.)
 
   - Data downloaded with `source_data` can be cached (so you don't have to
 re-download it every time you run a script. To do this use the `cache` argument.
-
-- `source_DropboxData`: loads plain-text formatted data stored in a Dropbox
-**non-Public** folder. See
-[this blog post](http://christophergandrud.blogspot.com/2013/04/dropbox-r-data.html)
-for more details. Also, if you are looking for full Dropbox control (not just
-data downloading) from R see Karthik Ram's
-[rDrop](https://github.com/karthikram/rDrop) package.
 
 - `source_XlsxData`: downloads and loads a data set in Excel format. The
 function relies on the

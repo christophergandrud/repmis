@@ -7,7 +7,7 @@
 #' 
 #' @examples 
 #' \dontrun{
-#' set_valid_wd(c('examples/directory1', 'anotherExample/directory2))
+#' set_valid_wd(c('examples/directory1', 'anotherExample/directory2'))
 #' }
 #'
 #' @export
