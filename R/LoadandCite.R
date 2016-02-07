@@ -66,6 +66,7 @@
 #' package.
 #' @seealso \code{write_bib}, \code{\link{install.packages}}, and
 #' \code{\link{library}}
+#' @importFrom utils install.packages installed.packages
 #'
 #' @export
 

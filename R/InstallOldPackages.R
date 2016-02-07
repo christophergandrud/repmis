@@ -20,6 +20,8 @@
 #' }
 #' @seealso \code{\link{install.packages}} and \code{\link{download.file}}
 #' @importFrom plyr ddply
+#' @importFrom utils available.packages contrib.url download.file
+#' install.packages
 #' @export
 
 InstallOldPackages <- function(pkgs, versions,

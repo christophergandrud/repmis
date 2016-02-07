@@ -4,8 +4,8 @@
 #'
 #' @details Sets the working directory to the first valid directory from a
 #' list of possible directories.
-#' 
-#' @examples 
+#'
+#' @examples
 #' \dontrun{
 #' set_valid_wd(c('examples/directory1', 'anotherExample/directory2'))
 #' }
@@ -87,6 +87,7 @@ RVNumber <- function(){
 #' @source Directly from Y. Xie. knitr: A general-purpose package for dynamic
 #' report generation in R, 2013. URL
 #' \url{http://CRAN.R-project.org/package=knitr}. R package version 1.6.
+#' @importFrom utils citation installed.packages toBibtex
 #' @keywords internal
 #' @noRd
 
