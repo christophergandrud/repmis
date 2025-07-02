@@ -9,7 +9,7 @@ Research Documents. SSRN.
 This function is partially based on: \url{https://gist.github.com/3710171}.
 It also builds on code from knitr's \code{write_bib}. See: Y. Xie. knitr: A
 general-purpose package for dynamic report generation in R, 2013. URL
-\url{http://CRAN.R-project.org/package=knitr}. R package version 1.5. Note
+\url{https://CRAN.R-project.org/package=knitr}. R package version 1.5. Note
 that it does not formally depend on knitr so that knitr can be included in
 \code{LoadandCite} so that it is possible to install old versions of that
 package.
@@ -40,7 +40,7 @@ is created. If \code{FALSE} than the citations are returned as plain text.}
 citations. Currently supports \code{'plain'}, i.e. no special formatting and
 \code{'JSS'} to match the BibTeX style for the
 \emph{Journal of Statistical Software}
-(see \url{http://www.jstatsoft.org/style}).}
+(see \url{https://www.jstatsoft.org/style}).}
 
 \item{tweak}{logical. Whether to fix some known problems in the citations,
 especially non-standard format of authors.}

@@ -122,7 +122,7 @@ Add `source_data`. `source_GitHubData` turned into a wrapper for `source_data`.
 
 Change how default repo in `LoadandCite` is determined/set.
 
-Version 0.2.1
+## Version 0.2.1
 
 `LoadandCite` repo option now gets repo information from `.Rprofile`. Thanks to
 Karthik Ram.
@@ -133,7 +133,7 @@ Karthik Ram.
 (`InstallOldPackages`) and as part of `LoadandCite`.
 
 - the `package` argument for `LoadandCite` is deprecated. Use `pkgs` instead.
-This is so the syntax matches `install.packages syntax better.
+  This is so the syntax matches `install.packages` syntax better.
 
 ## Version 0.1.1
 

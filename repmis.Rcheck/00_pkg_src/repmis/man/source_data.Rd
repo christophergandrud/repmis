@@ -42,7 +42,7 @@ header (i.e. variable names).}
 
 \item{envir}{the environment where the data should be loaded.}
 
-\item{...}{additional arguments passed to \code{\link{fread}} or
+\item{...}{additional arguments passed to \code{\link[data.table]{fread}} or
 \code{\link{load}} as relevant.}
 }
 \value{

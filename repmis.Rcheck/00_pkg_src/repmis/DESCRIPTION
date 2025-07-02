@@ -13,12 +13,12 @@ Authors@R: c(
     )
 License: GPL (>= 3)
 Depends: R (>= 3.0.0)
-URL: http://cran.r-project.org/package=repmis
+URL: https://CRAN.R-project.org/package=repmis
 BugReports: https://github.com/christophergandrud/repmis/issues
 Imports: data.table, digest, httr, plyr, R.cache
 Suggests: xlsx
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2025-07-02 06:04:10 UTC; christophergandrud
+Packaged: 2025-07-02 06:26:24 UTC; christophergandrud
 Author: Christopher Gandrud [aut, cre]
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>

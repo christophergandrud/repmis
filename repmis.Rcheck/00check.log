@@ -6,10 +6,11 @@
     GNU Fortran (Homebrew GCC 15.1.0) 15.1.0
 * running under: macOS Sequoia 15.5
 * using session charset: UTF-8
-* using option ‘--no-manual’
+* using option ‘--as-cran’
 * checking for file ‘repmis/DESCRIPTION’ ... OK
 * checking extension type ... Package
 * this is package ‘repmis’ version ‘0.5.1’
+* checking CRAN incoming feasibility ... [3s/10s] OK
 * checking package namespace information ... OK
 * checking package dependencies ... INFO
 Package suggested but not available for checking: ‘xlsx’
@@ -19,9 +20,11 @@ Package suggested but not available for checking: ‘xlsx’
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
+* checking serialization versions ... OK
 * checking whether package ‘repmis’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
+* checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking for left-over files ... OK
@@ -35,6 +38,7 @@ Package suggested but not available for checking: ‘xlsx’
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
 * checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
@@ -42,6 +46,7 @@ Package suggested but not available for checking: ‘xlsx’
 * checking R code for possible problems ... OK
 * checking Rd files ... OK
 * checking Rd metadata ... OK
+* checking Rd line widths ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
@@ -49,5 +54,14 @@ Package suggested but not available for checking: ‘xlsx’
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
 * checking examples ... OK
+* checking PDF version of manual ... OK
+* checking HTML version of manual ... NOTE
+Skipping checking HTML validation: 'tidy' doesn't look like recent enough HTML Tidy.
+Please obtain a recent version of HTML Tidy by downloading a binary
+release or compiling the source code from <https://www.html-tidy.org/>.
+* checking for non-standard things in the check directory ... NOTE
+Found the following files/directories:
+  ‘PackageCites.bib’
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: OK
+Status: 2 NOTEs

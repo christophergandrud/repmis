@@ -14,7 +14,7 @@ Authors@R: c(
 License: GPL (>= 3)
 Depends:
     R (>= 3.0.0)
-URL: http://cran.r-project.org/package=repmis
+URL: https://CRAN.R-project.org/package=repmis
 BugReports: https://github.com/christophergandrud/repmis/issues
 Imports:
     data.table,
