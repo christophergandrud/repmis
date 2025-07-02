@@ -4,8 +4,14 @@
 \alias{source_XlsxData}
 \title{Download an Excel data set}
 \usage{
-source_XlsxData(url, sheet, sha1 = NULL, cache = FALSE,
-  clearCache = FALSE, ...)
+source_XlsxData(
+  url,
+  sheet,
+  sha1 = NULL,
+  cache = FALSE,
+  clearCache = FALSE,
+  ...
+)
 }
 \arguments{
 \item{url}{character string of the Excel files's URL.}
@@ -33,6 +39,5 @@ a data frame
 and https) into R.
 }
 \seealso{
-\code{read.xlsx}, \link[httr]{httr}, \code{\link{source_data}}
+\code{read.xlsx}, \code{\link[httr]{GET}}, \code{\link{source_data}}
 }
-

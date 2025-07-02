@@ -7,6 +7,8 @@ Description: Tools to load 'R' packages
     from other sources.
 Version: 0.5.1
 Date: 2025-07-02
+Author: Christopher Gandrud [aut, cre]
+Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 Authors@R: c(
     person("Christopher", "Gandrud", email = "christopher.gandrud@gmail.com",
     role = c("aut", "cre"))
@@ -24,4 +26,5 @@ Imports:
     R.cache
 Suggests:
     xlsx
-RoxygenNote: 5.0.1
+Encoding: UTF-8
+RoxygenNote: 7.3.2

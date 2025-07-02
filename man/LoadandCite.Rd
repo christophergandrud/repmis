@@ -15,9 +15,18 @@ that it does not formally depend on knitr so that knitr can be included in
 package.
 }
 \usage{
-LoadandCite(pkgs = NULL, versions = NULL, Rversion = NULL,
-  bibtex = TRUE, style = "plain", tweak = TRUE, install = FALSE,
-  file = NULL, repos = NULL, lib = NULL)
+LoadandCite(
+  pkgs = NULL,
+  versions = NULL,
+  Rversion = NULL,
+  bibtex = TRUE,
+  style = "plain",
+  tweak = TRUE,
+  install = FALSE,
+  file = NULL,
+  repos = NULL,
+  lib = NULL
+)
 }
 \arguments{
 \item{pkgs}{a character vector of R package names. If \code{pkgs = NULL} then
@@ -75,11 +84,13 @@ overwrite existing files with the same name as \code{file}, so it is
 generally a good idea to create a new BibTeX file with \code{LoadandCite}.
 }
 \examples{
+\dontrun{
 # Create vector of package names
 ## In this example you need to have the packages installed aready.
 PackNames <- "repmis"
 # Load the packages and create a BibTeX file
 LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
+}
 \dontrun{
 # Install, load, and cite specific package versions
 # dontrun due to CRAN restrictions
@@ -93,4 +104,3 @@ LoadandCite(pkgs = Names, versions = Vers, install = TRUE,
 \code{write_bib}, \code{\link{install.packages}}, and
 \code{\link{library}}
 }
-

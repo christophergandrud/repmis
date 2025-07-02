@@ -16,7 +16,7 @@
 #'
 #' @return a data frame
 #'
-#' @seealso \code{read.xlsx}, \link{httr}, \code{\link{source_data}}
+#' @seealso \code{read.xlsx}, \code{\link[httr]{GET}}, \code{\link{source_data}}
 #'
 #' @export
 

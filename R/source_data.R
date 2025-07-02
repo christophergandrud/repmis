@@ -22,7 +22,7 @@
 #' header (i.e. variable names).
 #' @param stringsAsFactors logical. Convert all character columns to factors?
 #' @param envir the environment where the data should be loaded.
-#' @param ... additional arguments passed to \code{\link{fread}} or
+#' @param ... additional arguments passed to \code{\link[data.table]{fread}} or
 #' \code{\link{load}} as relevant.
 #'
 #' @return a data frame
@@ -51,7 +51,7 @@
 #' }
 #' @source Originally based on source_url from the Hadley Wickham's devtools
 #' package.
-#' @seealso \link{httr}, \code{\link{fread}}, and \code{\link{load}}
+#' @seealso \code{\link[httr]{GET}}, \code{\link[data.table]{fread}}, and \code{\link{load}}
 #' @importFrom data.table fread
 #' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content content

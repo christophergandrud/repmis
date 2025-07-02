@@ -22,4 +22,3 @@ set_valid_wd(c('examples/directory1', 'anotherExample/directory2'))
 }
 
 }
-

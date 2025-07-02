@@ -20,4 +20,3 @@ The function returns the latest git commit and branch for the repo specified
  The functions makes it possible to include the latest git commit and branch
  in a run to be able to know exactly which code where used.
 }
-

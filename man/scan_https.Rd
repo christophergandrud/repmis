@@ -25,4 +25,3 @@ a charcter object of length 1
 Read a character text file from a secure (https) site into R as a single
 object.
 }
-

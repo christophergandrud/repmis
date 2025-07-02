@@ -18,7 +18,7 @@
 #' citations. Currently supports \code{'plain'}, i.e. no special formatting and
 #' \code{'JSS'} to match the BibTeX style for the
 #' \emph{Journal of Statistical Software}
-#' (see \url{http://www.jstatsoft.org/style}).
+#' (see \url{https://www.jstatsoft.org/style}).
 #' @param tweak logical. Whether to fix some known problems in the citations,
 #' especially non-standard format of authors.
 #' @param install a logical option for whether or not to install the packages.
@@ -41,11 +41,13 @@
 #' overwrite existing files with the same name as \code{file}, so it is
 #' generally a good idea to create a new BibTeX file with \code{LoadandCite}.
 #' @examples
+#' \dontrun{
 #' # Create vector of package names
 #' ## In this example you need to have the packages installed aready.
 #' PackNames <- "repmis"
 #' # Load the packages and create a BibTeX file
 #' LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
+#' }
 #' \dontrun{
 #' # Install, load, and cite specific package versions
 #' # dontrun due to CRAN restrictions
@@ -60,7 +62,7 @@
 #' This function is partially based on: \url{https://gist.github.com/3710171}.
 #' It also builds on code from knitr's \code{write_bib}. See: Y. Xie. knitr: A
 #' general-purpose package for dynamic report generation in R, 2013. URL
-#' \url{http://CRAN.R-project.org/package=knitr}. R package version 1.5. Note
+#' \url{https://CRAN.R-project.org/package=knitr}. R package version 1.5. Note
 #' that it does not formally depend on knitr so that knitr can be included in
 #' \code{LoadandCite} so that it is possible to install old versions of that
 #' package.
