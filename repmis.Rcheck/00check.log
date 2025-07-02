@@ -1,0 +1,26 @@
+* using log directory ‘/Users/christophergandrud/git_repos/repmis/repmis.Rcheck’
+* using R version 4.5.1 (2025-06-13)
+* using platform: aarch64-apple-darwin24.4.0
+* R was compiled by
+    Apple clang version 17.0.0 (clang-1700.0.13.3)
+    GNU Fortran (Homebrew GCC 15.1.0) 15.1.0
+* running under: macOS Sequoia 15.5
+* using session charset: UTF-8
+* using option ‘--no-manual’
+* checking for file ‘repmis/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘repmis’ version ‘0.5’
+* checking package namespace information ... OK
+* checking package dependencies ... ERROR
+Packages required but not available: 'data.table', 'httr', 'plyr'
+
+Package suggested but not available: ‘xlsx’
+
+The suggested packages are required for a complete check.
+Checking can be attempted without them by setting the environment
+variable _R_CHECK_FORCE_SUGGESTS_ to a false value.
+
+See section ‘The DESCRIPTION file’ in the ‘Writing R Extensions’
+manual.
+* DONE
+Status: 1 ERROR

@@ -1,0 +1,145 @@
+## Version 0.5
+
+Unfortunately, `source_DropboxData` is no longer supported due to changes in the
+Dropbox API.
+
+## Version 0.4.4 
+
+`set_valid_wd` informs the user if no valid directory is found.
+
+## Version 0.4.3
+
+`set_valid_wd` sets valid working directory from vector of possible directories.
+
+## Version 0.4.2
+
+xlsx package moved to suggests. Most of the package can now be used without xlsx 
+installed or its rJava dependency.
+
+## Version 0.4.1 
+
+Minor internal change to options for sourcing data.
+
+Minor documentation improvements.
+
+## Version 0.4
+
+`source_data` and `source_DropboxData` now use `fread` from the data.table
+package rather than `read.table` for faster more robust data loading.
+
+Note: may break code from previous version in some instances. Please check.
+
+## Version 0.3.3
+
+Added `scan_https` for reading a character text file from a secure (https) site
+into R as a single object.
+
+## Version 0.3.2
+
+Added `git_stamp` function for get git stamp (commit and branch) for a
+repository. Thanks to Måns Magnusson.
+
+## Version 0.3.1
+
+Improved SHA1 Hash messages.
+
+## Verion 0.3
+
+`source_data` now also loads RDATA files. Thanks to Måns Magnusson.
+
+## Version 0.2.9
+
+Added `source_XlsxData` function for downloading and loading Excel files.
+
+Internal code improvements
+
+Internal improvements.
+
+## Version 0.2.8
+
+Added `cache` and `clearCache` arguments to `source_data. This allows the user
+to cache the downloaded data frame so that it does not need to be downloaded
+every time the function is called.
+
+## Version 0.2.7.1
+
+Added ability to pass arguments to `source_data`, `source_DropboxData`, and
+`source_GitHubData`.
+
+## Version 0.2.7
+
+Improvements made to `LoadandCite` largely suggested by R Journal reviewers.
+These include:
+
+- if `pkgs = NULL` then non-base packages loaded in the current session are cited.
+
+- can use the `style` argument to style the citations for the Journal of
+Statistical Software.
+
+- automatically includes a citation for the current R version and can check to
+see if the version of R running matches a specified version.
+
+## Version 0.2.6.2
+
+Minor example changes.
+
+## Version 0.2.6.1
+
+Minor internal changes.
+
+## Version 0.2.6
+
+Minor changes to `LoadandCite`, if `file = NULL` then the packages are loaded
+but no BibTeX file is created.
+
+Other internal improvements and bug fixes.
+
+## Version 0.2.5
+
+Drawing on devtools version 1.2, this `source_data` now us finds sha-1 hashes
+for files and lets the user compare these with the version of the file they have
+downloaded. This makes it easier to see if you downloaded the same file you
+thought you had downloaded.
+
+`source_GitHubData` is now depricated and will not be updated from this point.
+Please use `source_data` instead.
+
+Minor default settings change for data commands.
+
+## Version 0.2.4
+
+Add `source_DropboxData` for loading plain-text data from a non-Public Dropbox
+folder.
+
+Big hat tip to Kay Cichini
+(http://thebiobucket.blogspot.com/2013/04/download-files-from-dropbox.html)
+
+## Version 0.2.3
+
+Add `source_data`. `source_GitHubData` turned into a wrapper for `source_data`.
+
+## Version 0.2.2
+
+Change how default repo in `LoadandCite` is determined/set.
+
+Version 0.2.1
+
+`LoadandCite` repo option now gets repo information from `.Rprofile`. Thanks to
+Karthik Ram.
+
+## Version 0.2
+
+- Add tools to install old R package versions both in a stand alone function
+(`InstallOldPackages`) and as part of `LoadandCite`.
+
+- the `package` argument for `LoadandCite` is deprecated. Use `pkgs` instead.
+This is so the syntax matches `install.packages syntax better.
+
+## Version 0.1.1
+
+Documentation and external package load fixes.
+
+## Version 0.1
+
+Includes the functions `LoadandCite` for loading and citing R packages as well
+as `source_GitHubData` for downloading plain-text data from GitHub.
