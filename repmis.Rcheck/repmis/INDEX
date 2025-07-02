@@ -1,0 +1,12 @@
+git_stamp               Get git stamp (commit and branch) for a
+                        repository
+InstallOldPackages      Install old versions of R packages.
+LoadandCite             Install, load, and cite R packages
+scan_https              Read a character text file from a secure
+                        (https) site into R as a single object.
+set_valid_wd            Sets valid working directory from vector of
+                        possible directories
+source_data             Load plain-text data and RData from a URL
+                        (either http or https)
+source_DropboxData      No longer supported
+source_XlsxData         Download an Excel data set

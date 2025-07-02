@@ -5,8 +5,8 @@ Description: Tools to load 'R' packages
     and automatically generate BibTeX files citing them as well as load and
     cache plain-text and 'Excel' formatted data stored on 'GitHub', and
     from other sources.
-Version: 0.5
-Date: 2016-02-06
+Version: 0.5.1
+Date: 2025-07-02
 Authors@R: c(
     person("Christopher", "Gandrud", email = "christopher.gandrud@gmail.com",
     role = c("aut", "cre"))
